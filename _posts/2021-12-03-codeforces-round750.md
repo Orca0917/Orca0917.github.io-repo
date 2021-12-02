@@ -1,6 +1,6 @@
 ---
 title:  "Codeforces Round #750 (Div.2)"
-excerpt: "A, B, C, D 풀이"
+excerpt: "A, B, C solved, D upsolving"
 
 categories:
   - codeforces
