@@ -1,6 +1,6 @@
 ---
 title:  "상호 배타적 집합 / union-find"
-excerpt: "두 집합 간의 합 연산을 할 때 유용하게 사용되는 union-find 알고리즘"
+excerpt: "두 집합 간의 합 연산을 할 때 유용하게 사용되는 union-find 알고리즘에 대해 알아보자"
 
 categories:
   - concept
