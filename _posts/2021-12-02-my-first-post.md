@@ -37,7 +37,7 @@ last_modified_at: 2021-12-02
 
 한 집합에 속하는 원소들을 하나의 트리로 묶어서 같은 집합임을 보여주는 것이다. 그래프로도 표현할 수 있지만, 트리로 표현했을 때의 장점은 **해당 집합의 대표값을 루트로 설정**할 수 있는 점이다.
 
-![그림1. 트리를 이용한 집합의 표현](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/30d28ae2-2154-45f9-bf52-27e2bd805873/Untitled.png)
+![그림1. 트리를 이용한 집합의 표현](https://user-images.githubusercontent.com/91870042/144387981-63ece140-3daf-4ac9-9646-92e8553d6fd2.png)
 
 그림1. 트리를 이용한 집합의 표현
 
@@ -45,11 +45,11 @@ last_modified_at: 2021-12-02
 
 이를 알면, 합치기 연산도 간단하게 할 수 있다. 각 집합의 대표 원소를 찾은 후에 한쪽 원소를 다른 한쪽의 자식노드로 넣으면 된다. 다음은 두 집합에 대해서 합치기 연산을 수행한 결과를 보여준다.
 
-![그림2. 분리된 집합](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c26b80ce-ced2-43ee-91b9-70c714ae5f82/Untitled.png)
+![그림2. 분리된 집합](https://user-images.githubusercontent.com/91870042/144388049-0c88bca8-ec2a-4968-acd4-2858699e31ce.png)
 
 그림2. 분리된 집합
 
-![그림3. 분리된 집합에서 합치기 연산을 수행한 결과](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/60bc06c0-5259-4366-bbf1-e5d98b7185a8/Untitled.png)
+![그림3. 분리된 집합에서 합치기 연산을 수행한 결과](https://user-images.githubusercontent.com/91870042/144388124-24b44081-45c8-4343-9b57-78fed0548eb3.png)
 
 그림3. 분리된 집합에서 합치기 연산을 수행한 결과
 
