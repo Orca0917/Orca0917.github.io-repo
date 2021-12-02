@@ -395,6 +395,10 @@ body {
     text-decoration: none;
     border-bottom: 1px solid $border-color;
   }
+
+  a strong {
+    color: #00adb5;
+  }
 }
 
 .back-to-top {
