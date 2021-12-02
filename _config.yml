@@ -113,7 +113,7 @@ author:
       url: "mailto:0917jong@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://killerwhale0917.tistory.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -290,3 +290,11 @@ defaults:
       related: true
       mathjax: true
       sidebar_main: true
+
+# 코드블록 줄번호
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
