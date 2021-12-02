@@ -3,9 +3,9 @@ title:  "상호 배타적 집합 / union-find"
 excerpt: "두 집합 간의 합 연산을 할 때 유용하게 사용되는 union-find 알고리즘"
 
 categories:
-  - Blog
+  - concept
 tags:
-  - [Blog, jekyll, Github, Git]
+  - [Graph, DSU]
 
 toc: true
 toc_sticky: true
