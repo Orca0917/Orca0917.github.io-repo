@@ -38,7 +38,7 @@ class SoccerPlayer(object):
         self.position = position
         self.back_number = back_number
     
-    def change_backk_number(self, new_number):
+    def change_back_number(self, new_number):
         print("선수의 등번호를 변경합니다 : From %d to %d" % (self.back_number, new_number))
         self.back_number = new_number
 ```
@@ -147,7 +147,7 @@ class NoteBook(object):
 부모 클래스로 부터 속성과 Method를 물려받은 자식 클래스를 생성하는 것
 ```py
 class Person(object):
-    def __init__(self, name, ag, gender):
+    def __init__(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender
@@ -208,8 +208,8 @@ for animal in animals
 2. 필요없는 정보에는 접근할 필요가 없음
 3. 소스의 보호
 
-> **Encapsulation**
-> 캡슐화 또는 정보 은닉 (Information Hiding)
+> **Encapsulation**  
+> 캡슐화 또는 정보 은닉 (Information Hiding)  
 > Class를 설계할 때, 클래스 간 간섭/정보 공유를 최소화한다. 예를 들어, 심판 클래스가 축구선수 클래스 가족정보를 알아야 할 필요가 없는 것과 같다. 이렇듯 인터페이스만 알아서 사용하는 경우에 캡슐화를 사용한다.
 
 ```py
@@ -269,7 +269,7 @@ def print_msg(msg):
 another = print_msg("Hello, python")
 another()
 ```
-`closure`을 사용했을 때의 장점: 비슷한 목적을 가진 함수의 변형이 가능하다. javascript 에서 상당히 많이 나오는 개념인데 그 이유는 다음 코드를 보면 이해가 된다.
+`closures`을 사용했을 때의 장점: 비슷한 목적을 가진 함수의 변형이 가능하다. javascript 에서 상당히 많이 나오는 개념인데 그 이유는 다음 코드를 보면 이해가 된다.
 ```py
 def tag_func(tag, text):
     text = text
