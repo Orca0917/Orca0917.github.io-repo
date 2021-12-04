@@ -3,7 +3,7 @@ title:  "Codeforces Round #753 (Div.3)"
 excerpt: "A, B solved, C, D, E upsolving"
 
 categories:
-  - codeforces
+  - codeforces-contest
 tags:
   - [C++, Algorithm, Div3]
 

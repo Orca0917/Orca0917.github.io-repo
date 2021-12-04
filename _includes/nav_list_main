@@ -19,14 +19,21 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "boj" %}
-                        <li><a href="/categories/algorithm-boj" class="">BOJ 풀이 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/algorithm-boj" class="">BOJ 문제 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "codeforces" %}
-                        <li><a href="/categories/algorithm-codeforces" class="">코드포스 풀이 ({{category[1].size}})</a></li>
+                    {% if category[0] == "codeforces-contest" %}
+                        <li><a href="/categories/algorithm-codeforces-contest" class="">코드포스 대회 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "codeforces-problem" %}
+                        <li><a href="/categories/algorithm-codeforces-problem" class="">코드포스 문제 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -49,6 +56,14 @@
                 {% for category in site.categories %}
                     {% if category[0] == "pandas" %}
                         <li><a href="/categories/python-pandas" class="">Pandas ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">AI</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "boostcamp" %}
+                        <li><a href="/categories/ai-boostcamp" class="">BoostCamp ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

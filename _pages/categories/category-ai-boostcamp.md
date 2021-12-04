@@ -1,11 +1,11 @@
 ---
-title: "C++ 코드포스 풀이"
+title: "Naver AI BoostCamp"
 layout: archive
-permalink: categories/algorithm-codeforces
+permalink: categories/ai-boostcamp
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.codeforces %}
+{% assign posts = site.categories.boostcamp %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
