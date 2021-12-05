@@ -219,6 +219,6 @@ python matplotlib_ex.py
 <br>
 
 # <span style = "color: #00adb5">References</span>
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203370?isDesc=false
-https://www.youtube.com/watch?v=3J02sec99RM
+https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203370?isDesc=false  
+https://www.youtube.com/watch?v=3J02sec99RM  
 https://wikidocs.net/1418
