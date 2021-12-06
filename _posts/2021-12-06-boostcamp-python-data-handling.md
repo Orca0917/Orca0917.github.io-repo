@@ -364,6 +364,9 @@ a_date = p_document_id_tag.find("date").get_text()
 
 ## JSON과 XML의 비교
 동일한 기능을 수행하는 코드이지만, JSON의 코드가 더 간결하고 보기 쉽기 때문에 훨 씬 큰 데이터에 대해서는 메모리도 줄일 수 있어서 효과적이다.
+
+[참고🔍](http://tcpschool.com/json/json_intro_xml)
+
 ```xml
 # XML
 <?xml version="1.0" encoding="UTF-8" ?>
