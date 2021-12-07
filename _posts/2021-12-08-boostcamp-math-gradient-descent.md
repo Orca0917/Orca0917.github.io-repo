@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] 수학: 경사하강법"
+title:  "[부스트캠프 Pre-Course] AI수학: 경사하강법"
 excerpt: "미분의 개념과 그래디언트 벡터에 대한 설명"
 
 categories:
