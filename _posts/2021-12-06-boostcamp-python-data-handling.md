@@ -30,16 +30,24 @@ customer_list = [] #cutomer 개별 List를 저장하는 List
 with open ("customers.csv") as customer_data: #customer.csv 파일을 customer_data 객체에 저장
     while True:
         data = customer_data.readline() #customer.csv에 한줄씩 data 변수에 저장
-        if not data: break #데이터가 없을 때, Loop 종료
-        if line_counter==0: #첫번째 데이터는 데이터의 필드
-            data_header = data.split(",") #데이터의 필드는 data_header List에 저장, 데이터 저장시 “,”로 분리
+        
+        if not data: 
+            break # 데이터가 없을 때, Loop 종료
+        
+        if line_counter==0: # 첫번째 데이터는 데이터의 필드
+            data_header = data.split(",") # 데이터의 필드는 data_header List에 저장, 데이터 저장시 “,”로 분리
+        
         else:
-            customer_list.append(data.split(",")) #일반 데이터는 customer_list 객체에 저장, 데이터 저장시 “,”로 분리
+            customer_list.append(data.split(",")) # 일반 데이터는 customer_list 객체에 저장, 데이터 저장시 “,”로 분리
+        
         line_counter += 1
         
-print("Header :\t", data_header) #데이터 필드 값 출력
+
+print("Header :\t", data_header) # 데이터 필드 값 출력
+
 for i in range(0,10): #데이터 출력 (샘플 10개만)
     print ("Data",i,":\t\t",customer_list[i])
+
 print (len(customer_list)) #전체 데이터 크기 출력
 ```
 
@@ -53,19 +61,24 @@ customer = None
 with open ("customers.csv", "r") as customer_data:
     while 1:
         data = customer_data.readline()
+
         if not data:
             break
+            
         if line_counter==0:
             data_header = data.split(",")
         else:
             customer = data.split(",")
+
             if customer[10].upper() == "USA": #customer 데이터의 offset 10번째 값
                 customer_USA_only_list.append(customer) #즉 country 필드가 “USA” 것만
+
         line_counter+=1 #sutomer_USA_only_list에 저장
 
 print ("Header :\t", data_header)
 for i in range(0,10):
     print ("Data :\t\t",customer_USA_only_list[i])
+
 print (len(customer_USA_only_list))
 
 with open ("customers_USA_only.csv", "w") as customer_USA_only_csv:
@@ -113,11 +126,11 @@ with open("korea_floating_population_data.csv","r", encoding="cp949") as p_file:
             header = row #첫 번째 줄은 데이터 필드로 따로 저장
         location = row[7]
 
-        #“행정구역”필드 데이터 추출, 한글 처리로 유니코드 데이터를 cp949로 변환
+        # "행정구역" 필드 데이터 추출, 한글 처리로 유니코드 데이터를 cp949로 변환
         # u: unicode의 약자.
         if location.find(u"성남시") != -1:
             seoung_nam_data.append(row)
-        #”행정구역” 데이터에 성남시가 들어가 있으면 seoung_nam_data List에 추가
+        # "행정구역" 데이터에 성남시가 들어가 있으면 seoung_nam_data List에 추가
         rownum +=1
 
 with open("seoung_nam_floating_population_data.csv","w", encoding="utf8") as s_p_file:
@@ -249,13 +262,13 @@ XML은 컴퓨터 간에(스마트폰-PC) 정보를 주고받기 매우 유용한
 ```xml
 <?xml version="1.0"?> 
 <고양이> 
-    <이름>나비</이름> 
-    <품종>샴</품종> 
-    <나이>6</나이> 
-    <중성화>예<중성화> 
-    <발톱 제거>아니요</발톱 제거>
-    <등록 번호>Izz138bod</등록 번호>
-    <소유자>이강주</소유자>
+    <이름> 나비 </이름> 
+    <품종> 샴 </품종> 
+    <나이> 6 </나이> 
+    <중성화> 예 <중성화> 
+    <발톱_제거> 아니요 </발톱_제거>
+    <등록_번호> Izz138bod </등록_번호>
+    <소유자> 이강주 </소유자>
 </고양이>
 ```
 
