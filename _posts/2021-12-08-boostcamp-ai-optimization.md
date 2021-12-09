@@ -98,6 +98,8 @@ minimizers는 Sharp보다는 Flat한 것이 Generalized가 더 잘되어 있기 
 
 위의 그림을 봤을 때, Batch크기를 크게 하여 sharp minimum에 도달하였을 경우에는 테스트 데이터에 대한 결과값과의 차이가 커진다. (y절편의 차이값)
 
+<br>
+
 # <span style = "color: #00adb5">Gradient Descent Methods</span>
 ## stochastic gradient descent
 ![image](https://user-images.githubusercontent.com/91870042/145227804-22b83532-64d4-4ba4-9a31-4d1ba56791e1.png){: .align-center}
