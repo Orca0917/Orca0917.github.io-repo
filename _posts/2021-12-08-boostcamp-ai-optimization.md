@@ -51,7 +51,7 @@ Cross-Validation은 `K-fold validation`이라 표현하기도 한다.
 ![image](https://user-images.githubusercontent.com/91870042/145223996-04aa2213-3651-43b9-9749-b6c431db646d.png){: .align-center}
 
 ### Tradeoff
-나의 학습데이터에 Noise가 있다고 가정할 때, 이 Noise가 있는 데이터를 최소화시키는 것은 3가지 구성의 합으로 나타낼 수 있다. 아래에서 \\(t\\)는 target data를 의미하고, \\(f\\)는 neural network로 추론한 결과를 말한다.
+나의 학습데이터에 Noise가 있다고 가정할 때, 이 Noise가 있는 데이터를 최소화시키는 것은 3가지 구성의 합으로 나타낼 수 있다. 아래에서 \\(t\\)는 target data를 의미하고, \\(\hat{f}\\)는 neural network로 추론한 결과를 말한다. \\(f\\)는 실제 데이터의 값이다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145224668-d9d69a72-33c6-43d1-b74a-89e61c055334.png){: .align-center}
 
@@ -60,10 +60,10 @@ Cross-Validation은 `K-fold validation`이라 표현하기도 한다.
 ## Bootstrapping
 `Bootstrapping`은 여러개의 데이터중 임의의 데이터를 추출하여 학습 데이터를 생성하는 것을 말한다. 모든 학습데이터를 이용해서 학습하는 것이 좋을 것 같지만, 좋지 않은 경우가 많다.
 
-1. Bagging(Bootstrapping aggregating)
+1. Bagging(Bootstrapping aggregating)  
 추출된 임의의 학습데이터들로 여러개의 Neural Network Model을 생성한다. 이후, 하나의 데이터에 대해서 각각의 Model이 얼마나 일관성있는 출력을 갖는지 비교한다.
 
-2. Boosting
+2. Boosting  
 추출된 임의의 학습데이터들로 Neural Network를 학습시킨다. 나머지 데이터들에 대해서 예측을 하지 못하는 경우, 나머지 데이터에 대해서 잘 학습된 Nerual Network Model을 생성한다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145226008-fddb29cc-7740-4796-a652-07cb81923691.png){: .align-center}
