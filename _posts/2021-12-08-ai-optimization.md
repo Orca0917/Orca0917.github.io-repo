@@ -13,18 +13,12 @@ date: 2021-12-08
 last_modified_at: 2021-12-08
 ---
 
-# <span style = "color: #00adb5">introduction</span>
-
-> Language is the source of misunderstanings
-
 # <span style = "color: #00adb5">Gradient Descent</span>
 
 loss function을 편미분 하여 국소적인 최소값을 찾기 위해서 계속 반본적으로 최적화시킨다.
 
 # <span style = "color: #00adb5">Generalization</span>
 우리의 목적은 `일반화(Generalization)`성능을 높이는 것이다. 그렇다면 일반화의 성능을 높인다는 것은 무엇을 의미할까?
-
-![image](https://user-images.githubusercontent.com/91870042/145222399-075013f7-5baa-4fb7-bd3b-33e73faddadd.png){: .align-center}
 
 먼저 데이터는 크게 2종류로 나눌 수 있다. 
 - `학습 데이터(Training Data)`: 신경망 모델을 학습시키기 위한 데이터를 말한다.
@@ -34,7 +28,7 @@ loss function을 편미분 하여 국소적인 최소값을 찾기 위해서 계
 
 ![image](https://user-images.githubusercontent.com/91870042/145222399-075013f7-5baa-4fb7-bd3b-33e73faddadd.png){: .align-center}
 
-위의 그림을 보게되면, 학습데이터로 학습을 많이 할수록, 테스트 데이터에 대한 오차는 커지는 것을 알 수 있다. 여기서 일반화가 좋다는 것은 테스트데이터와 학습데이터로 나오는 결과의 일관성이 적다는 것이다.
+위의 그림을 보게되면, 학습데이터로 학습을 많이 할수록, 테스트 데이터에 대한 오차는 커지는 것을 알 수 있다. 여기서 일반화가 좋다는 것은 테스트데이터와 학습데이터로 나오는 결과의 일관성이 있다는 것이다.
 
 > 일반화의 성능이 높다는 것은 Train Data와 Test Data의 차이가 적어, 모두 일관성 있는 데이터를 출력하는 것을 말한다.
 
