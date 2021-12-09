@@ -53,17 +53,17 @@ last_modified_at: 2021-12-08
 \\(
     y = W^Tx + b
 \\)
-이렇게 곱해지는 행렬(\\(W\\))을 해석하는 하나의 방법은, 두개의 벡터사이의 변환이다.
+이렇게 곱해지는 행렬(\\(W\\))을 해석하는 하나의 방법은, 두 개의 벡터사이의 변환이다.
 
 ## Beyond Linear Neural Networks
 
 ![image](https://user-images.githubusercontent.com/91870042/145208883-2f6ecfa6-6e05-46e1-8948-73eb26548c90.png){: .align-center}
 
-위 사진 처럼, 딥러닝으로 Neural Network를 여러겹 쌓겠다고 해보자. Neural NEtwork를 여러개 쌓기 위해서는 하나의 Network가 가중치 행렬 \\(W_{1}^{T}x)\\)을 통해 나오는 결과 Hidden Vector(\\(h\\))를 다시 가중치 행렬에 넣어 결과를 얻어내는 형식으로 사용한다. 이를 수식으로 표현하면 다음과 같다.
+위 사진 처럼, 딥러닝으로 Neural Network를 여러겹 쌓겠다고 해보자. Neural Network를 여러개 쌓기 위해서는 하나의 Network가 가중치 행렬 (\\(W_{1}^{T}x\\))을 통해 나오는 결과 Hidden Vector(\\(h\\))를 다시 가중치 행렬에 넣어 결과를 얻어내는 형식으로 사용한다. 이를 수식으로 표현하면 다음과 같다.
 
-\\(
+\begin{aligned}
     y = W_{2}^{T}h = W_{2}^{T}W_{1}^{T}x
-\\)
+\end{aligned}
 
 사실, 위의 수식은 처음의 입력에 대해서 가중치 행렬을 2번 연산한 결과와 동일한데, 이는 1층의 Network Layer와 동일하다. 그렇기 때문에 이 값을 증폭시켜줄 `비선형함수`가 필요한데 우리는 그 함수를 `활성함수(Activation Function)`이라고 부른다. 따라서 활성함수를 \\(\rho\\) 라고 하면 다시 다음과 같아 나타낼 수 있다.
 
@@ -72,7 +72,7 @@ last_modified_at: 2021-12-08
 \\)
 
 ## 활성 함수
-위에서 말한 활성함수의 종류에는 `ReLU`, `Sigmoid`, `Hyperbolic Tangent`함수가 있다. 어떤게 좋은지는 문제와 상황마다 모두 다르다. 하지만, Neural Network를 여러개 쌓았을 때, 의미있는 결과를 얻어내기 위해서는 사용해야하는 비선형 함수이다.
+위에서 말한 활성함수의 종류에는 `ReLU`, `Sigmoid`, `Hyperbolic Tangent`함수가 있다. 어떤게 좋은지는 문제와 상황마다 모두 다르다. 하지만, Neural Network를 여러개 쌓았을 때, 의미있는 결과를 얻어내기 위해서는 비선형 함수를 사용해야만 한다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145209921-f2d2a57f-1ece-4b2f-b793-3b2f057be4cf.png){: .align-center}
 
