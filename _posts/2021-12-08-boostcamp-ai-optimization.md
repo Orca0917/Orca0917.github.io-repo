@@ -73,7 +73,8 @@ Cross-Validation은 `K-fold validation`이라 표현하기도 한다.
 # <span style = "color: #00adb5">Practical Gradient Descent method : 고전적 경사하강법</span>
 
 1. Stochastic Gradient Descent(SGD)  
-한 번에 하나의 데이터만을 입력하여 출력값을 업데이트 하면서 빠르게 전진한다.
+
+  한 번에 하나의 데이터만을 입력하여 출력값을 업데이트 하면서 빠르게 전진한다.
 
   ![image](https://user-images.githubusercontent.com/91870042/145226572-03ea8edf-900a-4cd9-b7e7-81272db9388b.png){: .align-center}
   
