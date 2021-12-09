@@ -51,7 +51,7 @@ Cross-Validation은 `K-fold validation`이라 표현하기도 한다.
 ![image](https://user-images.githubusercontent.com/91870042/145223996-04aa2213-3651-43b9-9749-b6c431db646d.png){: .align-center}
 
 ### Tradeoff
-나의 학습데이터에 Noise가 있다고 가정할 때, 이 Noise가 있는 데이터를 최소화시키는 것은 3가지 구성의 합으로 나타낼 수 있다. 아래에서 \\(t\\)는 target data를 의미하고, \\(f\\)는 neural network로 추론한 결과를 말한다.
+나의 학습데이터에 Noise가 있다고 가정할 때, 이 Noise가 있는 데이터를 최소화시키는 것은 3가지 구성의 합으로 나타낼 수 있다. 아래에서 \\(t\\)는 target data를 의미하고, \\(\hat{f}\\)는 neural network로 추론한 결과를 말한다. \\(f\\)는 실제 데이터의 값이다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145224668-d9d69a72-33c6-43d1-b74a-89e61c055334.png){: .align-center}
 
@@ -60,25 +60,28 @@ Cross-Validation은 `K-fold validation`이라 표현하기도 한다.
 ## Bootstrapping
 `Bootstrapping`은 여러개의 데이터중 임의의 데이터를 추출하여 학습 데이터를 생성하는 것을 말한다. 모든 학습데이터를 이용해서 학습하는 것이 좋을 것 같지만, 좋지 않은 경우가 많다.
 
-1. Bagging(Bootstrapping aggregating)
+1. Bagging(Bootstrapping aggregating)  
 추출된 임의의 학습데이터들로 여러개의 Neural Network Model을 생성한다. 이후, 하나의 데이터에 대해서 각각의 Model이 얼마나 일관성있는 출력을 갖는지 비교한다.
 
-2. Boosting
+2. Boosting  
 추출된 임의의 학습데이터들로 Neural Network를 학습시킨다. 나머지 데이터들에 대해서 예측을 하지 못하는 경우, 나머지 데이터에 대해서 잘 학습된 Nerual Network Model을 생성한다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145226008-fddb29cc-7740-4796-a652-07cb81923691.png){: .align-center}
 
+<br>
+
 # <span style = "color: #00adb5">Practical Gradient Descent method : 고전적 경사하강법</span>
 
-- Stochastic Gradient Descent(SGD)  
-한 번에 하나의 데이터만을 입력하여 출력값을 업데이트 하면서 빠르게 전진한다.
+1. Stochastic Gradient Descent(SGD)  
 
-![image](https://user-images.githubusercontent.com/91870042/145226572-03ea8edf-900a-4cd9-b7e7-81272db9388b.png){: .align-center}
+  한 번에 하나의 데이터만을 입력하여 출력값을 업데이트 하면서 빠르게 전진한다.
 
-- Mini-batch gradient descent
+  ![image](https://user-images.githubusercontent.com/91870042/145226572-03ea8edf-900a-4cd9-b7e7-81272db9388b.png){: .align-center}
+  
+2. Mini-batch gradient descent  
 batch-size의 샘플을 이용해서 gradient를 계산해서 업데이트
 
-- Batch gradient descent
+3. Batch gradient descent  
 한번에 모든 데이터를 이용해서 gradient의 평균을 이용해서 업데이트
 
 ## Batch-size  Matters
@@ -95,6 +98,8 @@ minimizers는 Sharp보다는 Flat한 것이 Generalized가 더 잘되어 있기 
 ![image](https://user-images.githubusercontent.com/91870042/145227566-7d826e05-7d59-4c7b-8af9-ebcee2e67d5c.png){: .align-center}
 
 위의 그림을 봤을 때, Batch크기를 크게 하여 sharp minimum에 도달하였을 경우에는 테스트 데이터에 대한 결과값과의 차이가 커진다. (y절편의 차이값)
+
+<br>
 
 # <span style = "color: #00adb5">Gradient Descent Methods</span>
 ## stochastic gradient descent
