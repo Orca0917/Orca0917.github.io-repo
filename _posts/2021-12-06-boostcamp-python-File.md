@@ -43,11 +43,11 @@ for i in range(10):
 ```
 
 ### Built-in Exception의 종류
-- IndexError: List의 Index범위를 넘어갈 때 발생하는 오류
-- NameError: 존재하지 않는 변수를 호출할 때 발생하는 오류
-- ZeroDivisionError: 0으로 숫자를 나눌 때 발생하는 오류
-- ValueError: 변환할 수 없는 문자, 숫자를 변활할 때 발생하는 오류
-- FileNotFoundError: 존재하지 않는 파일을 호출할 때 발생하는 오류
+- `IndexError`: List의 Index범위를 넘어갈 때 발생하는 오류
+- `NameError`: 존재하지 않는 변수를 호출할 때 발생하는 오류
+- `ZeroDivisionError`: 0으로 숫자를 나눌 때 발생하는 오류
+- `ValueError`: 변환할 수 없는 문자, 숫자를 변활할 때 발생하는 오류
+- `FileNotFoundError`: 존재하지 않는 파일을 호출할 때 발생하는 오류
 이외에도 훨씬 다양한 Built-in Exception이 존재한다.
 
 ### try~except~else 구문
@@ -332,7 +332,7 @@ for key in config['SectionTwo']:
 `argparser`모듈은 파이썬 스크립트의 명령행 옵션을 파싱할때 사용하는 모듈이다. 특수 모듈도 많이 존재하지만, 일반적으로 argparse를 사용한다. `Command-Line Option`이라고 부른다.
 
 ```py
-import arparse
+import argparse
 
 parser = arparse.ArgumentParser(description='Sum two integers.')
 
