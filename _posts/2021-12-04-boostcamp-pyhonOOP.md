@@ -87,7 +87,7 @@ Notebook은 Note가 삽입 될 때, 페이지를 생성하며, 최고 300페이�
 300페이지가 넘으면 더 이상 노트 삽입하지 못한다.
 
 ## class scheme
-![image](https://user-images.githubusercontent.com/91870042/144715006-f0f147fb-78cf-4dc8-9a06-4a5fd4085696.png)
+![image](https://user-images.githubusercontent.com/91870042/144715006-f0f147fb-78cf-4dc8-9a06-4a5fd4085696.png){: .align-center}
 
 ## Note class
 ```py
@@ -177,7 +177,7 @@ class Employee(Person):
 ## 다형성 (Polymorphism)
 같은 이름 메소드의 내부 로직을 다르게 작성한다. Dynamic Typing특성으로 인해 파이썬에서는 같은 부모클래스의 상속에서 주로 발생한다. 중요한 OOP의 개념이지만 너무 깊이 알 필요는 없다.
 
-![image](https://user-images.githubusercontent.com/91870042/144715631-b06df976-def1-430b-9939-27c565f355bf.png)
+![image](https://user-images.githubusercontent.com/91870042/144715631-b06df976-def1-430b-9939-27c565f355bf.png){: .align-center}
 
 ```py
 class Animal:
@@ -341,5 +341,9 @@ print(raise_two(7))
 ```
 
 <br>
+
 # <span style = "color: #00adb5">References</span>
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203369/?isDesc=false
+
+[📘 부스트캠프 AI Tech 3기 Pre-Course: Python Object Oriented Programming](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203369/?isDesc=false)
+
+
