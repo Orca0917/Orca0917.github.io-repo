@@ -99,11 +99,10 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
-
 # Site Author
 author:
   name             : "Ryu Jongmoon"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "https://user-images.githubusercontent.com/91870042/146774013-7e2ef70b-308e-4753-8388-7a43603fd043.png"
   bio              : "알고리즘과 AI, 데이터분석에<br/>관심이 많은 대학생입니다😊"
   location         : "Republic of Korea"
   email            :
