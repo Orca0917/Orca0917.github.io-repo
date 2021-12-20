@@ -283,12 +283,13 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false #true
       comments: # true
       share: true
       related: true
       mathjax: true
       sidebar_main: true
+      show_date: true
 
 # 코드블록 줄번호
 markdown: kramdown
