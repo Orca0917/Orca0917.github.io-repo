@@ -366,3 +366,11 @@ input[type="submit"],
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
+.page__inner-wrap > section > p > u {
+  color: $primary-color;
+}
+
+.page__inner-wrap > section > p > b {
+  color:#ffbd2f;
+}
