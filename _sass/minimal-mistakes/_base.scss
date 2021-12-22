@@ -375,6 +375,6 @@ u, ins {
   color:#ffbd2f;
 }
 
-.poge__inner-wrap {
-  font-size: 16px;
+.page__inner-wrap > section > h1 {
+  color: $primary-color;
 }
