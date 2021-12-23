@@ -5,7 +5,7 @@ excerpt: "두 집합 간의 합 연산을 할 때 유용하게 사용되는 unio
 categories:
   - concept
 tags:
-  - [Graph, DSU]
+  - [그래프, 분리집합]
 
 toc: true
 toc_sticky: true

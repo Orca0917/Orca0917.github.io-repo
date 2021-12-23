@@ -5,7 +5,7 @@ excerpt: "여러 문자열들을 저장하고, 효율적으로 탐색하기 위�
 categories:
   - concept
 tags:
-  - [Graph, String, Trie]
+  - [그래프, 문자열, 트라이]
 
 toc: true
 toc_sticky: true

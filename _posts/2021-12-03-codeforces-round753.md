@@ -5,7 +5,7 @@ excerpt: "A, B solved, C, D, E upsolving"
 categories:
   - codeforces-contest
 tags:
-  - [C++, Algorithm, Div3]
+  - [C++, 알고리즘, Div3]
 
 toc: true
 toc_sticky: true
@@ -151,7 +151,7 @@ int main() {
 > 따라서 우리는 배열을 정렬하고, 그 차이 값이 가장 큰 것을 출력하면 되는 문제이다.
 >
 
-분류: `brute force` `sortings`
+분류: `brute force` `정렬`
 
 ## 4. 정답 코드
 
@@ -204,7 +204,7 @@ int main() {
 > 빨간색 원소를 채울 수 없는 경우는 red[i] > n - i - 1인 경우이다. 빨간색 원소는 큰수부터 작은 수로 정렬이 되어있는데, 빨간색에서 i번째로 큰수가 더 커버리다면 낮출 수 있는 방법이 없기 때문이다.
 > 
 
-분류: `greedy` `math` `sortings`
+분류: `greedy` `math` `정렬`
 
 ## 4. 정답 코드
 

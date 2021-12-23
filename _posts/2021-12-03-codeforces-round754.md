@@ -5,7 +5,7 @@ excerpt: "A, B, C solved, D upsolving"
 categories:
   - codeforces-contest
 tags:
-  - [C++, Algorithm, Div2]
+  - [C++, 알고리즘, Div2]
 
 toc: true
 toc_sticky: true
@@ -89,7 +89,7 @@ int32_t main()
 
 시간복잡도: \\(O(n)\\)
 
-분류: `greedy` `sortings`
+분류: `그리디 알고리즘` `정렬`
 
 ## 4. 정답 코드
 

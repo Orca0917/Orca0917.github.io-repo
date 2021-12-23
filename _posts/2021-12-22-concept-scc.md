@@ -5,7 +5,7 @@ excerpt: "SCC: Strongly Connected Components에 대한 이해와 타잔 알고�
 categories:
   - concept
 tags:
-  - [Graph, Tarjan, SCC]
+  - [그래프, 타잔 알고리즘, 강결합 컴포넌트]
 
 toc: true
 toc_sticky: true

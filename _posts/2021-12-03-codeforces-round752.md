@@ -5,7 +5,7 @@ excerpt: "A, B, C solved, D upsolving"
 categories:
   - codeforces-contest
 tags:
-  - [C++, Algorithm, Div2]
+  - [C++, 알고리즘, Div2]
 
 toc: true
 toc_sticky: true

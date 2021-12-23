@@ -5,7 +5,7 @@ excerpt: "numpy에 대해서 알아보자."
 categories:
   - numpy
 tags:
-  - [python, numpy]
+  - [Python, Numpy]
 
 toc: true
 toc_sticky: true

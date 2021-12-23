@@ -5,7 +5,7 @@ excerpt: "Codeforces Global Round15 / 1552B"
 categories:
   - codeforces-problem
 tags:
-  - [C++, Algorithm, Combinatorics, Graphs, Greedy, Sortings]
+  - [C++, 알고리즘, 조합론, 그래프, 그리디 알고리즘, 정렬]
 
 toc: true
 toc_sticky: true

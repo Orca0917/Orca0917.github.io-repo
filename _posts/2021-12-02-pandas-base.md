@@ -5,7 +5,7 @@ excerpt: "pandas에 대해서 알아보자."
 categories:
   - pandas
 tags:
-  - [Graph, DSU]
+  - [Python, Pandas]
 
 toc: true
 toc_sticky: true

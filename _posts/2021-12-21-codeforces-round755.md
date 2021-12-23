@@ -5,7 +5,7 @@ excerpt: "A, B, C solved"
 categories:
   - codeforces-contest
 tags:
-  - [C++, Algorithm, Div2]
+  - [C++, 알고리즘, Div2]
 
 toc: true
 toc_sticky: true
@@ -164,7 +164,7 @@ int main() {
 
 두 배열 \\(a, b\\)를 정렬한 후, 각 인덱스에 대한 차이가 0 또는 1인지만 확인하면 된다.
 
-분류: `brute force` `greedy` `math` `sortings`
+분류: `brute force` `greedy` `math` `정렬`
 
 
 ## 4. 정답 코드
