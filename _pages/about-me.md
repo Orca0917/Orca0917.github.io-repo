@@ -8,7 +8,7 @@ sidebar_main: true
 
 # 소개
 ## 학력
-- 가천대학교 AI·소프트웨어학부 소프트웨어학과 3학년 (휴학)  
+- 가천대학교 AI·소프트웨어학부 소프트웨어학과 3학년 ('18.3 ~ , 휴학)  
 - 대한민국 육군 군수지원사령부 ATCIS 운용 ('20.5.18 ~ '21.11.21)
 
 ## 연락
@@ -26,4 +26,4 @@ blog2: [깃허브 페이지: CODEWORK](https://killerwhale0917.github.io/)
 - **AI**: Machine Learning, Data Science, Recommendation System
 
 ## 수상 경력
-- 교내 프로그래밍 대회 수상 (2018.12, 금상)
+- 교내 프로그래밍 대회 수상 (2018, 금상)
