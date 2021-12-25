@@ -25,7 +25,5 @@ blog2: [깃허브 페이지: CODEWORK](https://killerwhale0917.github.io/)
 - **Algorithm**: Problem Solving, Competitive Programming
 - **AI**: Machine Learning, Data Science, Recommendation System
 
-<!--
-## 수상
-- 가천대학교 프로그래밍 경진대회 (2018, 2등)
--->
+## 수상 경력
+- 교내 프로그래밍 대회 수상 (2018.12, 금상)
