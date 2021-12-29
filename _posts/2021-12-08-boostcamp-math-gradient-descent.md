@@ -16,7 +16,7 @@ last_modified_at: 2021-12-08
 # <span style = "color: #00adb5">미분</span>
 `미분(differentiation)`은 변수의 움직임에 따른 함수값의 변화를 측정하기 위한 도구로 최적화에서 제일 많이 사용하는 기법이다. 미분은 다시, 변화율의 극한으로 정의할 수 있다.
 
-\\(f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x))}{h}\\)
+$$f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}$$
 
 미분은 손으로 직접 계산하는 대신, Python에서 미분을 계산해줄 수 있다.
 
@@ -112,7 +112,10 @@ gradient_descent(fun = func, init_point = np.random.uniform(-2, 2))
 ## 변수가 벡터인 경우
 벡터가 입력인 다변수 함수의 경우 `편미분(partial differentiation)`을 사용한다.
 
-\\(\partial_{x_{i}}f(x)=\lim_{h\rightarrow 0}\frac{f(x+he_{i}) - f(x)}{h}\\)
+\\[
+    \partial_{x_{i}}f(x)=\lim_{h\rightarrow 0}\frac{f(x+he_{i}) - f(x)}{h}
+\\]
+
 > \\(e_{i}\\)는 i번째 값만 1이고 나머지는 0으로 채워진 단위벡터를 의미한다.
 
 ```py
