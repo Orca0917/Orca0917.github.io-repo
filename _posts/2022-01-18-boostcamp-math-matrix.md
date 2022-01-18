@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] AI수학: 행렬"
+title: "[AI Math] 행렬"
 excerpt: "행렬의 개념과 연산, 그리고 벡터공간에서 가지는 의미"
 
 categories:
@@ -12,8 +12,12 @@ toc_sticky: true
 date: 2021-12-07
 last_modified_at: 2021-12-07
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">행렬</span>
+# 행렬
 `행렬`은 벡터를 원소로 가지는 **2차원 배열**이다. **행렬은 행벡터를 가지는 2차원 배열이다.**
 
 ![image](https://user-images.githubusercontent.com/91870042/145036244-e4ec75b5-e992-4821-8dde-f50aac49a815.png){: .align-center}
@@ -185,7 +189,3 @@ X_ = np.array([np.append(x, [1]) for x in X]) # intercept항 추가
 beta = np.linalg.pinv(X_) @ y
 y_test = np.append(x_test) @ beta
 ```
-<br>
-
-# <span style = "color: #00adb5">References</span>
-[📘부스트캠프 AI Tech 3기 Pre-Course: 행렬이 뭐에요?](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203363/?isDesc=false)
