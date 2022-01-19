@@ -143,7 +143,7 @@ f.close()
 
 ```py
 # with구문과 함께 사용한 파일 입출력. // Indentation이 끝나면, close를 자동으로 해준다.
-with open("i_have_a_dream.txt". "r") as my_file:
+with open("i_have_a_dream.txt", "r") as my_file:
     contents = my_file.read()
     print(type(contents), contents)
 ```
@@ -152,7 +152,7 @@ with open("i_have_a_dream.txt". "r") as my_file:
 
 ```py
 # 파일로부터 한줄 씩 읽어와서 출력하는 방법
-with open("i_have_a_dream.txt". "r") as my_file:
+with open("i_have_a_dream.txt", "r") as my_file:
     contents = my_file.readlines()
     print(type(contents)) # list
     print(content_list)
@@ -161,7 +161,7 @@ with open("i_have_a_dream.txt". "r") as my_file:
 `readline()`: 텍스트 파일이 너무 커서 한번에 메모리 상에 올리기 힘들경우, 한 줄씩 읽어서 보여주는 방법도 가능하다.
 
 ```py
-with open("i_have_a_dream.txt". "r") as my_file:
+with open("i_have_a_dream.txt", "r") as my_file:
     i = 0
     while True:
         line = my_file.readline()
