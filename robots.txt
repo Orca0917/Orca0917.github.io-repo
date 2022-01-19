@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://killerwhale0917.github.io/sitemap.xml
+Sitemap: https://killerwhale0917.github.io//sitemap.xml
