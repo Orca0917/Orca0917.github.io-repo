@@ -5,7 +5,7 @@ excerpt: "프로그래밍을 배우기 전에 알아야 하는 기본적인 컴�
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

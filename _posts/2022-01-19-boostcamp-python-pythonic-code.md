@@ -5,7 +5,7 @@ excerpt: "파이썬의 특유 문법을 의미하는 pythonic code에 대한 이
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

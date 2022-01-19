@@ -5,7 +5,7 @@ excerpt: "파이썬의 객체지향 프로그래밍 (Object-Oriented-Programming
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

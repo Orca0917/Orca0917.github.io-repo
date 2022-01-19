@@ -5,7 +5,7 @@ excerpt: "파이썬의 기초적인 내용에 대한 전반적인 소개"
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

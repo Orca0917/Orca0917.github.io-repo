@@ -5,7 +5,7 @@ excerpt: "프로그래밍에서 기본적으로 알아야 할 변수와 메모�
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

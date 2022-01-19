@@ -5,7 +5,7 @@ excerpt: "파이썬 프로젝트의 기본이 되는 모듈과 패키지, 그리
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

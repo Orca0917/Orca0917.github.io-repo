@@ -5,7 +5,7 @@ excerpt: "파이썬에서 많이 사용되는 자료구조: 스택, 큐, 덱, �
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

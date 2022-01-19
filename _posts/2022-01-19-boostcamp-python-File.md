@@ -5,7 +5,7 @@ excerpt: "파이썬 프로그램의 예외처리와 파일 다루기, 기록을 
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  

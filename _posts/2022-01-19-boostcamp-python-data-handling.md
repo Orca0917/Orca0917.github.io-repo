@@ -5,7 +5,7 @@ excerpt: "파이썬에서 다룰 수 있는 CSV, 웹, XML, JSON 데이터 타입
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, boostcamp]
+  - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  
