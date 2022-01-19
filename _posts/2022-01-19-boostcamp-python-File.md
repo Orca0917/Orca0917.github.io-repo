@@ -1,19 +1,23 @@
 ---
-title:  "[부스트캠프 Pre-Course] Python File / Exception / Log Handling"
+title:  "[Python Basics for AI] File / Exception / Log Handling"
 excerpt: "파이썬 프로그램의 예외처리와 파일 다루기, 기록을 남기는 로깅"
 
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, BoostCamp, Python]
+  - [AI, Naver, boostcamp]
 toc: true
 toc_sticky: true
  
-date: 2021-12-06
-last_modified_at: 2021-12-06
+date: 2022-01-19 04:00:00
+last_modified_at: 2022-01-19 04:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">Exception</span>
+# Exception
 1. 예상가능한 예외  
 개발자가 발생 여부를 사전에 인지할 수 있는 예외이다. 예시로 사용자의 잘못된 입력, 파일 오출시 파일 없음과 같은 현상이 있다. 이런 예외에 대해서는 개발자가 반드시 명시적으로 정의 해야한다.
 
@@ -94,7 +98,7 @@ print(get_binary_number(10))
 ```
 <br>
 
-# <span style = "color: #00adb5">File Handling</span>
+# File Handling
 File system, OS에서 파일을 저장하는 트리구조 저장 체계이다.
 > Wikipedia  컴퓨터 등의 기기에서 의미 있는 정보를 담는 논리적 단위. 모든 프로그램은 파일로 구성되어 있고, 파일을 사용한다.
 
@@ -108,11 +112,11 @@ File system, OS에서 파일을 저장하는 트리구조 저장 체계이다.
 기본적인 파일 종류로는 `text파일`과 `binary파일`로 나뉘어진다. 컴퓨터는 text파일을 처리하기 위해서 binary파일로 변환을 시킨다. 모든 text파일도 실제로는 binary파일이며, 우리가 볼 수 있는 것은, ASCII/UNICODE 형태의 문자열 집합으로 저장되어 사람이 읽을 수 있는 것이다.
 
 ### Binary파일
-![image](https://user-images.githubusercontent.com/91870042/144778613-393e4c87-70ce-4a56-8e46-b709c7d0a550.png)
+![image](https://user-images.githubusercontent.com/91870042/144778613-393e4c87-70ce-4a56-8e46-b709c7d0a550.png){: .align-center}
 컴퓨터만 이해할 수 있는 형태인 이진형식으로 저장된 파일이다. 일반적으로 메모장으로 열면 내용이 깨져서 보인다. 그 예시로, 엑셀파일이나 워드파일이 있다.
 
 ### Text파일
-![image](https://user-images.githubusercontent.com/91870042/144778518-70011282-9ffa-4afa-8b87-0aa2b41eecea.png)
+![image](https://user-images.githubusercontent.com/91870042/144778518-70011282-9ffa-4afa-8b87-0aa2b41eecea.png){: .align-center}
 
 인간도 이해할 수 있는 형태인 문자열 형식으로 저장된 파일이다. 메모장으로 열면 우리 눈으로 읽을 수 있고, 메모장에 저장된 파일, HTML파일, 파이썬 코드파일이 대표적이다.
 
@@ -217,7 +221,7 @@ print(list(cwd.glob("*"))) # workspace내에 존재하는 파일 출력.
 
 <br>
 
-# <span style = "color: #00adb5">Log Handling</span>
+# Log Handling
 
 ## Log파일 생성하기
 ```py
@@ -283,7 +287,7 @@ logging.critical("check critical")
 
 Logging level설정은 log관리시 가장 기본이 되는 설정 정보이다. 이렇게 설정을 하게 되면 로그가 어떤 단계에서 부터 보여질 지 선택할 수 있다.
 
-![image](https://user-images.githubusercontent.com/91870042/144779727-4b118e8c-70a1-4009-b854-52e8dbe66e0b.png)
+![image](https://user-images.githubusercontent.com/91870042/144779727-4b118e8c-70a1-4009-b854-52e8dbe66e0b.png){: .align-center}
 
 ```py
 import logging

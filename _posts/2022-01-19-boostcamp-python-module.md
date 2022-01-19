@@ -1,17 +1,21 @@
 ---
-title:  "[부스트캠프 Pre-Course] Python Module and Project"
-excerpt: "파이썬 프로젝트의 기본이 되는 모듈과 패키지 그리고 프로젝트의 개념"
+title:  "[Python Basics for AI] Python Module & Project"
+excerpt: "파이썬 프로젝트의 기본이 되는 모듈과 패키지, 그리고 프로젝트의 개념에 대한 설명"
 
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, BoostCamp, Python]
+  - [AI, Naver, boostcamp]
 toc: true
 toc_sticky: true
  
-date: 2021-12-05
-last_modified_at: 2021-12-05
+date: 2022-01-19 03:00:00
+last_modified_at: 2022-01-19 03:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
 # <span style = "color: #00adb5">Module: 모듈</span>
 
@@ -218,7 +222,7 @@ python matplotlib_ex.py
 
 <br>
 
-# <span style = "color: #00adb5">References</span>
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203370?isDesc=false  
-https://www.youtube.com/watch?v=3J02sec99RM  
-https://wikidocs.net/1418
+# References
+[📘 Which Python Package Manager Should You Use? - YouTube](https://www.youtube.com/watch?v=3J02sec99RM)
+
+[📘 점프 투 파이썬: 패키지 - Wikidocs](https://wikidocs.net/1418)

@@ -1,20 +1,25 @@
 ---
-title:  "[부스트캠프 Pre-Course] Python OOP"
-excerpt: "Python Object Oriented Programming"
+title:  "[Python Basics for AI] Python OOP"
+excerpt: "파이썬의 객체지향 프로그래밍 (Object-Oriented-Programming)"
 
 categories:
   - boostcamp
 tags:
-  - [AI, Naver, BoostCamp, Python]
+  - [AI, Naver, boostcamp]
 toc: true
 toc_sticky: true
  
-date: 2021-12-04
-last_modified_at: 2021-12-04
+date: 2022-01-19 02:00:00
+last_modified_at: 2022-01-19 02:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">객체지향 프로그래밍 개요</span>
+# 객체지향 프로그래밍 개요
 Object-Oriented Programming, OOP
+
 객체: 실생활에서 일종의 물건. 속성(Attribute)와 행동(Action)을 가진다.
 OOP는 이러한 객체 개념을 프로그램으로 표현한다. 속성은 변수(variable), 행동은 함수(method)로 표현된다.
 python도 역시 객체 지향 프로그래밍 언어이다.
@@ -24,12 +29,12 @@ python도 역시 객체 지향 프로그래밍 언어이다.
 - 행동: `선수 : 공을 차다, 패스하다`, `심판 : 휘슬을 불다, 경고를 주다`
 - 속성: `선수 : 선수이름, 포지션, 소속팀`, `팀: 팀이름, 팀소속 선수`
 
-OOP는 설계도에 해당하는 `클래스`와 실제 구현체인 `인스턴스`로 나뉘어진다.
+OOP는 설계도에 해당하는 `클래스`와 실제 구현체인 `인스턴스`로 나뉘어진다.  
 ex. 붕어빵 틀: 클래스 / 붕어빵: 인스턴스
 
 <br>
 
-# <span style = "color: #00adb5">class 구현하기 in Python</span>
+# class 구현하기 in Python
 축구 선수 정보를 Class로 구현하기
 ```python
 class SoccerPlayer(object):
@@ -61,7 +66,7 @@ ex. `__main__`, `__add__`, `__str__`, `__eq__`
 ```python
 class SoccerPlayer(object):
     def __str__(self): # SoccerPlayer 객체를 출력하려고 하면 이 부분을 출력한다.
-        return "Hello, My name is %s. I play in %s in center " & \(self.name, self.position)
+        return "Hello, My name is %s. I play in %s in center " % (self.name, self.position)
 
 jinhyun = SoccerPlayer("Jinhyun", "MF", 10)
 print(jinhyun)
@@ -78,7 +83,7 @@ jinhyun = SoccerPlayer("Jinhyun", "MF", 10)
 ```
 <br>
 
-# <span style = "color: #00adb5">OOP Implementation Example (노트를 정리하는 프로그램)</span>
+# OOP Implementation Example (노트를 정리하는 프로그램)
 사용자는 Note에 뭔가를 적을 수 있다.
 Note에는 Content:str이 있고, 내용을 제거할 수 있다.
 2개의 노트북을 합쳐서 하나로 만들 수 있다.
@@ -139,7 +144,7 @@ class NoteBook(object):
 ```
 <br>
 
-# <span style = "color: #00adb5">OOP characteristics</span>
+# OOP characteristics
 객체지향 언어의 특징: 실제 세상을 모델링을 하였다.
 `inheritance` `Polymorphism` `Visibility`
 
@@ -246,7 +251,7 @@ class Inventory(object):
 ```
 <br>
 
-# <span style = "color: #00adb5">Decorate</span>
+# Decorate
 ## first-class objects
 일등함수 또는 일급 객체를 의미하며 변수나 데이터구조에 할당이 가능한 객체이다. parameter로 전달이 가능하고 리턴값으로 사용할 수 있다. 따라서 **파이썬의 모든 함수는 일급 함수이다.**
 
@@ -342,8 +347,5 @@ print(raise_two(7))
 
 <br>
 
-# <span style = "color: #00adb5">References</span>
-
-[📘 부스트캠프 AI Tech 3기 Pre-Course: Python Object Oriented Programming](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203369/?isDesc=false)
 
 
