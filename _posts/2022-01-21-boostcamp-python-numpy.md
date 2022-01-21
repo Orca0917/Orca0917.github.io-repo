@@ -551,8 +551,3 @@ np.save("npy_test_object", arr = a_int)
 a_test = np.load(file = "npy_test_object.npy")
 npy_array = np.load(file = "npy_test.npy")
 ```
-
-<br>
-
-# <span style = "color: #00adb5">References</span>
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203373?isDesc=false
