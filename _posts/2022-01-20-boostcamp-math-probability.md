@@ -173,3 +173,19 @@ print(mc_int(f_x, low=-1, high=1, sample_size=10000, repeat=100))
 
 >>> (1.493875, 0.003913)
 ```
+
+# References
+
+[📘 로지스틱회귀 - wikipedia](https://ko.wikipedia.org/wiki/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1_%ED%9A%8C%EA%B7%80)
+
+[📘 결합분포 - wikipedia](https://ko.wikipedia.org/wiki/%EA%B2%B0%ED%95%A9%EB%B6%84%ED%8F%AC)
+
+[📘 확률변수와 확률함수 - tistory](https://drhongdatanote.tistory.com/49)
+
+[📘 확률변수 - wikipedia](https://ko.wikipedia.org/wiki/%ED%99%95%EB%A5%A0_%EB%B3%80%EC%88%98)
+
+[📘 Cross entropy - wikipedia](https://ko.wikipedia.org/wiki/%EA%B5%90%EC%B0%A8_%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC)
+
+[📘 [통계학] 08-2. 확률벡터(2) - 결합분포, 주변분포, 독립확률변수 - tistory](https://deep-learning-study.tistory.com/59)
+
+[📘 [확률과 통계] 21. 연속확률변수의 결합확률분포 - naver blog](https://m.blog.naver.com/mykepzzang/220836634095)
