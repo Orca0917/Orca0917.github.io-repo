@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] Python Numpy"
+title:  "[Python Basics for AI] Python Numpy"
 excerpt: "Numpy: 데이터분석과 인공지능 학습에 있어 필수적으로 필요한 도구"
 
 categories:
@@ -9,11 +9,11 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2021-12-07
-last_modified_at: 2021-12-07
+date: 2022-01-21 00:00:00
+last_modified_at: 2022-01-21 00:00:00
 ---
 
-# <span style = "color: #00adb5">numpy introduction</span>
+# numpy introduction
 numpy는 `Numerical Python`의 약자이다. numpy는 고성능 과학 계산용 패키지로서, Matrix와 Vector같은 **Array연산의 표준**이라고 볼 수 있다.
 
 ## 특징
@@ -24,7 +24,7 @@ numpy는 `Numerical Python`의 약자이다. numpy는 고성능 과학 계산용
 
 <br>
 
-# <span style = "color: #00adb5">ndarray</span>
+# ndarray
 ```py
 import numpy as np
 ```
@@ -99,7 +99,7 @@ np.array([[1, 2, 3], [4.5, "5", "6"]], dtype=np.int8).nbytes # 6
 
 <br>
 
-# <span style = "color: #00adb5">Handling Shape</span>
+# Handling Shape
 딥러닝을 공부하다보면, Array의 shape을 변경하는 경우가 많이 존재한다. 그에 따라서 array의 모양을 바꿔줘야 하는데 그때 사용하는 것이 `reshape`이다.
 
 ## reshape
@@ -135,7 +135,7 @@ np.array(matrix).flatten() # 실제 matrix가 변경되는 것은 아니다. 할
 
 <br>
 
-# <span style = "color: #00adb5">Indexing & Slicing</span>
+# Indexing & Slicing
 
 ## Indexing
 list와 달리 2차원 배열에서 [0, 0]표기법을 제공한다. matrix인 경우 앞은 `행`, 뒤는 `열`을 의미한다.
@@ -171,7 +171,7 @@ a[1:3] # 1 Row ~ 2Row의 전체
 
 <br>
 
-# <span style = "color: #00adb5">creation Function</span>
+# creation Function
 
 ## arange
 `arange`: array의 범위를 지정하여, list의 값을 생성하는 명령어
@@ -268,7 +268,7 @@ np.random.normal(0, 1, 10).reshape(2, 5) # 정규분포
 
 <br>
 
-# <span style = "color: #00adb5">Operation Functions</span>
+# Operation Functions
 
 ## sum
 `sum`: ndarray의 원소들간의 합을 구할 수 있고, python기본 자료형인 list의 sum과 유사하다.
@@ -336,7 +336,7 @@ np.concatentate((a, b), axis = 1)
 
 <br>
 
-# <span style = "color: #00adb5">Array Operations</span>
+# Array Operations
 
 ## Element-wise Operations
 `Element-wise Operation`은 Array간 shape가 동일할 때 일어나는 연산이라는 의미이다.
@@ -421,7 +421,7 @@ scalar = 2
 
 <br>
 
-# <span style = "color: #00adb5">Comparisons</span>
+# Comparisons
 numpy의 array간의 비교를 진행하는 것을 말한다.
 
 ## All & Any
@@ -441,7 +441,7 @@ np.all(a < 10) # True
 numpy는 배열의 크기가 동일할 때, 원소간의 비교결과를 Boolean 데이터 타입으로 반환해준다.
 ```py
 a = np.array([1, 3, 0], float)
-b = np.arrau([5, 2, 1], float)
+b = np.array([5, 2, 1], float)
 a > b # False, True, False
 a == b # False, False, False
 (a > b).any() # True
@@ -471,6 +471,18 @@ a = np.arange(1, 11)
 np.where(a > 5)
 ```
 
+## isnan, isfinite
+- `isnan`은 배열 내에, Not a Number인 값을 알려준다.
+- `isfinite`은 어떤 수가 `NaN`, `np.Inf`인지 아닌지를 반환한다.
+
+```py
+a = np.array([1, np.NaN, np.Inf], float)
+np.isnan(a)
+>>> array([False, True, False])
+np.isfinite(a)
+>>> array([True, False, False])
+```
+
 ## argmax & argmin, argsort
 - `argmax`: 배열 내에서 최대값의 index를 반환한다.
 - `argmin`: 배열 내에서 최소값의 index를 반환한다.
@@ -490,7 +502,7 @@ array([0, 0, 2, 2])
 
 <br>
 
-# <span style = "color: #00adb5">Boolean & Fancy Index</span>
+# Boolean & Fancy Index
 
 ## Boolean Index
 특정 조건에 따른 값을 배열 형태로 추출한다. 위에서 했던, comparison operation의 반환값이 boolean값이 었다면, 이번에는 그 값을 반환해준다. **boolean index를 사용하기 위해서는 조건에 들어가는 shape와 원래 배열의 shape가 동일해야만 사용할 수 있다.**
@@ -521,7 +533,7 @@ a[b, c]
 
 <br>
 
-# <span style = "color: #00adb5">numpy data I/O</span>
+# numpy data I/O
 - `loadtxt`: 텍스트 파일을 호출하여 읽어들인다.
 - `savetxt`: 텍스트 파일을 원하는 형태로 저장한다.
 - `astype`: 데이터 타입을 변환한다.
