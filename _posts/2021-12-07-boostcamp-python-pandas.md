@@ -15,7 +15,7 @@ last_modified_at: 2021-12-07
 
 ![image](https://user-images.githubusercontent.com/91870042/144968064-c52e30d3-dd43-4fe4-9b23-f393ca5aca1c.png){: .align-center}
 
-# <span style = "color: #00adb5">Pandas</span>
+# Pandas
 구조화된 데이터의 처리를 지원하는 Python라이브러리로서, `Panel data`의 줄임말로 `Pandas`가 되었다. 고성능 array계산 라이브러리인 numpy와 통합하여, 강력한 `스프레드시트`처리 기능을 제공한다. Pandas에서는 인덱싱과 연산용함수, 전처리 함수등을 numpy와 비슷하게 제공하고 있으며 주로, **데이터 처리 및 통계 분석**을 위해서 사용된다.
 
 ## Tabular형태의 데이터 명칭
@@ -23,7 +23,7 @@ last_modified_at: 2021-12-07
 
 - `Data table`: 데이터가 들어있는 테이블. 엑셀의 Sheet와 비슷하다.
 - `Attribute`, `column`: 데이터의 속성을 의미한다.
-- `instance1`, `tuple`, `row`: 한 데이터의 가로 열을 의미한다.
+- `instance`, `tuple`, `row`: 한 데이터의 가로 열을 의미한다.
 - `data`, `값`, `value`: 행과 열이 만나는 하나의 셀을 의미한다.
 
 ## Pandas 설치
@@ -48,7 +48,7 @@ df_data.head() #처음 5줄 출력
 ```
 <br>
 
-# <span style = "color: #00adb5">Series</span>
+# Series
 - `Series`: 데이터프레임 중 하나의 column에 해당하는 데이터의 모음 Object
 - `DataFrame`: DataTable 전체를 포함하는 Object
 
@@ -129,7 +129,7 @@ example_obj["a"] = 3.2
 
 <br>
 
-# <span style = "color: #00adb5">DataFrame</span>
+# DataFrame
 데이터 프레임에서 값을 알기 위해서는 데이터 프레임의 `index`값과 `column`값을 알아야 한다. 또한 데이터 프레임은 각각의 데이터 타입이 다를 수 있다. Series를 모아서 만든 Data Table이기 때문에 기본적으로 2차원으로 구성되어 있다.
 
 ![image](https://user-images.githubusercontent.com/91870042/144962636-8e13c1f1-e4fb-4ae0-b4e7-fb98b95f2a7d.png){: .align-center}
@@ -189,7 +189,7 @@ df.drop("debt", axis=1) # 메모리 상에서 삭제X - df에 변화가 없음
 
 <br>
 
-# <span style = "color: #00adb5">selection & drop</span>
+# selection & drop
 
 ## Selection with column names
 - 한개의 column을 선택하는 경우
@@ -280,7 +280,7 @@ df.drop("city", axis=1, inplace=True)
 
 <br>
 
-# <span style = "color: #00adb5">dataframe operations</span>
+# dataframe operations
 
 ## Series operation
 
@@ -322,7 +322,7 @@ print(df.add(s2, axis=0))
 
 <br>
 
-# <span style = "color: #00adb5">lambda, map, apply</span>
+# lambda, map, apply
 ## map
 pandas의 series타입의 데이터에도 map함수를 사용할 수 있다. map을 활용하여 `dict`, `sequence`형 자료들을 데이터프레임으로 바로 변형할 수 있다.
 
@@ -396,7 +396,7 @@ df_info.applymap(f).head() # 모든 데이터프레임 값에 -가 붙어서 출
 
 <br>
 
-# <span style = "color: #00adb5">Pandas built-in Functions</span>
+# Pandas built-in Functions
 ## Describe
 `describe`는 numeric type의 데이터 요약 정보를 보여준다. 그 이외의 object데이터 타입은 보여주지 않는다.
 
@@ -437,7 +437,7 @@ df.corrwith(df.earn) # 전체항목과 소득간의 상관관계
 ```
 <br>
 
-# <span style = "color: #00adb5">Groupby</span>
+# Groupby
 SQL에서의 groupby명령어와 동일하다. groupby명령어가 실행되었을 때는 **(split → apply → combine)**의 과정을 거쳐서 연산을 진행한다.
 
 ![image](https://user-images.githubusercontent.com/91870042/144971886-6ba26863-e5fa-4c24-8635-7d133d5d5091.png){: .align-center}
@@ -602,7 +602,7 @@ df_phone.groupby(['month', 'item'])['date'].count().unstack()
 
 <br>
 
-# <span style = "color: #00adb5">Pivot table & Crosstab</span>
+# Pivot table & Crosstab
 ## Pivot Table
 엑셀에서 많이 사용하던 `피봇`기능과 동일한 기능을 수행한다. Index축은 groupby와 동일하지만, 칼럼값에 추가로 라벨링하여 각 데이터별로 aggfunc의 결과 값을 보여준다.
 
