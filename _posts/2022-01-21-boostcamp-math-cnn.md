@@ -90,6 +90,7 @@ convolution연산은 1차원 뿐만아니라 다양한 차원에서 계산이 �
 
 Convolution연산은 **커널이 모든 입력 데이터에 공통으로 적용**되기 때문에 역전파를 계산할 때도 convolution연산이 나오게 된다. 이 과정은 위의 수식보다 아래의 첨부된 강의자료로 보면 훨씬 이해하기가 쉽다.
 
+<!--
 ![image](https://user-images.githubusercontent.com/91870042/145159816-91f1a632-4fcb-4c1e-82fe-461e21be780f.png){: .align-center}
 
 ![image](https://user-images.githubusercontent.com/91870042/145159709-bca6abd4-9163-4d73-a240-6a11c74d4214.png){: .align-center}
@@ -105,6 +106,8 @@ Convolution연산은 **커널이 모든 입력 데이터에 공통으로 적용*
 ![image](https://user-images.githubusercontent.com/91870042/145159917-bcf0803d-701a-4670-b089-801ee1889734.png){: .align-center}
 
 ![image](https://user-images.githubusercontent.com/91870042/145159949-a2ed5d2c-a01a-4461-94a3-67400fdde6b8.png){: .align-center}
+
+-->
 
 <br>
 
