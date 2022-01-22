@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] AI수학: CNN"
+title:  "[AI Math] CNN"
 excerpt: "Convolution 연산과 다양한 차원에서의 연산방법과 역전파"
 
 categories:
@@ -9,11 +9,15 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2021-12-08
-last_modified_at: 2021-12-08
+date: 2022-01-20 03:00:00
+last_modified_at: 2022-01-20 03:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">Convolution 연산</span>
+# Convolution 연산
 
 ## 도입
 ![image](https://user-images.githubusercontent.com/91870042/145152531-68e147f2-0c7e-4f3e-908b-9e7e3d0c38ec.png){: .align-center}
@@ -52,7 +56,7 @@ GIF출처: https://en.wikipedia.org/wiki/Convolution
 
 <br>
 
-# <span style = "color: #00adb5">다양한 차원에서의 convolution</span>
+# 다양한 차원에서의 convolution
 convolution연산은 1차원 뿐만아니라 다양한 차원에서 계산이 가능하다. 아래 수식에서 입력받는 인자의 수와 \\(i, j, k\\)의 값이 바뀌어도 커널 \\(f\\)의 값은 변경되지 않는 것을 확인할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145154007-70ac6cf2-bb79-496e-a28b-56b1975a6310.png){: .align-center}
@@ -81,7 +85,7 @@ convolution연산은 1차원 뿐만아니라 다양한 차원에서 계산이 �
 
 <br>
 
-# <span style = "color: #00adb5">Convolution 연산의 역전파</span>
+# Convolution 연산의 역전파
 ![image](https://user-images.githubusercontent.com/91870042/145159386-ee65ad15-b48f-4db8-b73a-520f27aaaa40.png){: .align-center}
 
 Convolution연산은 **커널이 모든 입력 데이터에 공통으로 적용**되기 때문에 역전파를 계산할 때도 convolution연산이 나오게 된다. 이 과정은 위의 수식보다 아래의 첨부된 강의자료로 보면 훨씬 이해하기가 쉽다.
@@ -104,8 +108,7 @@ Convolution연산은 **커널이 모든 입력 데이터에 공통으로 적용*
 
 <br>
 
-# <span style = "color: #00adb5">References</span>
-[📘 부스트캠프 AI Tech 3기 Pre-Course: CNN 첫걸음](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203367?isDesc=false)
+# References
 
 [📘 CNN, Convolutional Nerual Network 요약](http://taewan.kim/post/cnn/)
 

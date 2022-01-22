@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] AI수학: 조건부확률과 베이즈정리"
+title:  "[AI Math] 조건부확률과 베이즈정리"
 excerpt: "조건부확률에서 이어지는 개념인 베이즈 정리와 인과관계 추론"
 
 categories:
@@ -9,11 +9,15 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2021-12-08
-last_modified_at: 2021-12-08
+date: 2022-01-20 02:00:00
+last_modified_at: 2022-01-20 02:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">조건부 확률</span>
+# 조건부 확률
 베이즈 통계학을 이해하기 위해서는 먼저 조건부확률의 개념을 이해해야 한다.
 
 \\(P(A\bigcap B) = P(B)P(A\|B)\\)
@@ -23,7 +27,7 @@ last_modified_at: 2021-12-08
 
 <br>
 
-# <span style = "color: #00adb5">베이즈 정리</span>
+# 베이즈 정리
 베이즈 정리는 조건부 확률을 이용하여 `정보를 갱신하는 방법`에 대해서 알려준다. \\(A\\)라는 새로운 정보가 주어졌을 때, \\(P(B)\\)로 부터 \\(P(B|A)\\)를 계산하는 방법을 제공해주는 것이다.
 
 ![image](https://user-images.githubusercontent.com/91870042/145143618-bd9caf72-9f4c-43d1-b121-359cf58c3283.png){: .align-center}
@@ -101,7 +105,6 @@ COVID-99의 발병률이 10%로 알려져 있다. COVID-99에 실제로 걸렸�
 
 ![image](https://user-images.githubusercontent.com/91870042/145147797-3c7cc452-26fd-4777-b5f7-a46caca61472.png){: .align-center}
 
-# <span style = "color: #00adb5">References</span>
-[📘 부스트캠프 AI Tech 3기 Pre-Course: 베이즈 통계학 맛보기](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203366/?isDesc=false)
+# References
 
 [📘 위키백과: 심슨의 역설](https://ko.wikipedia.org/wiki/%EC%8B%AC%EC%8A%A8%EC%9D%98_%EC%97%AD%EC%84%A4)

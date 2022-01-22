@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] AI수학: RNN"
+title:  "[AI Math] RNN"
 excerpt: "시퀀스 데이터의 개념과 특징, 이를 처리하기 위한 RNN"
 
 categories:
@@ -9,11 +9,15 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2021-12-08
-last_modified_at: 2021-12-08
+date: 2022-01-20 04:00:00
+last_modified_at: 2022-01-20 04:00:00
 ---
+📌 **알립니다!**<br>
+이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
+여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
+{: .notice--info}
 
-# <span style = "color: #00adb5">시퀀스 데이터</span>
+# 시퀀스 데이터
 `시퀀스(sequence) 데이터`는 소리, 문자열, 주가등의 데이터를 말한다. 시계열 데이터는 시간 순서에 따라 나열된 데이터로 시퀀스 데이터에 속한다. 시퀀스데이터는 순서가 매우 중요한 요소 중 하나이다.
 
 시퀀스 데이터는 독립동등분포(IID, Independent Identical Distribution)가정을 잘 위배하기 때문에 순서를 바꾸거나 과거 정보에 손실이 발생하면 데이터의 확률분포도 바뀌게 된다. 마치, 과거 정보 또는 앞뒤 맥락없이 미래를 예측하거나 문장을 완성시키는것이 불가능한것과 동일하다.
@@ -53,7 +57,7 @@ last_modified_at: 2021-12-08
 
 <br>
 
-# <span style = "color: #00adb5">RNN</span>
+# RNN
 가장 기본적인 RNN모형은 아래 그림과 같이 MLP와 유사한 모양이다. 하지만, 일반적인 MLP를 사용하면 이전 시점의 정보를 사용할 수 없다. 
 
 ![image](https://user-images.githubusercontent.com/91870042/145174245-522cd573-6a02-492c-9225-a51e5df16b25.png){: .align-center}
@@ -99,6 +103,3 @@ BPTT를 통해 RNN의 가중치행렬의 미분을 계산해보면 아래와 같
 ![image](https://user-images.githubusercontent.com/91870042/145176482-d21b3829-b4a9-40aa-bd11-940167f15b3f.png){: .align-center}
 
 <br>
-
-# <span style = "color: #00adb5">References</span>
-[📘 부스트캠프 AI Tech 3기 Pre-Course: RNN 첫걸음](https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203368?isDesc=false)
