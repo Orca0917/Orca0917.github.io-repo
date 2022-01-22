@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] Python Pandas"
+title:  "[Python Basics for AI] Python Pandas"
 excerpt: "Pandas: 파이썬 데이터 처리의 표준 라이브러리"
 
 categories:
@@ -9,8 +9,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2021-12-07
-last_modified_at: 2021-12-07
+date: 2022-01-21 01:00:00
+last_modified_at: 2022-01-21 01:00:00
 ---
 
 ![image](https://user-images.githubusercontent.com/91870042/144968064-c52e30d3-dd43-4fe4-9b23-f393ca5aca1c.png){: .align-center}
@@ -559,7 +559,7 @@ df.groupby('Team').filter(lambda x: x["Rank"].sum() > 1)
 
 <br>
 
-# <span style = "color: #00adb5">Case Study</span>
+# Case Study
 실제 데이터를 이용해서 데이터를 분석
 [📄phone_data.csv](https://www.shanelynn.ie/wp-content/uploads/2015/06/phone_data.csv)
 
@@ -641,7 +641,7 @@ pd.crosstab(index = df_movie.critic, columns = df_movie.title,
 
 <br>
 
-# <span style = "color: #00adb5">Merge & Concat</span>
+# Merge & Concat
 ## Merge
 `Merge`는 2개의 데이터를 하나로 합칠 때 사용되며, SQL에서의 Merge와 동일한 기능을 수행한다.
 ```py
@@ -690,7 +690,7 @@ df_new = pd.concat([df_a, df_b], axis = 1)
 
 <br>
 
-# <span style = "color: #00adb5">Persistence</span>
+# Persistence
 ## Database Connection
 데이터베이스에 연결을 해서 원하는 정보를 추출하여 데이터프레임으로 불러올 수 있다. 데이터베이스에 연결을 할때는 보통 `sqlite3`를 사용을 하며 import는 다음과 같이 한다.
 ```py
@@ -717,8 +717,3 @@ df_routes.to_pickle("./data/df_routes.pickle")
 df_routes.read_pickle("./data/df_routes.pickle")
 df_routes.describe()
 ```
-<br>
-
-# <span style = "color: #00adb5">References</span>
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203374?isDesc=false
-https://www.boostcourse.org/onlyboostcampaitech3/lecture/1203375?isDesc=false
