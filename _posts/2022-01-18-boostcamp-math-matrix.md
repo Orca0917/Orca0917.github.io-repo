@@ -3,7 +3,7 @@ title: "[AI Math] 행렬"
 excerpt: "행렬의 개념과 연산, 그리고 벡터공간에서 가지는 의미"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Math]
 toc: true

@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] File / Exception / Log Handling"
 excerpt: "파이썬 프로그램의 예외처리와 파일 다루기, 기록을 남기는 로깅"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true

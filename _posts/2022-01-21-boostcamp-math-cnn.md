@@ -3,7 +3,7 @@ title:  "[AI Math] CNN"
 excerpt: "Convolution 연산과 다양한 차원에서의 연산방법과 역전파"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Python, Math]
 toc: true

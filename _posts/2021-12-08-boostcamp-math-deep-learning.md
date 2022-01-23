@@ -3,7 +3,7 @@ title: "[AI Math] 딥러닝 학습방법"
 excerpt: "신경망의 구조와 내부에서 사용되는 softmax, 활성함수, 역전파 알고리즘"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Python, Math]
 toc: true

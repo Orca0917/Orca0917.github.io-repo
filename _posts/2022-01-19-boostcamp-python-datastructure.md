@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Python의 자료구조"
 excerpt: "파이썬에서 많이 사용되는 자료구조: 스택, 큐, 덱, 그 이외의 Collections까지에 대한 이해"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true

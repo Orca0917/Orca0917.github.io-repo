@@ -63,7 +63,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "boostcamp" %}
-                        <li><a href="/categories/ai-boostcamp" class="">BoostCamp ({{category[1].size}})</a></li>
+                        <li><a href="/categories/ai-boostcamp" class="">Pre-course ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -74,6 +74,28 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <span class="nav__sub-title">Boostcamp</span>
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "python" %}
+                            <li><a href="/categories/boostcamp-python" class="">Python Basics ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "aimath" %}
+                            <li><a href="/categories/boostcamp-aimath" class="">AI Math ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "pytorch" %}
+                            <li><a href="/categories/boostcamp-pytorch" class="">Pytorch ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
       </li>
   </ul>
 </nav>

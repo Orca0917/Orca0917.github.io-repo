@@ -3,14 +3,14 @@ title:  "[Python Basics for AI] 파이썬 기초: Basic computer class for newbi
 excerpt: "프로그래밍을 배우기 전에 알아야 하는 기본적인 컴퓨터 시스템에 대한 설명. (파일 시스템과 터미널 환경)"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  
-date: 2022-01-17
-last_modified_at: 2022-01-17
+date: 2022-01-17 00:00:00
+last_modified_at: 2022-01-17 00:00:00
 ---
 📌 **알립니다!**<br>
 이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>

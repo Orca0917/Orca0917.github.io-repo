@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Python Numpy"
 excerpt: "Numpy: 데이터분석과 인공지능 학습에 있어 필수적으로 필요한 도구"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp, Python, Numpy]
 toc: true

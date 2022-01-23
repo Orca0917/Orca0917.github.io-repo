@@ -1,0 +1,11 @@
+---
+title: "Boostcamp AI Tech - Python Basics"
+layout: archive
+permalink: categories/boostcamp-python
+author_profile: true
+sidebar_main: true
+---
+
+
+{% assign posts = site.categories.python %}
+{% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

@@ -3,7 +3,7 @@ title: "[AI Math] 경사하강법 (2)"
 excerpt: "일반적인 경사하강법의 단점을 보완하는 확률적 경사하강법(SGD, Stochastic Gradient Descent)에 대한 소개"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Python, Math]
 toc: true

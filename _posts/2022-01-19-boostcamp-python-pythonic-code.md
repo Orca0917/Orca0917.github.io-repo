@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Pythonic Code"
 excerpt: "파이썬의 특유 문법을 의미하는 pythonic code에 대한 이해와 자주 사용하게 되는 lambda, map, reduce, asterisk의 활용"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true

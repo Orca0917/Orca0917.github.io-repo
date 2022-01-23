@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Python Data Handling"
 excerpt: "파이썬에서 다룰 수 있는 CSV, 웹, XML, JSON 데이터 타입"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true

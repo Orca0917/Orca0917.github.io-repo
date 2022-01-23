@@ -3,7 +3,7 @@ title: "[AI Math] 경사하강법 (1)"
 excerpt: "딥러닝 학습의 향상을 위한 손실함수의 미분과 경사하강법에 대한 소개"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Python, Math]
 toc: true

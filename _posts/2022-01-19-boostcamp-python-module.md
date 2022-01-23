@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Python Module & Project"
 excerpt: "파이썬 프로젝트의 기본이 되는 모듈과 패키지, 그리고 프로젝트의 개념에 대한 설명"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true

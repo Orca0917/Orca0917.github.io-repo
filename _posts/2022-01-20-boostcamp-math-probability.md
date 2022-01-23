@@ -3,7 +3,7 @@ title: "[AI Math] 확률론"
 excerpt: "확률분포, 조건부확률, 기댓값의 개념과 몬테카를로 샘플링 방법에 대한 설명"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Math]
 toc: true

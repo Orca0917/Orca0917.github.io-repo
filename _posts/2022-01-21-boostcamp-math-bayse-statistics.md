@@ -3,7 +3,7 @@ title:  "[AI Math] 조건부확률과 베이즈정리"
 excerpt: "조건부확률에서 이어지는 개념인 베이즈 정리와 인과관계 추론"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Math]
 toc: true

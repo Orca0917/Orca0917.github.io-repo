@@ -3,7 +3,7 @@ title:  "[AI Math] RNN"
 excerpt: "시퀀스 데이터의 개념과 특징, 이를 처리하기 위한 RNN"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Python, Math]
 toc: true

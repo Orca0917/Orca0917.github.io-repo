@@ -3,7 +3,7 @@ title: "[AI Math] 벡터"
 excerpt: "벡터의 기본 개념과 연산, 노름에 대한 소개"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Math]
 toc: true

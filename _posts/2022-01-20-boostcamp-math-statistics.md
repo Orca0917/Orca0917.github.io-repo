@@ -3,7 +3,7 @@ title: "[AI Math] 통계학"
 excerpt: "모수의 개념과 모수를 추정하는 방법인 최대가능도 추정법에 대한 소개"
 
 categories:
-  - boostcamp
+  - aimath
 tags:
   - [AI, Naver, BoostCamp, Math]
 toc: true

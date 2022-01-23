@@ -3,7 +3,7 @@ title:  "[Python Basics for AI] Python Pandas"
 excerpt: "Pandas: 파이썬 데이터 처리의 표준 라이브러리"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp, Python, Pandas]
 toc: true

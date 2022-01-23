@@ -3,14 +3,14 @@ title:  "[Python Basics for AI] 파이썬 개요: Python Overview"
 excerpt: "파이썬의 기초적인 내용에 대한 전반적인 소개"
 
 categories:
-  - boostcamp
+  - python
 tags:
   - [AI, Naver, BoostCamp]
 toc: true
 toc_sticky: true
  
-date: 2022-01-17
-last_modified_at: 2022-01-17
+date: 2022-01-17 01:00:00
+last_modified_at: 2022-01-17 01:00:00
 ---
 📌 **알립니다!**<br>
 이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
