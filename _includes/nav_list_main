@@ -74,7 +74,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <span class="nav__sub-title">Boostcamp</span>
+            <span class="nav__sub-title">Boostcamp AI Tech</span>
                 <ul>
                     {% for category in site.categories %}
                         {% if category[0] == "python" %}
