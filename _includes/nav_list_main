@@ -92,7 +92,7 @@
                 <ul>
                     {% for category in site.categories %}
                         {% if category[0] == "pytorch" %}
-                            <li><a href="/categories/boostcamp-pytorch" class="">Pytorch ({{category[1].size}})</a></li>
+                            <li><a href="/categories/boostcamp-pytorch" class="">PyTorch ({{category[1].size}})</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
