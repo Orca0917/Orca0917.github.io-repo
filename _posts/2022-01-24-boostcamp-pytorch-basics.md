@@ -17,6 +17,14 @@ last_modified_at: 2022-01-24 01:00:00
 여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
 {: .notice--info}
 
+# PyTorch 패키지
+- torch : Tensor와 Numpy에서 제공하는 기본 수학 함수들이 포함된 메인 네임스페이스
+- torch.autograd : 자동미분(auto grad)를 위한 함수들이 포함되어 있다.
+- torch.nn : 신경망을 구축하기 위한 데이터 구조, 레이어가 정의되어 있다. (RNN, LSTM, ReLU, MSELoss)
+- torch.optim : PyTorch Dataset의 Parameter을 최적화 해주는 알고리즘이 구현되어 있다. (SGD)
+- torch.utils.data : SGD의 반복연산을 실행할 때 사용하는 미니 배치용 함수가 포함되어 있다.
+- torch.onnx : Tensorflow, Keras와 같은 다른 딥러닝 프레임워크와 PyTorch 를 연결시킬 때 사용한다.
+
 # Tensor
 `텐서(Tensor)`는 다차원 Array를 표현하는 PyTorch의 클래스로서 numpy의 ndarray와 동일하다고 볼 수 있다. 마찬가지로 `TensorFlow`의 tensor와도 그 개념이 같다.
 

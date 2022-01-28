@@ -245,8 +245,9 @@ with torch.no_grad():
 
 초기화를 진행하지 않는다면, 모델의 Parameter와 유사한 `Buffer`에 누적이 되어 원하는 결과값이 나오지 않을 수 있다. 하지만, 이러한 연산은 RNN의 모델에서는 계속 누적하여 연산을 해야하기 때문에 도움이 된다.
 
-참고: [stackoverflow: Why do we need to call zero_grad() in PyTorch?](https://stackoverflow.com/questions/48001598/why-do-we-need-to-call-zero-grad-in-pytorch)
+참고1: [stackoverflow: Why do we need to call zero_grad() in PyTorch?](https://stackoverflow.com/questions/48001598/why-do-we-need-to-call-zero-grad-in-pytorch)
 
+참고2: [★ 5. optimizer.zero_grad()가 필요한 이유](https://wikidocs.net/53560)
 
 ## 직접 구현하는 backward
 ```py
