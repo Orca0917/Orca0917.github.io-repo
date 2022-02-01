@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2022-02-01
-last_modified_at: 2022-02-01
+date: 2022-02-01 00:00:00
+last_modified_at: 2022-02-01 00:00:00
 ---
 📌 **알립니다!**<br>
 이번에 작성되는 글은 **Wikidocs의 Matplotlib Tutorial - 파이썬으로 데이터 시각화하기**를 읽고 정리하는 글입니다.<br>
