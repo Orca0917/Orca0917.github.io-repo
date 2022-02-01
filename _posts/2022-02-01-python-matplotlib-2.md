@@ -1,6 +1,6 @@
 ---
 title:  "matplotlib: 데이터 시각화 (2)"
-excerpt: "matplotlib의 "
+excerpt: "matplotlib의 plot(여러개의 곡선), grid, tick, title, 수평/수직선 표시, bar, scatter, histogram 그래프 생성"
 
 categories:
   - matplotlib
