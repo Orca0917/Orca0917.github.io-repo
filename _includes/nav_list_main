@@ -81,28 +81,35 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <span class="nav__sub-title">Boostcamp AI Tech</span>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "python" %}
-                            <li><a href="/categories/boostcamp-python" class="">Python Basics ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "aimath" %}
-                            <li><a href="/categories/boostcamp-aimath" class="">AI Math ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "pytorch" %}
-                            <li><a href="/categories/boostcamp-pytorch" class="">PyTorch ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
+        <span class="nav__sub-title">Boostcamp AI Tech</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "python" %}
+                        <li><a href="/categories/boostcamp-python" class="">Python Basics ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "aimath" %}
+                        <li><a href="/categories/boostcamp-aimath" class="">AI Math ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "pytorch" %}
+                        <li><a href="/categories/boostcamp-pytorch" class="">PyTorch ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "datavis" %}
+                        <li><a href="/categories/boostcamp-datavis" class="">Data Visualtization ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
       </li>
   </ul>
 </nav>
