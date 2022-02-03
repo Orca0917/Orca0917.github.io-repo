@@ -5,7 +5,7 @@ excerpt: "matplotlib의 기본사용법, label, legend, axis, linestyle, marker,
 categories:
   - matplotlib
 tags:
-  - [Python, matplotlib]
+  - [Python, Matplotlib]
 
 toc: true
 toc_sticky: true

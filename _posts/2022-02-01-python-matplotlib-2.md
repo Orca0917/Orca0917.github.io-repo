@@ -5,7 +5,7 @@ excerpt: "matplotlib의 plot(여러개의 곡선), grid, tick, title, 수평/수
 categories:
   - matplotlib
 tags:
-  - [Python, matplotlib]
+  - [Python, Matplotlib]
 
 toc: true
 toc_sticky: true

@@ -5,7 +5,7 @@ excerpt: "matplotlib의 errorbar, pie chart, heatmap(matshow), subplot, colormap
 categories:
   - matplotlib
 tags:
-  - [Python, matplotlib]
+  - [Python, Matplotlib]
 
 toc: true
 toc_sticky: true
