@@ -1,5 +1,5 @@
 ---
-title:  "[부스트캠프 Pre-Course] 딥러닝 기초: 뉴럴 네트워크-MLP"
+title:  "[Deep Learning Basic] Neural Network, MLP"
 excerpt: "신경망의 정의와 Deep Neural Networks"
 
 categories:
