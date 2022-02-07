@@ -181,7 +181,7 @@ $$ W_{t+1} = W_t - \frac{\eta}{\sqrt{G_t+\epsilon}}g_t$$
 
 ## Adam
 
-$$ m_t = \beta_1 m_{t=1} + (1-\beta_1)g_t $$
+$$ m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t $$
 
 $$ v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2 $$
 
