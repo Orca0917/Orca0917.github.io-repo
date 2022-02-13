@@ -371,7 +371,9 @@ u, ins {
   text-decoration: none;
   border-bottom: 1px solid #ffbd2f;
 }
-.page__inner-wrap > section > p > strong {
+.page__inner-wrap > section > p > strong,
+.page__inner-wrap > section > ul > li > strong,
+.page__inner-wrap > section > ul > li > ul > li > strong {
   color:#ffbd2f;
 }
 
