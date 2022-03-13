@@ -1,6 +1,6 @@
 ---
 title:  "[Recommender System] Collaborative Filtering 2"
-excerpt: "모델을 기반으로 한 협업필터링 MBCF와 SVD의 원리"
+excerpt: "모델을 기반으로 한 협업필터링 MBCF와 SVD의 원리 그리고 베이즈 정리를 사용한 BPR"
 
 categories:
   - RecSys
