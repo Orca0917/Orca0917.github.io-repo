@@ -314,7 +314,7 @@ $$ p(\Theta \mid >_u) \propto p(>_u\mid \Theta)p(\Theta) $$
 
 $$ \prod_{u\in U}p(>_u|\Theta) = \prod_{u, i, j\in D_s}p(i>_u j)=\prod_{u, i, j\in D_s}\sigma(\widehat{x_{uij}}(\Theta)) $$
 
-여기서 $$p(i >_u j)는 유저 $$u$$가 아이템 $$j$$ 보다 $$i$$를 선호할 확률을 말한다. 그리고 유저의 벡터를 $$p_u$$, 아이템 $$i$$의 벡터를 $$q_i$$라고 한다면, 유저 $$u$$가 아이템 $$i$$ 보다 $$j$$를 좋아할 확률은 다음과 같다.
+여기서 $$p(i >_u j)$$는 유저 $$u$$가 아이템 $$j$$ 보다 $$i$$를 선호할 확률을 말한다. 그리고 유저의 벡터를 $$p_u$$, 아이템 $$i$$의 벡터를 $$q_i$$라고 한다면, 유저 $$u$$가 아이템 $$i$$ 보다 $$j$$를 좋아할 확률은 다음과 같다.
 
 $$ p(i>_u j):=\sigma(\widehat{x_{uij}}(\Theta)), \qquad \sigma(x):=\frac{1}{1+e^{-x}} $$
 
