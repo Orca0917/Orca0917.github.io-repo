@@ -206,8 +206,13 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
-# Sass/SCSS
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
+  
+  # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
@@ -287,14 +292,8 @@ defaults:
       comments: # true
       share: false
       related: true
-      use_math: true
       sidebar_main: true
       show_date: true
+      mathjax: true
+      use_math: true
 
-# 코드블록 줄번호
-markdown: kramdown
-kramdown:
-    highlighter: rouge
-    syntax_highlighter_opts:
-        block:
-            line_numbers: true
