@@ -59,11 +59,12 @@ last_modified_at: 2022-03-14 04:00:00
 $$
 \begin{aligned}
 TF(w,d)&=\text{freq}_{w,d} \\
-&\Rightarrow\frac{(\text{freq}_{w,d})}{\underset{k}{\max}(\text{freq}_{k,d})} \quad \text{(normalized)}\\\\
+&\Rightarrow\frac{(\text{freq}_{w,d})}{\underset{k}{\max}(\text{freq}_{k,d})} \quad \text{(normalized)}\\
 IDF(w)&=\log\frac{n(D)}{n_w}
 \end{aligned}
 $$
 
+$$ somtehing $$
 
 - $n_w : w$가 등장하는 문서의 개수
 - IDF의 값은 변화가 크기 때문에 $\log$를 사용해서 smoothing을 진행하였다.
@@ -85,9 +86,12 @@ TF-IDF를 사용해서 아이템에 대한 Profile을 생성했지만, 우리가
 
 이제 Item Profile과 User Profile을 모두 생성했다. 이제 두 Profile이 유사한 아이템과 유저간의 매칭이 이루어져야 한다. 비슷한 정도를 측정하기 위해서 주로 코사인 유사도를 사용한다.
 
-어떤 두 벡터 $X, Y$에 대해서 코사인 유사도는 다음과 같이 계산해볼 수 있다.
+어떤 두 벡터 $X, Y$ 에 대해서 코사인 유사도는 다음과 같이 계산해볼 수 있다.
 
-$$ \cos(\theta)=\cos(X, Y)=\frac{X\cdot Y}{|X||Y|}=\frac{\sum_{i=1}^{N}X_iY_i}{\sqrt{\sum_{i=1}^{N}X_i^2}\sqrt{\sum_{i=1}^{N}Y_i^2}} $$
+\begin{aligned}
+  \cos(\theta)=\cos(X, Y)=\frac{X\cdot Y}{\vert X\vert\vert Y\vert}=\frac{\sum_{i=1}^{N}X_iY_i}{\sqrt{\sum_{i=1}^{N}X_i^2}\sqrt{\sum_{i=1}^{N}Y_i^2}}
+\end{aligned}
+
 
 두 벡터의 코사인 유사도를 구할 때 유의점은 **두 벡터의 차원이 같아야 한다**는 것이다. 분명 위에서 아이템을 기반으로 User Profile을 생성하였다면 두 차원은 같게 나올 것이다.
 
