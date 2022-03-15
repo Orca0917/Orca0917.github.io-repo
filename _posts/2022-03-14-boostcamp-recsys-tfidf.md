@@ -24,11 +24,9 @@ last_modified_at: 2022-03-14 04:00:00
 
 ## 개요
 
-컨텐츠 기반 추천의 아이디어는 굉장히 단순하다. **유저 $u$가 선호한 아이템 $i$과 비슷한 아이템 $i'$을 $u$에게 추천**을 해주는 것이다. 예를 들어, 영화에서는 동일한 감독의 다른 영화를 추천해줄 수도 있고, 비슷한 장르의 영화를 추천해줄 수 있다.
+![image](https://user-images.githubusercontent.com/91870042/158402639-cc163d1e-2dfe-4d5d-8880-f40987904b7f.png){: .align-center width="70%"}
 
-![image](https://user-images.githubusercontent.com/91870042/158010405-f9d53f18-42bd-420b-9cb7-4d70e94f7a1b.png){: .align-center width="70%"}
-
-이러한 컨텐츠 기반 추천의 장점과 단점은 무엇이 있을까.
+컨텐츠 기반 추천의 아이디어는 굉장히 단순하다. **유저 $u$가 선호한 아이템 $i$과 비슷한 아이템 $i'$을 $u$에게 추천**을 해주는 것이다. 예를 들어, 영화에서는 동일한 감독의 다른 영화를 추천해줄 수도 있고, 비슷한 장르의 영화를 추천해줄 수 있다. 이러한 컨텐츠 기반 추천의 장점과 단점은 무엇이 있을까.
 
 **장점**
 
@@ -44,13 +42,15 @@ last_modified_at: 2022-03-14 04:00:00
 
 ## Item Profile
 
+![image](https://user-images.githubusercontent.com/91870042/158403857-a182a8ba-9fda-4d12-81ee-fa365759f103.png){: .align-center width="70%"}
+
 아이템을 기반으로 추천이 이루어지기 때문에, 각 아이템이 어떤 속성을 가지고 있는지 저장하는 정보가 필요하다. 그 정보를 Item Profile이라고 부른다.
 
 - ex. 영화: 작가, 제목, 배우, 장르, 감독
 
 아이템이 가진 다양한 속성을 어떻게 저장해야 가장 편하게 사용할 수 있을까. 바로 벡터 형태를 사용하는 것이다. 이 벡터값에는 0 또는 1의 값만 갖는 이진값이나 실수값을 사용해볼 수 있다.
 
-### TF-IDF for Text Feature
+## TF-IDF for Text Feature
 
 문서는 텍스트로 이루어져있고, 텍스트는 다시 단어들의 집합으로 구성되어 있다. 이 단어들 중에서 중요한 단어를 선정해서 대표하는 값으로 나타내볼 수 있다. 이 과정에서 중요한 단어를 선정하기 위해서 각 단어의 중요도를 나타내는 Score값이 필요하게 되고 여기에 TF-IDF를 적용시켜 볼 수 있다.
 
@@ -82,7 +82,7 @@ TF-IDF를 사용해서 아이템에 대한 Profile을 생성했지만, 우리가
 - **Simple** : 유저가 선호한 아이템 벡터들의 평균값을 사용한다.
 - **Variant** : 유저가 아이템에 내린 선호도로 정규화한 평균값을 사용한다.
 
-### Cosine Similarity
+### Cosine Similarity ⭐
 
 이제 Item Profile과 User Profile을 모두 생성했다. 이제 두 Profile이 유사한 아이템과 유저간의 매칭이 이루어져야 한다. 비슷한 정도를 측정하기 위해서 주로 코사인 유사도를 사용한다.
 
@@ -97,7 +97,7 @@ TF-IDF를 사용해서 아이템에 대한 Profile을 생성했지만, 우리가
 
 코사인 유사도의 결과값으로 1에 가깝게 나왔다면 두 벡터의 방향이 비슷한 것이고, 정 반대는 -1에 가까워진다.
 
-![image](https://user-images.githubusercontent.com/91870042/158012009-9a4dd57b-54cf-4f0d-a977-5043c0f4ce1e.png){: .align-center width="70%"}
+![image](https://user-images.githubusercontent.com/91870042/158404744-d664205b-3da9-4400-9c54-d2da6bc83833.png){: .align-center width="70%"}
 
 ### User와 Item사이의 거리
 

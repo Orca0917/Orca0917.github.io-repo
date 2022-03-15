@@ -33,7 +33,7 @@ last_modified_at: 2022-03-14 07:00:00
 
 확장성 문제는 유저와 아이템이 점점 늘어날 수록 그 계산량이 많아져서 시간이 오래걸리게 되는 문제이다. 유저와 아이템이 많아야 정확한 예측을 할 수 있지만 시간이 오래걸려서 사용하기 힘들다는 단점이 있었다.
 
-이런 문제를 모델을 기반으로 한 추천 시스템인 MBCF는 어떻게 해결할 수 있었는지 알아보자.
+이런 문제를 희소성, 확장성 문제를 모델을 기반으로 한 추천 시스템인 MBCF는 어떻게 해결할 수 있었는지 알아보자.
 
 ## Model Based Collaborative Filtering
 
@@ -67,15 +67,15 @@ NBCF와의 차이점과 비교하자면 NBCF는 유저 또는 아이템 벡터�
 
 ## Issue: Implicit Feedback
 
-[여기](https://killerwhale0917.github.io/recsys/boostcamp-recsysbasic-1/#%EC%9C%A0%EC%A0%80-%EC%95%84%EC%9D%B4%ED%85%9C-%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9-%EC%A0%95%EB%B3%B4)에서 설명했다시피, 존재하는 데이터는 Explicit Feedback보다 Implicit Feedback이 훨씬 더 많은 비율을 차지하고 있다. 이러한 데이터를 어떻게 잘 사용할지 고민해보아야 한다.
+[여기](https://killerwhale0917.github.io/recsys/boostcamp-recsysbasic-1/#%EC%9C%A0%EC%A0%80-%EC%95%84%EC%9D%B4%ED%85%9C-%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9-%EC%A0%95%EB%B3%B4)에서 설명했다시피, 존재하는 데이터는 Explicit Feedback보다 Implicit Feedback이 훨씬 더 많은 비율을 차지하고 있다. 이러한 데이터를 어떻게 잘 사용할지 고민해보아야 한다. 이후에 [Matrix Factorization with Implicit Feedback](https://killerwhale0917.github.io/recsys/boostcamp-recsys-alsbpr/#mf-for-implicit-feedback-1) 파트에서 더 자세히 다룬다!
 
 ## Latent Factor Model
 
-최근에는 Latent Factor보다는 Embedding 이라는 말을 더 많이 사용하고 있다. 유저와 아이템의 관계를 잠재적 요인으로 표현할 수 있다고 보는 모델로서 현실세계의 다양하고 복잡한 유저-아이템 관계를 몇 개의 벡터로 압축해서 표현하는 것을 말한다.
+최근에는 Latent Factor보다는 Embedding 이라는 말을 더 많이 사용하고 있다. Latent Factor Model은 **유저와 아이템의 관계를 잠재적 요인으로 표현할 수 있다고 보는 모델**로서 현실세계의 다양하고 복잡한 유저-아이템 관계를 몇 개의 벡터로 압축해서 표현하는 것을 말한다.
 
 유저-아이템 행렬을 저차원의 행렬로 분해하는 방식으로 작동되며, 분해한 각 차원의 의미는 모델의 학습을 통해서 생성되며 표면적으로 각각이 무슨 의미를 갖는지는 알 수가 없다.
 
 ![image](https://user-images.githubusercontent.com/91870042/158022395-b4cef103-04e6-4d3f-af2d-184bcd5f4a52.png){: .align-center width="70%"}
 <p align="center"><i>Latent Factor Model의 예시 (https://woono.tistory.com/149)</i></p>
 
-생성한 유저와 아이템 벡터를 같은 공간에 나타냈을 때 유저와 아이템의 유사한 정보를 확인해볼 수 있다. 유저와 아이템 벡터가 가까이 놓일 경우 해당 유저에게 해당 아이템이 추천될 확률이 높아진다.
+생성한 유저와 아이템 벡터를 같은 공간에 나타냈을 때 유저와 아이템의 유사한 정보를 확인해볼 수 있다. 유저와 아이템 벡터가 가까이 놓일 경우 해당 유저에게 해당 아이템이 추천될 확률이 높아진다. 위의 그림에서 나타낸 축의 정보는 차원을 말하는데 이는 설명을 위해서 명시적으로 작성한 것일 뿐! 실제로는 알 수가 없다.

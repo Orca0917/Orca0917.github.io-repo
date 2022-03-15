@@ -22,20 +22,18 @@ last_modified_at: 2022-03-14 03:00:00
 
 추천 시스템의 종류
 
-- Simple Aggregate (popularity, average score, recent uploads)
-- Association Analysis
-- Content-based Recommendation
-- Collaborative Filtering
-- Item2Vec Recommendation and ANN
-- Deep Learning-based Recommendation
+- [Simple Aggregate (popularity, average score, recent uploads)](https://killerwhale0917.github.io/recsys/boostcamp-recsys-recbypopularity/)
+- [Association Analysis](#연관-분석)
+- [Content-based Recommendation](https://killerwhale0917.github.io/recsys/boostcamp-recsys-tfidf/)
+- [Collaborative Filtering](https://killerwhale0917.github.io/recsys/boostcamp-recsys-cfintro/)
+- [Item2Vec Recommendation and ANN](https://killerwhale0917.github.io/recsys/boostcamp-recsys-item2vec/)
+- [Deep Learning-based Recommendation](https://killerwhale0917.github.io/recsys/boostcamp-recsys-dlmlp/)
 - Context-aware Recommendation
 - Multi-Armed Bandit(MAB)-based Recommendation
 
 ## 개요
 
-추천시스템은 **inference 시간이 상당하게 중요하게 작용**한다. 이 시간이 적어야 사용자들에게 바로 추천을 해줄 수 있는데, 딥러닝은 모델이 무겁고 연산량이 많아서 실제로 많이 사용하고 있지는 않다. 그렇기 때문에 **기계학습을 사용해서 고전적인 방법을 아직도 많은 회사나 기업에서 다루고 있다**. 물론 성능은 딥러닝을 적용시켰을 때, 가장 좋게 나오고 있다.
-
-기계학습을 사용했을 때의 장점은 추천을 한 원인을 같이 제공해줄 수 있는 점도 있다.
+추천시스템은 **inference 시간**이 상당하게 중요하게 작용한다. 이 시간이 적어야 사용자들에게 바로 추천을 해줄 수 있는데, 딥러닝은 모델이 무겁고 연산량이 많아서 실제로 많이 사용하고 있지는 않다. 그렇기 때문에 **기계학습을 사용해서 고전적인 방법을 아직도 많은 회사나 기업에서 다루고 있다**. 기계학습을 사용했을 때의 장점은 추천을 한 원인을 같이 제공해줄 수 있는 점도 있다. 물론 성능은 딥러닝을 적용시켰을 때, 가장 좋게 나오고 있다. 
 
 <br/>
 
@@ -78,7 +76,7 @@ Frequent Itemset에 대해서 알아보기 앞서서 Itemset에 대해서 살펴
 
 ### Support⭐
 
-연관 규칙에서 support(지지도)는 **두 itemset $X, Y$를 포함하는 transaction의 비율**을 말한다. support 값은 전체 연관 규칙중에서 빈도가 높거나 구성비율이 높은 규칙을 찾거나 불필요한 연산을 줄이기 위해서 사용한다([Apriori 알고리즘](#frequent-itemset-generation-strategies))
+연관 규칙에서 support(지지도)는 **두 itemset $X, Y$ 를 포함하는 transaction의 비율**을 말한다. support 값은 전체 연관 규칙중에서 빈도가 높거나 구성비율이 높은 규칙을 찾거나 불필요한 연산을 줄이기 위해서 사용한다([Apriori 알고리즘](#frequent-itemset-generation-strategies))
 
 $$ s(X)=\frac{n(X)}{N}=P(X), \quad s(X\rightarrow Y)=\frac{n(X \cup Y)}{N}=P(X\cap Y) $$
 
@@ -86,7 +84,7 @@ $$ \quad s(X)\ge s(X\rightarrow Y) $$
 
 ### Confidence⭐
 
-Confidence(신뢰도)는 **$X$가 포함된 transaction 가운데 $Y$도 포함하는 transaction의 비율**을 말한다. Confidence가 높다는 것은 연관성이 높은 유용한 규칙을 뜻한다.
+Confidence(신뢰도)는 **$X$ 가 포함된 transaction 가운데 $Y$ 도 포함하는 transaction의 비율**을 말한다. Confidence가 높다는 것은 연관성이 높은 유용한 규칙을 뜻한다.
 
 $$ c(X\rightarrow Y)=\frac{n(X\cup Y)}{n(X)}=\frac{s(X\rightarrow Y)}{s(X)}=\frac{P(X \cap Y)}{P(X)}=P(Y\mid X) $$
 
@@ -110,7 +108,7 @@ $$ \text{lift}(A\rightarrow B)=\frac{P(B\mid A)}{P(B)} $$
 
 ![image](https://user-images.githubusercontent.com/91870042/158142303-6e988507-a1f2-4c05-bfc2-d2d7b0105889.png){: .align-center width="70%"}
 
-$X$를 와인, $Y$를 와인오프너, $Z$를 생수라고 하고 각각의 조건부 확률을 다음으로 정의한다고 하자.
+$X$ 를 와인, $Y$ 를 와인오프너, $Z$ 를 생수라고 하고 각각의 조건부 확률을 다음으로 정의한다고 하자.
 
 $$ P(Y\mid X) = 0.1 \quad P(Z\mid X) = 0.2 \quad P(Y) = 0.01 \quad P(Z) = 0.2 $$
 
@@ -149,8 +147,8 @@ $$ R=\sum_{k=1}^{d-1}\left [ \binom{d}{k}\times \sum_{j=1}^{d-k}\binom{d-k}{j} \
 
 ### Frequent Itemset Generation Strategies
 
-첫 번째 방법으로, 가능한 후보 Itemset의 개수를 줄여버리는 것이다. $M$을 감소시키는 방법인데 가지치기를 통해서 줄일 수 있다. 이 방법을 사용하는 알고리즘이 **Apriori 알고리즘**이다.
+첫 번째 방법으로, 가능한 후보 Itemset의 개수를 줄여버리는 것이다. $M$ 을 감소시키는 방법인데 가지치기를 통해서 줄일 수 있다. 이 방법을 사용하는 알고리즘이 **Apriori 알고리즘**이다.
 
-다음은 탐색하는 transaction의 수를 줄이는 것이다. $N$을 감소시키는 방법으로 Itemset의 크기가 커짐에 따라서 전체 $N$개의 transaction보다 적은 개수로 탐색하게 해준다. 이 방법을 사용하는 알고리즘은 **DHP(Direct Hashing & Pruning) 알고리즘**이다.
+다음은 탐색하는 transaction의 수를 줄이는 것이다. $N$ 을 감소시키는 방법으로 Itemset의 크기가 커짐에 따라서 전체 $N$ 개의 transaction보다 적은 개수로 탐색하게 해준다. 이 방법을 사용하는 알고리즘은 **DHP(Direct Hashing & Pruning) 알고리즘**이다.
 
-마지막으로 전체 탐색횟수를 줄이는 알고리즘이 있다. $NM$을 감소시키는 방법이며 효율적인 자료구조를 사용해서 후보 Itemset과 transaction의 수 모두를 저장해서 모든 Itemset과 transaction의 조합에 대해서 탐색하지 않아도 되게 만들어주는 것이다. 이것을 사용하는 알고리즘은 **FP-Growth 알고리즘**이다.
+마지막으로 전체 탐색횟수를 줄이는 알고리즘이 있다. $NM$ 을 감소시키는 방법이며 효율적인 자료구조를 사용해서 후보 Itemset과 transaction의 수 모두를 저장해서 모든 Itemset과 transaction의 조합에 대해서 탐색하지 않아도 되게 만들어주는 것이다. 이것을 사용하는 알고리즘은 **FP-Growth 알고리즘**이다.

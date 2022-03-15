@@ -21,11 +21,11 @@ last_modified_at: 2022-03-14 08:00:00
 
 ## SVD의 개념
 
-**SVD는 2차원 행렬을 분해하는 방법**이다. User와 Item의 관계를 나타내는 행렬이 있다고 할 때, **잠재요소**를 나타내는 행렬을 포함하도록 분해하는 것이다.
+**SVD는 2차원 행렬을 분해하는 방법**이다. User와 Item의 관계를 나타내는 행렬($R$) 이 있다고 할 때, **잠재요소**를 나타내는 행렬을 포함하도록 분해하는 것이다.
 
-![image](https://user-images.githubusercontent.com/91870042/158022371-f37c9857-c929-4de5-84c3-23b4bb545fdc.png){: .align-center width="70%"}
+![image](https://user-images.githubusercontent.com/91870042/158414212-8ea4d6c4-bb15-4896-b076-c0da73b0597c.png){: .align-center width="90%"}
 
-기존 유저와 아이템의 행렬정보를 $R$이라고 했을 때, 유저-잠재요인 $U$, 잠재요인의 중요도를 나타내는 $\Sigma$, 잠재요인-아이템 $V^T$ 행렬로 분해해서 나타내는 것을 말한다.
+기존 유저와 아이템의 행렬정보를 $R$ 이라고 했을 때, 유저-잠재요인 $U$, 잠재요인의 중요도를 나타내는 $\Sigma$, 잠재요인-아이템 $V^T$ 행렬로 분해해서 나타내는 것을 말한다.
 
 $$ R = U\Sigma V^T $$
 
@@ -35,12 +35,12 @@ $$ R = U\Sigma V^T $$
 
 위에서 잠재요인의 전체를 사용하지 않고 K개의 대표 특이치를 사용해서 원래의 행렬을 근사시키는 것을 **Truncated SVD**라고 부른다.
 
-![image](https://user-images.githubusercontent.com/91870042/158022654-ad2bfceb-7517-47aa-92c2-74e21da7825f.png){: .align-center width="70%"}
+![image](https://user-images.githubusercontent.com/91870042/158415879-89ad3094-9ddb-4899-8d6f-e278829d2eab.png){: .align-center width="90%"}
 
 
 $$ R\approx\widehat{U}\,\widehat{\Sigma_k}\,\widehat{V^T}=\hat{R} $$
 
-Truncated SVD는 몇 개의 특이치만을 사용해서 유용한 정보를 유지할 수 있다고 보며, 분해된 행렬이 부분 복원되면서 가장 중요한 정보로 요약이 된다. 이때 이 **$k$개의 Latent Factor는 유추만 할 수 있을 뿐, 각각이 무엇을 의미하는지는 알 수가 없다**.
+Truncated SVD는 몇 개의 특이치만을 사용해서 유용한 정보를 유지할 수 있다고 보며, 분해된 행렬이 부분 복원되면서 가장 중요한 정보로 요약이 된다. 이때 이 **$k$ 개의 Latent Factor는 유추만 할 수 있을 뿐, 각각이 무엇을 의미하는지는 알 수가 없다**.
 
 ## SVD의 한계
 
@@ -62,20 +62,20 @@ Truncated SVD는 몇 개의 특이치만을 사용해서 유용한 정보를 유
 
 $$ R\approx P\times Q^T = \hat{R} $$
 
-![image](https://user-images.githubusercontent.com/91870042/158022883-da814304-87fb-4853-9763-fd0bcd46f942.png){: .align-center width="70%"}
+![image](https://user-images.githubusercontent.com/91870042/158417480-08265642-6f33-4c8a-8c3a-0175330e6fb1.png){: .align-center width="90%"}
 
 
 ### Objective Function
 
-유저-아이템 행렬 $R$에서 특정 유저 $u$와, 특정 아이템 $i$의 값을 $r_{u,i}$라고 표현하면, 예측값과 실제값의 차이 제곱의 합을 최소로 하는 SSE 방식을 사용해서 아래와 같이 나타내볼 수 있다.
+유저-아이템 행렬 $R$ 에서 특정 유저 $u$ 와, 특정 아이템 $i$ 의 값을 $r_{u,i}$ 라고 표현하면, 예측값과 실제값의 차이 제곱의 합을 최소로 하는 SSE 방식을 사용해서 아래와 같이 나타내볼 수 있다.
 
-$$ \underset{P,Q}{\min}\sum_{\text{ovserved }r_{u,i}}(r_{u,i}-p_u^Tq_i)^2 $$
+$$ \underset{P,Q}{\min}\sum_{\text{observed }r_{u,i}}(r_{u,i}-p_u^Tq_i)^2 $$
 
-여기서 **$P$와 $Q$는 학습이 가능한 파라미터이며 하나 주목할 것은 SVD와 Ranking 행렬에서 값이 있는 것만 사용을 했다는 것**이다.
+여기서 **$P$ 와 $Q$ 는 학습이 가능한 파라미터이며 하나 주목할 것은 SVD와 Ranking 행렬에서 값이 있는 것만 사용을 했다는 것**이다.
 
-더 나아가서, 여기에 Overfitting이 되는 것을 막기 위한 `Penalty Term`을 추가해볼 수 있다. 여기서는 L2-norm을 사용한 정규화를 진행한다.
+더 나아가서, 여기에 Overfitting이 되는 것을 막기 위한 `Penalty Term`을 추가해볼 수 있다. 여기서는 `L2-norm`을 사용한 정규화를 진행한다.
 
-$$ \underset{P,Q}{\min}\sum_{\text{ovserved }r_{u,i}}(r_{u,i}-p_u^Tq_i)^2+\lambda(\|p_u\|_2^2+\|q_i\|_2^2) $$
+$$ \underset{P,Q}{\min}\sum_{\text{observed }r_{u,i}}(r_{u,i}-p_u^Tq_i)^2+\lambda(\|p_u\|_2^2+\|q_i\|_2^2) $$
 
 ### 정규화
 
@@ -94,7 +94,7 @@ Weight를 손실함수에 넣어주면, Weight값이 너무 커지지 않도록 
 
 ### MF 모델에서의 SGD
 
-먼저 MF 모델에서 사용하는 손실함수와 Error Term이 무엇인지 다시 한 번 나타내보면 다음과 같다.
+먼저 MF 모델에서 사용하는 `손실함수`와 `Error Term`이 무엇인지 다시 한 번 나타내보면 다음과 같다.
 
 $$ L=\sum(r_{u,i}-p_u^Tq_i)^2+\lambda(\|p_u\|_2^2+\|q_i\|_2^2) $$
 
@@ -141,7 +141,7 @@ $$
 
 ### ✔ Adding Confidence Level
 
-실생활에서 **모든 평점이 의미있는 평점은 아니라**는 것을 알 수 있다. 댓글 알바와 같은 것을 통한 조작된 것일 수도 있고 많은 광고를 통해 사람들이 몰려서 클릭이나 조회수가 높아지는 것일 수도 있다. 이럴 경우 각 평점 $r_{u,i}$에 대한 신뢰도를 의미하는 $c_{u,i}$를 추가해볼 수 있다.
+실생활에서 **모든 평점이 의미있는 평점은 아니라**는 것을 알 수 있다. 댓글 알바와 같은 것을 통한 조작된 것일 수도 있고 많은 광고를 통해 사람들이 몰려서 클릭이나 조회수가 높아지는 것일 수도 있다. 이럴 경우 각 평점 $r_{u,i}$ 에 대한 `신뢰도`를 의미하는 $c_{u,i}$ 를 추가해볼 수 있다.
 
 $$ \underset{P,Q}{\min}\sum_{\text{ovserved }r_{u,i}}c_{u,i}(r_{u,i}-\mu - b_u-b_i-p_u^Tq_i)^2+\lambda(\|p_u\|_2^2+\|q_i\|_2^2+b_u^2+b_i^2) $$
 
