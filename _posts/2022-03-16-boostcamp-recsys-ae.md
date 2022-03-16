@@ -24,13 +24,16 @@ last_modified_at: 2022-03-16 00:00:00
 
 ![image](https://user-images.githubusercontent.com/91870042/158577816-8d514bc1-50c5-49c9-a8c7-488ee7e8470d.png){: .align-center}
 
-오토인코더는 입력 데이터를 받아서 그대로 복원시키는 비지도 학습 모델이다. 오토인코더는 중간의 Hidden Layer를 입력 데이터의 feature representation 데이터로 사용한다. 모델은 입력과 출력의 차이를 최소로 하도록 손실함수를 구성한다. 
+오토인코더는 간단히 말하자면, 입력 데이터를 받아서 그대로 복원시키는 비지도 학습 모델이다. 오토인코더는 중간의 Hidden Layer를 입력 데이터의 feature representation 데이터로 사용하며 입력과 출력의 차이를 최소로 하도록 손실함수를 구성한다. 이렇게 계속 학습을 진행하면 결국 입력과 출력이 거의 동일해진다.
+
+- 인코더: 입력데이터를 잠재 벡터로 만드는 역할
+- 디코더: 잠재 벡터만을 사용해 입력과 비슷한 출력을 만드는 역할
 
 ### Denoising AutoEncoder
 
 ![image](https://user-images.githubusercontent.com/91870042/158577918-9ea2c1b5-9e02-4b9a-8b5c-0c0c6a4e9be3.png){: .align-center}
 
-입력 데이터에 random noise 또는 dropout 을 추가하여 학습을 진행한 모델을 말한다. noise가 포함된 입력을 더 잘 복원할 수 있는 모델이 더 강건하게 학습되기 때문에 전체적인 성능이 향상된다.
+Denoising AutoEncoder는 입력 데이터에 random noise 또는 dropout 을 추가하여 인코더와 디코더를 통해 학습을 진행한 모델을 말한다. noise가 포함된 입력을 더 잘 복원할 수 있는 모델이 더 robust 하게 학습되기 때문에 전체적인 성능이 향상된다.
 
 ## AutoRec
 
@@ -40,7 +43,7 @@ AutoRec 논문은 오토인코더를 협업필터링에 적용하여 기존의 �
 
 ### AutoRec의 아이디어
 
-오토인코더의 입력 데이터를 Rating Vector 로 하여 인코딩 디코딩 과정을 수행한 것이 AutoRec이다. 유저 또는 아이템 벡터를 저차원의 잠재 요인으로 나타내 이를 사용해 평점을 예측한다. MF와 비교했을 때, AutoRec은 비선형 활성함수를 사용하기 때문에 더 복잡한 상호작용을 표현하는데 좋아진다.
+오토인코더의 입력 데이터를 Rating Vector 로 하여 인코딩 디코딩 과정을 수행한 것이 AutoRec이다. AutoRec은 유저 또는 아이템 벡터를 저차원의 잠재 요인으로 나타내 이를 사용해 평점을 예측한다. MF와 비교했을 때, AutoRec은 비선형 활성함수를 사용하기 때문에 더 복잡한 상호작용을 표현하는데 좋아진다.
 
 ### AutoRec의 모델
 
