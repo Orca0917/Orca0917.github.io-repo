@@ -1,5 +1,5 @@
 ---
-title:  "[Recommender System] Model Based Collaborative FilteringPermalink"
+title:  "[Recommender System] Model Based Collaborative Filtering"
 excerpt: "모델을 기반으로 한 협업필터링 MBCF"
 
 categories:
