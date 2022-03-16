@@ -73,3 +73,31 @@ h(r;\theta)=f(W\cdot g(Vr+\mu)+b) $$
 
 - DAE: Collaborative Denoising Auto-Encoders for Top-N Recommender Systems,
 - VAE: Collaborative Variational Autoencoder for Recommender Systems, ...
+
+## CDAE
+
+![image](https://user-images.githubusercontent.com/91870042/158581733-f39504a5-d353-4cb9-a730-d0031b89f269.png){: .align-center}
+
+Collaborative Denoising Auto-Encoders for Top-N Recommender Systems 논문은 Denoising Autoencoder를 Collaborative Filtering에 적용하여 top-N 추천에 활용하였다.
+
+### CDAE의 특징
+
+AutoRec이 평점 예측을 위한 모델이었다면, CDAE는 랭킹을 통해서 유저에게 Top-N 개의 아이템을 추천하는 모델이다. CDAE는 문제의 단순화를 위해서 유저와 아이템의 상호작용 정보를 Binary 정보로 바꾸어 학습데이터로 사용하였다. 이렇게 Binary 정보로 바꾸게 되면서 개별 유저에 대한 아이템의 rating 정보가 아닌, 선호(preference)를 학습하게 되었다.
+
+### CDAE 모델
+
+![image](https://user-images.githubusercontent.com/91870042/158582160-0f45617f-06c6-4a4c-b49c-85ff6e1797c3.png){: .align-center}
+
+CDAE는 AutoRec과 달리 Denoising Auto Encoder를 사용했기 때문에 noise 정보를 입력에 추가하였다. 위의 사진에서 $\tilde{y}_{u}$ 는 noise가 추가된 데이터를 말한다.
+
+각 유저마다 학습 파라미터인 $V_u$ 가 존재하는데 이는 각 유저에 따른 특징을 학습하게 된다. 그리고 마지막에 Top-N 추천을 진행할 때 사용한다.
+
+전체 학습과정을 다시 한 번 살펴보면, noise가 추가된 입력으로 부터 Hidden Layer의 잠재벡터를 생성하고, 다시 잠재벡터를 디코더를 거쳐 출력으로 만드는 것이다. 이를 수식으로 표현하면 다음과 같다.
+
+$$ z_u=h(W^T\tilde{y}_u+V_u+b)\qquad\hat{y}_{ui}-f({W'}_i^Tz_u+b'_i) $$
+
+### 결과
+
+![image](https://user-images.githubusercontent.com/91870042/158583419-adeeee55-049a-4c68-bb07-2c5aa6561236.png){: .align-center}
+
+CDAE모델은 대체적으로 N에 관계없이 다른 Top-N의 추천 모델에 비해 더 높은 MAP(Mean Average Precision)와 recall을 보였다.
