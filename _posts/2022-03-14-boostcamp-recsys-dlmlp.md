@@ -79,7 +79,7 @@ Jaccard 유사도가 $S_{23}>S_{12}>S_{13}$일 때, $p_1, p_2, p_3$을 잠재공
 - `Neural CF Layers` : $\phi_x(\cdots\phi_2(\phi_1(P^Tv_u, Q^Tv_i))\cdots)$ ⇒ 일반적인 MLP Layer를 말한다.
 - `Output Layer` : user와 item사이의 관련도
     - 활성함수로는 logistic(sigmoid) 또는 probit함수 사용
-    - $\hat{y}_{ui}=\phi_{out}(\phi_x(\cdots\phi_2(\phi_1(P^Tv_u, Q^Tv_i))\cdots)),\quad \hat{y}_{ui}\in[0,1]$
+    - $\hat{y}\_{ui}=\phi\_{out}(\phi_x(\cdots\phi_2(\phi_1(P^Tv_u, Q^Tv_i))\cdots)),\quad \hat{y}_{ui}\in[0,1]$
 
 ### 모델 (#2. MLP + GMF)
 
@@ -162,7 +162,7 @@ $$
 - Example Age
     - 모델이 과거 데이터 위주로 편향되어 학습되는 문제
     - 시청 로그가 학습 시점으로부터 경과한 정도를 피쳐로 포함한다.
-        - 이는 Bootstraping 현상 방지와 Freshness를 제ㄱ고ㅗ한다.
+        - 이는 Bootstraping 현상 방지와 Freshness를 제고한다.
 
 > **Dense Layer & softmax**
 
@@ -183,7 +183,7 @@ $$
         - 아래와 같은 softmax연산을 해서 모든 비디오를 찾아주는 것은 힘들다..
 
 $$
-P(w_t=i|U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}}
+P(w_t=i\mid U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}}
 $$
 
 - 그렇기 때문에, 가장 빠르게 가까운 유사도를 가진 아이템을 찾아주는 Annoy, Faiss 같은 ANN 라이브러리를 사용하여 빠르게 서빙을 진행해야 한다.
