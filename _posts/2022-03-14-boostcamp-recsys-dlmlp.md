@@ -23,13 +23,13 @@ last_modified_at: 2022-03-14 12:00:00
 추천시스템에 딥러닝을 적용시켰을 때의 장점은 다음 4가지가 있다.
 
 1. **Nonlinear Transformation**
-    - Deep NN은 데이터의 **비선형성을 효과적으로 나타낼 수 있다**.
+    - Deep Neural Network는 데이터의 **비선형성을 효과적으로 나타낼 수 있다**.
     - 복잡한 user-item interaction pattern을 효과적으로 모델링하여 user의 선호도를 예측할 수 있다.
 2. **Representation Learning**
-    - DNN은 raw data로부터 feature representation을 학습해 **사람이 직접 feature design을 하지 않아도 된다.**
+    - DNN은 원본(raw) 데이터로 부터 feature의 특징을 학습해 **사람이 직접 feature Design 하지 않아도 된다.**
     - 텍스트, 이미지, 오디오 등 다양한 종류의 정보를 추천시스템에 활용할 수 있다.
 3. **Sequence Modeling**
-    - DNN은 자연어처리, 음성신호처리등 **sequential modeling task에서 성공적으로 적용된다**. 유저나 아이템의 시간적 정보를 활용!!
+    - DNN은 자연어처리, 음성신호처리등 **sequential modeling task에서 성공적으로 적용된다**.
     - 추천시스템에서 next-item prediction, session-based recommendation에 사용된다.
     - 현재까지 소비한 아이템을 바탕으로 다음 구매할 것을 추천
 4. **Flexibility**
@@ -50,14 +50,14 @@ last_modified_at: 2022-03-14 12:00:00
 ![image](https://user-images.githubusercontent.com/91870042/158174754-f9806d04-5d10-42a5-961d-2335834dab37.png){: .align-center width="70%"}
 <p align="center"><i>Perceptron과 MLP의 구조</i></p>
 
-Multi Layer Perceptron(MLP)는 다층 퍼셉트론으로 퍼셉트로 이루어진 레이어를 여러겹 쌓아 순차적으로 이어놓은 Feed-Forward Neural Network이다. 다층 퍼셉트론을 사용하게 되면, 선형분류만으로 해결하기 어려웠던 문제들을 딥러닝으로 비선형적으로 해결할 수 있다.
+Multi Layer Perceptron(MLP)는 다층 퍼셉트론으로 퍼셉트로 이루어진 레이어를 여러겹 쌓아 순차적으로 이어놓은 Feed-Forward Neural Network이다. 다층 퍼셉트론을 사용하게 되면, 선형분류만으로 해결하기 어려웠던 문제들을 딥러닝을 사용해 비선형적으로 해결할 수 있다.
 
 ## Neural Collaborative Filtering
 
 ![image](https://user-images.githubusercontent.com/91870042/158174885-e2fd0f2c-d91f-41e3-a15d-5beffc0e75ff.png){: .align-center width="70%"}
 <p align="center"><i>Neural Collaborative Filtering 논문</i></p>
 
-기존 Matrix Factorization 의 한계를 지적하며 신경망 기반의 구조를 사용해 추천시스템의 일반화 성능을 높이는 모델에 대해 설명한 논문으로 Neural Collaborative Filtering 이 있다.
+Neural Collaborative Filtering은 기존 Matrix Factorization 의 한계를 지적하며 신경망 기반의 구조를 사용해 추천시스템의 일반화 성능을 높이는 모델을 설명한 논문이다.
 
 ### 아이디어
 
@@ -66,29 +66,28 @@ Multi Layer Perceptron(MLP)는 다층 퍼셉트론으로 퍼셉트로 이루어�
 ![image](https://user-images.githubusercontent.com/91870042/158175691-10912750-718c-461b-b72d-eef788327d1d.png){: .align-center width="70%"}
 <p align="center"><i>Matrix Factorization의 문제점</i></p>
 
-Jaccard 유사도가 $S_{23}>S_{12}>S_{13}$일 때, $p_1, p_2, p_3$을 잠재공간에 나타내면 위의 오른쪽 그림처럼 나타난다고 해보자.
-여기서, 새로운 사람 $u_4$를 추가하였을 때 가장 유사한 유저는 $u_1$이고, 그다음으로 유사한 유저는 $u_3$이다. 하지만 여기서 $p_3$보다 $p_2$가 유사해질 수 밖에 없는 모순이 발생한다.
+Jaccard 유사도가 $Sim_{23}>Sim_{12}>Sim_{13}$ 일 때, $u_1, u_2, u_3$ 을 잠재공간에 나타내면 위의 오른쪽 그림처럼 나타난다고 해보자.
+여기서, 새로운 사람 $u_4$ 를 추가하였을 때 가장 유사한 유저는 $u_1$이고, 그 다음으로 유사한 유저는 $u_3$ 이다. 하지만 여기서 $p_3$ 보다 $p_2$ 가 유사해질 수 밖에 없는 모순이 발생한다.
 
 ### 모델 (#1. MLP)
 
 ![image](https://user-images.githubusercontent.com/91870042/158176699-edba5945-57c4-47fd-b77c-9b2c69aa03fe.png){: .align-center width="70%"}
 <p align="center"><i>MLP만 모델에 사용한 구조</i></p>
 
-- `Input Layer` : **one-hot encoding된 sparse한 user(item) vector**: $v_u(v_i)$
-- `Embedding Layer` : user(item)의 잠재벡터: $P^Tv_u(Q^Tv_i)$
+- `Input Layer` : **one-hot encoding된 희소(sparse)한 user vector 또는 item vector**: $v_u, v_i$
+- `Embedding Layer` : user 또는 item의 잠재벡터 생성 $\mathbf{P}_u^Tv_u, \mathbf{Q}_i^Tv_i$
 - `Neural CF Layers` : $\phi_x(\cdots\phi_2(\phi_1(P^Tv_u, Q^Tv_i))\cdots)$ ⇒ 일반적인 MLP Layer를 말한다.
+  - $\phi_x : x$ 번째 neural network
 - `Output Layer` : user와 item사이의 관련도
     - 활성함수로는 logistic(sigmoid) 또는 probit함수 사용
-    - $\hat{y}\_{ui}=\phi\_{out}(\phi_x(\cdots\phi_2(\phi_1(P^Tv_u, Q^Tv_i))\cdots)),\quad \hat{y}_{ui}\in[0,1]$
+    - $\hat{y}\_{ui}=\phi\_{out}(\phi_x(\cdots\phi_2(\phi_1(\mathbf{P}_u^Tv_u, \mathbf{Q}_i^Tv_i))\cdots)),\quad \hat{y}_{ui}\in[0,1]$
 
 ### 모델 (#2. MLP + GMF)
 
 ![image](https://user-images.githubusercontent.com/91870042/158177094-f2e1f160-4b31-4167-833c-c7813ce45845.png){: .align-center width="70%"}
 <p align="center"><i>MLP와 함께 GMF를 사용한 모델 구조</i></p>
 
-GMF는 Generalized Matrix Factorization으로 MF를 일반화한 모델을 말한다. Neural Collaborative Filtering은 GMF와 MLP를 앙상블하여 각각의 장점을 살리고 단점을 보완하였다.
-
-GMF와 MLP에서 진행되는 임베딩 레이어는 서로 다른 임베딩 레이어를 사용한다.
+GMF는 Generalized Matrix Factorization으로 MF를 일반화한 모델을 말한다. Neural Collaborative Filtering은 GMF와 MLP를 앙상블하여 각각의 장점을 살리고 단점을 보완하였다. 이 때, GMF와 MLP의 입력으로 들어가는 임베딩 벡터를 생성하는 임베딩 레이어는 서로 다른 임베딩 레이어를 사용한다.
 
 $$
 \begin{aligned}
@@ -113,17 +112,17 @@ $$
 ![image](https://user-images.githubusercontent.com/91870042/158178114-676d4924-710d-4880-be55-f4dd7f750dc7.png){: .align-center width="70%"}
 <p align="center"><i>Deep Neural Networks for YouTube Recommendations 논문</i></p>
 
-딥러닝 기반 추천시스템을 실제 유튜브 서비스에 적용한 논문으로 "Deep Neural Networks for YouTube Recommendations"가 있다. 실제로 유튜브는 해당 딥러닝 기반 추천시스템을 사용한다고 한다.
+딥러닝 기반 추천시스템을 실제 유튜브 서비스에 적용한 논문으로 "Deep Neural Networks for YouTube Recommendations"가 있다. 실제로 유튜브는 해당 딥러닝 기반 추천시스템을 사용한다고 한다. 이 논문은 처음으로 2 단계를 거치는 추천시스템을 발표하였다.
 
 ### 유튜브 추천 문제 특징
 
-- **Scale**: 엄청 많은 유저와 아이템 vs. 제한된 컴퓨팅 파워
+- **Scale**: 엄청 많은 유저와 아이템 vs. 제한된 컴퓨팅 파워. 그렇기 때문에 효율적으로 서빙해야하고 이에 특화된 추천 알고리즘이 필요하다.
 - **Freshness**: 잘 학습된 컨텐츠와 새로 업로드 된 컨텐츠를 **실시간으로 적절히 조합**해야 한다. (exploration, exploitation)
     - 과거의 인기있는 영상만 추천만 하면 안된다.
     - 최근에 등장한 영상이 등장하도록 만들어야 한다.
 - **Noise**: 높은 Sparsity, 다양한 외부요인으로 유저의 행동을 예측하기 어렵다.
-    - 단순히 좋아요, 구독 등의 explicit데이터만 사용하면 유저의 행동을 예측하기가 어렵다.
-    - Implicit Feedback, 낮은 품질의 메타데이터를 잘 활용해야 한다. (해당 영상을 얼마나 시청했는지 정보)
+    - 단순히 좋아요, 구독 등의 explicit 데이터만 사용하면 유저의 행동을 예측하기가 어렵다.
+    - 더 정확한 예측을 위해서는 Implicit Feedback, 낮은 품질의 메타데이터를 잘 활용해야 한다. (해당 영상을 얼마나 시청했는지 정보)
 
 ### 전체구조: 2단계 추천시스템
 
@@ -144,49 +143,51 @@ $$
 ![image](https://user-images.githubusercontent.com/91870042/158179507-c7fa1d2d-accf-4cbe-835f-f0134bedf836.png){: .align-center width="70%"}
 <p align="center"><i>1단계: Candidate Generation</i></p>
 
+여기서는 유저가 좋아할 몇 백개의 비디오를 생성한다. 이때 학습되는 모델이 풀어야 할 문제는 multiclass classification 문제이며 아이템(비디오)의 수가 매우 많기 때문에 extreme multiclass classification 이라고도 한다.
+
+Candidate Generation 단계에서는 특정 시간 $t$ 에 유저 $u$ 가 $c$ 라는 context를 가지고 있을 때, 각 아이템(비디오) $i$ 를 볼 확률을 계산해야 한다. 마지막에 확률을 구할 때는 아래와 같이 softmax를 통해 각 확률을 구해낸다.
+
+$$
+P(w_t=i\mid U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}}
+$$
+
 > **Watch Vector와 Search Vector**
 
 ![image](https://user-images.githubusercontent.com/91870042/158179827-98c63243-e8e0-4c20-ad52-4c11ccec5cf7.png){: .align-center width="70%"}
 <p align="center"><i>watch vector와 search vector의 생성</i></p>
 
-- 과거의 시청이력과 검색 이력을 임베딩한다.
-- 마지막 시청기록 또는 검색어가 너무 큰 힘을 갖지 않도록 평균을 낸다.
+입력으로 중요하게 사용되는 유저의 과거 시청기록과 검색이력을 사용한다. 유저가 시청한 과거 영상들을 각각 임베딩하고, 평균을 구해서 watch vector를 생성한다. 이때 평균을 구하는 것은 마지막에 시청한 영상이 너무 큰 힘을 갖지 않기 위함이다. 같은 방식으로 search vector도 생성한다.
 
 > **Demographic/Geographic features & Example Age**
 
 ![image](https://user-images.githubusercontent.com/91870042/158179891-a03fe18a-8bb7-443e-8c33-c511e76146ef.png){: .align-center width="40%"}
 <p align="center"><i>Demographical Information의 사용</i></p>
 
-- Demographic & Geographic features
-    - 성별, 인구통계학 정보와 지리적 정보를 피쳐값으로 사용
-- Example Age
-    - 모델이 과거 데이터 위주로 편향되어 학습되는 문제
-    - 시청 로그가 학습 시점으로부터 경과한 정도를 피쳐로 포함한다.
-        - 이는 Bootstraping 현상 방지와 Freshness를 제고한다.
+위에서 만든 임베딩벡터 뿐만아니라 Demographic & Geographic features 도 사용한다. 이는 성별, 인구통계학 정보와 지리적 정보를 피쳐값을 사용한다는 것이다.
+
+위의 그림에서 `example age` 가 갖는 의미는 해당 영상이 얼마나 오래되었는지를 나타내는 벡터이다. 이로서 과거의 영상만 추천되지 않고, 최근의 영상을 추천할 수 있도록 하였다. 이는 Bootstraping 현상 방지와 Freshness(영상의 신선함, 최신)를 제공하기도 한다.
 
 > **Dense Layer & softmax**
 
 ![image](https://user-images.githubusercontent.com/91870042/158179982-52bb0b27-8a33-45de-a6b6-190a8f6f1567.png){: .align-center width="70%"}
 <p align="center"><i>Dense 레이어를 거쳐 softmax 연산을 진행</i></p>
 
-- 다양한 feature벡터들을 한 번에 concatenate시키고, Dense Layer를 거쳐서 **user vector $u$ 생성**
-- 최종 output layer는 **비디오를 분류하는 `softmax()` 를 거친다.**
+지금까지 말한 다양한 feature벡터들을 한 번에 concatenate시키고, Dense Layer를 거쳐서 **user vector $u$ 생성**한다. 최종 output layer는 **비디오를 분류하기 위해 확률값으로 바꾸어주는 `softmax()` 를 거친다.**
 
 > **Serving**
 
 ![image](https://user-images.githubusercontent.com/91870042/158180059-be9a0796-4f85-459e-ae26-37bd941ebed3.png){: .align-center width="40%"}
 <p align="center"><i>최종 모델 서빙 과정 (추천아이템 서빙)</i></p>
 
-- 유저를 input으로 하여 **상위 N개 비디오를 노출**
-- 학습 후, 유저 벡터 $u$와 모든 비디오 벡터 $v_j$의 내적을 계산한다.
-    - 하지만, 너무 많은 시간이 소모되기 때문에 실제 서비스에 적용하기 어렵다.
-        - 아래와 같은 softmax연산을 해서 모든 비디오를 찾아주는 것은 힘들다..
+Serving은 1단계의 마지막 과정으로 유저벡터와 인코딩된 아이템(비디오) 벡터를 input으로 하여 **상위 N개 비디오를 노출**하도록 하는 부분이다. 유저 벡터 $u$ 와 모든 비디오 벡터 $v_j$ 의 내적을 계산해서 가장 높은 유사한 비디오 N 개를 추천한다. 
+
+하지만, 모든 영상에 대해서 내적을 계산하면 너무 많은 시간이 소모되기 때문에 실제 서비스에 적용하기 어렵다. 아래와 같은 softmax연산을 해서 모든 비디오를 찾아주는 것은 힘들다..
 
 $$
-P(w_t=i\mid U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}}
+P(w_t=i\mid U,C)=\frac{e^{v_iu}}{\sum_{j\in V}e^{v_ju}} \qquad \text{(inefficient)}
 $$
 
-- 그렇기 때문에, 가장 빠르게 가까운 유사도를 가진 아이템을 찾아주는 Annoy, Faiss 같은 ANN 라이브러리를 사용하여 빠르게 서빙을 진행해야 한다.
+그렇기 때문에, 가장 빠르게 가까운 유사도를 가진 아이템을 찾아주는 Annoy, Faiss 같은 ANN 라이브러리를 사용하여 빠르게 서빙을 진행해야 한다.
 
 ### Ranking
 
@@ -202,12 +203,10 @@ $$
 - 영상의 과거 시청 여부등을 입력
 - 유저가 어떤 언어를 사용하는지
 
-사실 이러한 것들의 반영이 중요하기 때문에 딥러닝 보다는 도메인 전문가의 역량이 많이 필요한 부분이다.
-
 ![image](https://user-images.githubusercontent.com/91870042/158180999-d7e46564-40ee-47ec-9cc8-66441403c1f6.png){: .align-center width="70%"}
 <p align="center"><i>2단계 Ranking - (2) Dense 레이어를 통과하여 최종 서빙 진행</i></p>
 
-Raking 네트워크를 통과한 뒤, 비디오가 실제로 시청될 확률로 매핑하는 과정을 거친다.
+Ranking 네트워크를 통과한 뒤, 비디오가 실제로 시청될 확률로 매핑하는 과정을 거친다.
 
 $$ P(watch)\in[0,1] $$
 
@@ -223,5 +222,5 @@ $$ P(watch)\in[0,1] $$
     - 아이템: example age사용
 - Ranking: 과거에 많이 사용된 선형/트리 기반 모델보다 제안 딥러닝 모델이 더 뛰어난 성능을 보인다.
     - Rich Feature: CG에서 사용한 피쳐 외에 더 많은 피쳐를 사용하여 Ranking
-    - 단순 CTR 예측이 아닌, Expected Watch Time을 예측한다.
+    - 단순 CTR 예측이 아닌, 사용자가 영상을 시청할 시간을 예측한다.
 

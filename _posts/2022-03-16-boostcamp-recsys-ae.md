@@ -91,7 +91,9 @@ AutoRec이 평점 예측을 위한 모델이었다면, CDAE는 랭킹을 통해�
 
 ![image](https://user-images.githubusercontent.com/91870042/158582160-0f45617f-06c6-4a4c-b49c-85ff6e1797c3.png){: .align-center}
 
-CDAE는 AutoRec과 달리 Denoising Auto Encoder를 사용했기 때문에 noise 정보를 입력에 추가하였다. 위의 사진에서 $\tilde{y}_{u}$ 는 noise가 추가된 데이터를 말한다.
+CDAE는 AutoRec과 달리 Denoising Auto Encoder를 사용했기 때문에 noise 정보를 입력에 추가하였다. 위의 사진에서 $\tilde{y}_{u}$ 는 noise가 추가된 데이터를 말한다. $q$ 의 확률로 dropout을 시키거나 $1-q$ 의 확률로 noise 정보 $\delta$ 를 추가하였다.
+
+$$ P(\tilde{y}_u = \delta y_u) = 1-q \qquad P(\tilde{y}_u = 0) = q $$
 
 각 유저마다 학습 파라미터인 $V_u$ 가 존재하는데 이는 각 유저에 따른 특징을 학습하게 된다. 그리고 마지막에 Top-N 추천을 진행할 때 사용한다.
 
@@ -103,4 +105,4 @@ $$ z_u=h(W^T\tilde{y}_u+V_u+b)\qquad\hat{y}_{ui}-f({W'}_i^Tz_u+b'_i) $$
 
 ![image](https://user-images.githubusercontent.com/91870042/158583419-adeeee55-049a-4c68-bb07-2c5aa6561236.png){: .align-center}
 
-CDAE모델은 대체적으로 N에 관계없이 다른 Top-N의 추천 모델에 비해 더 높은 MAP(Mean Average Precision)와 recall을 보였다.
+CDAE모델은 대체적으로 N 에 관계없이 다른 Top-N의 추천 모델에 비해 더 높은 MAP(Mean Average Precision)와 recall을 보였다.
