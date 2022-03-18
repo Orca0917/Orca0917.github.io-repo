@@ -18,13 +18,9 @@ last_modified_at: 2022-03-16 02:00:00
 여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
 {: .notice--info}
 
-# Recommender System with RNN
-
-RNN을 사용한 추천시스템을 알아보기 전에, RNN의 개념에 대해 간단하게 알아보자
-
 ## RNN
 
-RNN(Recurrent Neural Network)는 순환신경망으로 시퀀스 데이터의 처리와 이해에 좋은 성능을 보이는 신경망 구조이다. 시퀀스 데이터의 현재 상태가 다음 상태에 영향을 미치는 특성을 모델에 적용한 것이다.
+RNN (Recurrent Neural Network)는 순환신경망으로 시퀀스 데이터의 처리와 이해에 좋은 성능을 보이는 신경망 구조이다. 시퀀스 데이터의 현재 상태가 다음 상태에 영향을 미치는 특성을 모델에 적용한 것이다.
 
 ![image](https://user-images.githubusercontent.com/91870042/158841049-338ae011-e9ea-41b8-b3d5-0d87992c3d81.png){: .align-center}
 
