@@ -1,6 +1,6 @@
 ---
-title:  "[Recommender System] Factorization Machine과 Field Factorization Machine"
-excerpt: "컨텍스트 기반 추천시스템인 FM과 FFM에 대해서 알아보자"
+title:  "[Recommender System] Gradient Boosting Machine"
+excerpt: "CTR 예측에 효과적으로 알려진 Gradient Boosting 기법의 원리를 이해하고, 대표적인 GBM 계열의 모델들에 대해 알아보자"
 
 categories:
   - RecSys
