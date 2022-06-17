@@ -131,7 +131,7 @@ blockquote {
 
 a {
   text-decoration: none;
-  
+
   &:focus {
     @extend %tab-focus;
   }
@@ -180,7 +180,7 @@ td > code {
   font-size: 0.9em;
   background: $code-background-color;
   border-radius: $border-radius;
-  color: #ffbd2f;
+  color: #ff4040;
   font-family: "nanumgothic";
   &:before,
   &:after {
@@ -367,14 +367,15 @@ input[type="submit"],
   transition: $global-transition;
 }
 
-u, ins {
+u,
+ins {
   text-decoration: none;
   border-bottom: 1px solid #ffbd2f;
 }
 .page__inner-wrap > section > p > strong,
 .page__inner-wrap > section > ul > li > strong,
 .page__inner-wrap > section > ul > li > ul > li > strong {
-  color:#ffbd2f;
+  color: #000000;
 }
 
 .page__inner-wrap > section > h1 {

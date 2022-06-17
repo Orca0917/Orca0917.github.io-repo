@@ -12,11 +12,11 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "CODE WORK"
+title                    : "Def & Ques"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "유종문(Ryu Jongmoon)"
@@ -26,7 +26,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "https://github.com/killerWhale0917/killerWhale0917.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "CODE WORK" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "QUESTIONNAIRE" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "Ryu Jongmoon"
-  avatar           : "https://user-images.githubusercontent.com/91870042/146774013-7e2ef70b-308e-4753-8388-7a43603fd043.png"
+  avatar           : "https://avatars.githubusercontent.com/u/91870042?v=4"
   bio              : "알고리즘과 AI, 데이터분석에<br/>관심이 많은 대학생입니다😊"
   location         : "Republic of Korea"
   email            :

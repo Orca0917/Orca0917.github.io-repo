@@ -1,5 +1,5 @@
 ---
-title:  "Neural Collaborative Filtering 논문 리뷰"
+title: "Neural Collaborative Filtering 논문 리뷰"
 
 categories:
   - paper
@@ -11,6 +11,9 @@ use_math: true
 
 date: 2022-03-22 00:00:00
 last_modified_at: 2022-03-22 00:00:00
+
+layout: single
+classes: wide
 ---
 
 # Neural Collaborative Filtering
@@ -35,11 +38,13 @@ NCF(Neural Collaborativ Filtering)는 내적하는 연산을 대체하였고, �
 
 그렇기 때문에 딥러닝을 사용한 추천시스템이 필요하다고 말한다. 앞서서 말했듯이 딥러닝을 사용한 추천시스템 연구는 있었고, 유망하였지만 여전히 유저와 아이템 벡터간의 내적을 사용한 것을 한계점으로 보았다. 그리고 NCF에서 사용할 데이터는 Implicit Feedback 데이터인데 그 장단점을 아래와 같이 말한다.
 
-**장점**  
+**장점**
+
 - 데이터를 수집하기가 쉽다.
 - Explicit Feedback 데이터보다 훨씬 많은 양의 데이터를 모을 수 있다.
 
-**단점**  
+**단점**
+
 - 사용자(user)의 만족도가 명시적으로 나타나지 않아서 사용하기가 까다롭다.
 - Negative Feedback 정보가 없다.
 
@@ -55,7 +60,7 @@ NCF(Neural Collaborativ Filtering)는 내적하는 연산을 대체하였고, �
 
 NCF는 유저의 Implicit Feedback 데이터를 받아 다음과 같이 표현하였다.
 
-$$ 
+$$
 \begin{aligned}
 y_{u,i} = \begin{cases}1, \quad \text{if interaction(user $u$, item $i$) is observed} \\ 0, \quad \text{otherwise} \\ \end{cases}
 \end{aligned}
@@ -68,7 +73,7 @@ $$
 
 Implicit Feedback을 사용하는 추천시스템은 비어있는 상호작용에 대해서 점수를 매기고 아이템에 순위를 부여해 상위 $k$ 를 추천하는 문제를 해결한다. 이 때 수식을 아래와 같이 나타내볼 수 있다.
 
-$$ \hat{y}_{ui} = f(u, i \mid \Theta) $$
+$$ \hat{y}\_{ui} = f(u, i \mid \Theta) $$
 
 - $\hat{y}_{ui}$ : 유저 $u$ 와 아이템 $i$ 의 예측 상호작용 점수
 - $f$ : 모델의 파라미터를 사용해서 점수를 예측하는 interaction function
@@ -85,7 +90,7 @@ $$ \hat{y}_{ui} = f(u, i \mid \Theta) $$
 
 Matrix Factorization은 만들어진 행렬 $Y$ 에 대해서 저차원의 행렬 $P, Q$ 로 분해하여 표현하는 방법을 말하며 다음과 같이 표현할 수 있다. 식을 보면 알 수 있듯이 MF는 잠재요소를 사용한 선형모델로 간주된다.
 
-$$ \hat{y}_{ui} = f(u, i \mid \mathbf{p}_u, \mathbf{q}_i) = \mathbf{p}_u^T\mathbf{q}_i = \sum_{k=1}^K p_{uk}q_{ik}$$
+$$ \hat{y}_{ui} = f(u, i \mid \mathbf{p}\_u, \mathbf{q}\_i) = \mathbf{p}\_u^T\mathbf{q}\_i = \sum_{k=1}^K p*{uk}q*{ik}$$
 
 - $K$ : latent space의 차원(크기)
 - $\mathbf{p}_u$ : 유저 $u$ 에 대한 latent vector
@@ -122,7 +127,7 @@ $$ \hat{y}_{ui} = f(u, i \mid \mathbf{p}_u, \mathbf{q}_i) = \mathbf{p}_u^T\mathb
 
 그 다음에 존재하는 Layer는 Embedding Layer이다. 임베딩 레이어는 FCN(Fully Connected Layer)이며 입력으로 들어온 sparse 한 feature vector를 Dense하게 표현해주도록 바꾸어준다. 그렇게 생성된 유저와 아이템 각각의 Latent Vector는 NCF의 첫 레이어로 들어간다. 그리고 이 모델은 예측한 score와 실제 target score간의 오차를 최소화하는 방향으로 학습을 진행한다. 지금까지 소개한 내용을 수식으로 나타내면 다음과 같이 표현해볼 수 있다.
 
-$$ \hat{y}_{ui} = f(\mathbf{P}^T\mathbf{v}_u^U, \mathbf{Q}^T\mathbf{v}_i^I \mid \mathbf{P}, \mathbf{Q}, \Theta_f), \qquad \mathbf{P}\in\mathbb{R}^{M\times K}, \mathbf{Q}\in\mathbb{R}^{N\times K} $$
+$$ \hat{y}\_{ui} = f(\mathbf{P}^T\mathbf{v}\_u^U, \mathbf{Q}^T\mathbf{v}\_i^I \mid \mathbf{P}, \mathbf{Q}, \Theta_f), \qquad \mathbf{P}\in\mathbb{R}^{M\times K}, \mathbf{Q}\in\mathbb{R}^{N\times K} $$
 
 - $\mathbf{P}, \mathbf{Q}$ : latent factor matrix
 - $\Theta_f$ : interaction function $f$ 에 대한 모델 파라미터
@@ -136,7 +141,7 @@ $$ \hat{y}_{ui} = f(\mathbf{P}^T\mathbf{v}_u^U, \mathbf{Q}^T\mathbf{v}_i^I \mid 
 
 모델의 파라미터를 학습시키기 위해 존재하던 pointwise methods 는 주로 제곱오차를 사용한 회귀를 이용했다.
 
-$$ L_{sqr} = \sum_{(u, i)\,\in\,\mathcal{Y}\,\cup\,\mathcal{Y}^-} w_{ui}(y_{ui} - \hat{y}_{ui})^2$$
+$$ L*{sqr} = \sum*{(u, i)\,\in\,\mathcal{Y}\,\cup\,\mathcal{Y}^-} w*{ui}(y*{ui} - \hat{y}\_{ui})^2$$
 
 - $\mathcal{Y}$ : $\mathbf{Y}$ 에서 상호작용이 관찰된 집합
 - $\mathcal{Y}^-$ : 관측되지 않은 상호작용 전부 또는 샘플링된 일부
@@ -146,7 +151,7 @@ $$ L_{sqr} = \sum_{(u, i)\,\in\,\mathcal{Y}\,\cup\,\mathcal{Y}^-} w_{ui}(y_{ui} 
 
 그리고 예측한 값인 $\hat{y}\_{ui}$ 는 $i$ 와 $u$ 가 얼마나 유사한지를 나타낸다고 해석할 수 있다. 확률론적으로 해석하기 위해서 $\hat{y}_{ui}$ 값을 0과 1사이의 값으로 제한시킬 필요가 있다. 지금까지 설명한 것을 바탕으로 likelihood function 을 나타내면 다음과 같다.
 
-$$ p(\mathcal{Y}, \mathcal{Y}^{-}|\mathbf{P},\mathbf{Q},\Theta_{f})= \prod_{(u,i) \in \mathcal{Y} }{\hat{y}_{u,i}}  \prod_{(u,j) \in \mathcal{Y}^{-}} ({1-\hat{y}_{u,j}}) $$
+$$ p(\mathcal{Y}, \mathcal{Y}^{-}|\mathbf{P},\mathbf{Q},\Theta*{f})= \prod*{(u,i) \in \mathcal{Y} }{\hat{y}_{u,i}} \prod_{(u,j) \in \mathcal{Y}^{-}} ({1-\hat{y}\_{u,j}}) $$
 
 다시, 위의 식에 음의 log를 취하면 다음과 같다.
 
@@ -155,9 +160,9 @@ $$
 L &= -log \ p(\mathcal{Y}, \mathcal{Y}^{-} | P,Q,\Theta_{f}) \\
 \\
   &= -\sum_{(u,i) \in \mathcal{Y}} y_{u,i}\ log \ \hat{y}_{u,i} - (\sum_{(u,j) \ in  \mathcal{Y}^{-}} (1- y_{u,i}) \ log \ (1-\hat{y}_{u,j}) ) \\
-  
+
  \\
-  
+
   &= -\sum_{(u,i) \in  \mathcal{Y} \cup \mathcal{Y}^{-} } ( y_{u,i}\ log \ \hat{y}_{u,i} + (1- y_{u,i}) \ log \ (1-\hat{y}_{u,i}))
 \end{aligned}
 \\
@@ -171,11 +176,11 @@ Negative Instance인 $\mathcal{Y}^-$ 에 대해서는 각 iteration 마다 균�
 
 이번 파트에서는 MF가 NCF의 일부임을 보이면서 이름을 GMF로 부른다. GMF에서는 임베딩 레이어에서 생성된 latent vector들을 입력으로 받는다. 이때 첫번째 레이어의 mapping function을 다음과 같이 정의한다.
 
-$$ \phi_1(\mathbf{p}_u, \mathbf{q}_i) = \mathbf{p}_u \odot \mathbf{q}_i$$
+$$ \phi_1(\mathbf{p}\_u, \mathbf{q}\_i) = \mathbf{p}\_u \odot \mathbf{q}\_i$$
 
 그리고 output 레이어로 다음과 같이 전달한다.
 
-$$ \hat{y}_{ui} = a_{out}(\mathbf{h}^T(\mathbf{p}_u \odot \mathbf{q}_i)) $$
+$$ \hat{y}_{ui} = a_{out}(\mathbf{h}^T(\mathbf{p}\_u \odot \mathbf{q}\_i)) $$
 
 - $a_{out}$ : 활성함수(activation function)
 - $\mathbf{h}$ : 가중치
@@ -195,7 +200,7 @@ $$
 &\dots\dots\\
 \phi_L(\mathbf{z}_{L-1}) &= a_L(\mathbf{W}_L^T\mathbf{z}_{L-1} + \mathbf{b}_L),\\
 \hat{y}_{ui}&=\sigma(\mathbf{h}^T\phi_L(\mathbf{z}_{L-1}))
-\end{aligned} 
+\end{aligned}
 $$
 
 - $\mathbf{W}_x$ : $x$ 번째 레이어의 가중치 행렬
@@ -213,11 +218,11 @@ $$
 $$
 \begin{aligned}
 \phi^{GMF} &= \mathbf{p}_{u}^{G} \odot \mathbf{q}_{i}^{G} \\
-\phi^{MLP} &= a_{L}(\mathbf{W}_{L}^{T}(a_{L-1}(...a_{2}(\mathbf{W}_{2}^{T} \begin{bmatrix} 
+\phi^{MLP} &= a_{L}(\mathbf{W}_{L}^{T}(a_{L-1}(...a_{2}(\mathbf{W}_{2}^{T} \begin{bmatrix}
 \mathbf{p}_{u}^{M}  \\
-\mathbf{q}_{i}^{M} 
+\mathbf{q}_{i}^{M}
 \end{bmatrix}+\mathbf{b}_{2})...))+\mathbf{b}_{L}) \\
-\hat{y}_{u,i} &= \sigma(\mathbf{h}^{T} \begin{bmatrix} 
+\hat{y}_{u,i} &= \sigma(\mathbf{h}^{T} \begin{bmatrix}
 \phi^{GMF}  \\
 \phi^{MLP}
 \end{bmatrix})
@@ -259,7 +264,7 @@ NCF모델과 비교할 대상은 ItemPop., ItemKNN, BPR, eALS 이다.
 
 ![image](https://user-images.githubusercontent.com/91870042/159469832-5ec13130-8e58-4efa-9434-152c1306c2f5.png){: .align-center}
 
-위 사진은 HR@10과 NDCG@10 에 대한 성능을 보여준다. 먼저 가장 눈에 띄는 부분은 SOTA로 불리는 eALS 또는 BPR보다 두 데이터셋에서 더 나은 성능을 보여주었다. Pinterest는 예측 요소가 8로 적었음에도 불구하고, 큰 예측 요소인 64를 사용한 eALS나 BPR보다 지속적으로 좋은 성능을 보였다. 
+위 사진은 HR@10과 NDCG@10 에 대한 성능을 보여준다. 먼저 가장 눈에 띄는 부분은 SOTA로 불리는 eALS 또는 BPR보다 두 데이터셋에서 더 나은 성능을 보여주었다. Pinterest는 예측 요소가 8로 적었음에도 불구하고, 큰 예측 요소인 64를 사용한 eALS나 BPR보다 지속적으로 좋은 성능을 보였다.
 
 MLP와 GMF에 대해서 비교적 강한 성능을 보여주었는데 MLP가 살짝 아래에 나타나있는 것을 보인다. 하지만, MLP는 레이어를 추가하여 성능을 올릴 수 있기 때문에 1차원적으로만 바라볼 수 없다. 마지막으로 GMF는 BPR보다 거듭되는 성장을 보여주었고, 이는 log loss를 사용한 classification의 효율을 증명해주었다. (둘은 동일한 MF 모델을 사용하였지만, 목적함수가 다름)
 
