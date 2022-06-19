@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Def & Ques"
+title                    : "Blooooog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "유종문(Ryu Jongmoon)"
@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "Ryu Jongmoon"
-  avatar           : "https://avatars.githubusercontent.com/u/91870042?v=4"
+  avatar           : "https://user-images.githubusercontent.com/91870042/174468170-0058d796-73e7-44cb-873e-58ae843688ed.png"
   bio              : "알고리즘과 AI, 데이터분석에<br/>관심이 많은 대학생입니다😊"
   location         : "Republic of Korea"
   email            :
