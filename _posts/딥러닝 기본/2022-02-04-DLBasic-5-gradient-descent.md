@@ -1,5 +1,5 @@
 ---
-title:  "경사하강법 (Gradient Descent)과 경사하강법의 문제점"
+title:  "경사하강법 (Gradient Descent)의 개념과 문제점"
 excerpt: "손실함수의 결과값을 최소화시키는 값을 찾기 위한 여정, 경사하강법에 대해서 다룹니다."
 
 categories:
@@ -86,8 +86,12 @@ $$
 
 # References
 
+[🎨 이미지 소스 : Gradient Descent](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html)
+
 [🌏 위키백과 : Saddle Point](https://en.wikipedia.org/wiki/Saddle_point)
 
 [🌏 위키백과 : 극값](https://ko.wikipedia.org/wiki/%EA%B7%B9%EA%B0%92)
 
 [🌏 IBM : How does gradient descent work?](https://www.ibm.com/cloud/learn/gradient-descent)
+
+[🎬 YouTube : 경사 하강, 신경 네트워크가 학습하는 방법 | 심층 학습, 2장](https://www.youtube.com/watch?v=IHZwWFHWa-w&t=1s)
