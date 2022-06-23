@@ -63,7 +63,7 @@ $$
 $$
 t = x+y\\
 z = t^2\\
-\frac{\partial z}{\partial x} = \frac{\partial z}{\partial w} \frac{\partial w}{\partial x} = 2w \times 1 = 2(x+y)
+\frac{\partial z}{\partial x} = \frac{\partial z}{\partial t} \frac{\partial t}{\partial x} = 2t \times 1 = 2(x+y)
 $$
 
 이 예제와 마찬가지로, 미분 연쇄법칙을 사용하면 최종 오류에 대한 1번째 레이어의 가중치행렬의 미분식은 아래처럼 풀어서 나타낼 수 있습니다.
