@@ -5,12 +5,12 @@ excerpt: "딥러닝에서 사용되는 벡터의 개념과 덧셈, 뺄셈, 곱�
 categories:
   - aimath
 tags:
-  - [AI, Naver, BoostCamp, Math]
+  - [AI, BoostCamp, Math]
 toc: true
 toc_sticky: true
  
 date: 2022-01-18 10:00:00
-last_modified_at: 2022-01-18 10:00:00
+last_modified_at: 2022-06-24
 ---
 
 ![image](https://user-images.githubusercontent.com/91870042/175080135-6fcfcfac-1425-488d-83dd-e3eb09c646f8.png){: .align-center width="100%"}
