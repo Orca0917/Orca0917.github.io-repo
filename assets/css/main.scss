@@ -7,7 +7,8 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-@import url("//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css"); // d2coding font
+@import url("//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css"); // d2coding font
+// @import url("//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css"); 
 @import url("//cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"); // nanum square font
 
 @font-face {
