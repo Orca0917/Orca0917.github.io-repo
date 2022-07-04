@@ -44,28 +44,6 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
-            <span class="nav__sub-title">Python</span>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "numpy" %}
-                            <li><a href="/categories/python-numpy" class="">Numpy ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "pandas" %}
-                            <li><a href="/categories/python-pandas" class="">Pandas ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <ul>
-                    {% for category in site.categories %}
-                        {% if category[0] == "matplotlib" %}
-                            <li><a href="/categories/python-matplotlib" class="">Matplotlib ({{category[1].size}})</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
             <span class="nav__sub-title">AI</span>
                 <ul>
                     {% for category in site.categories %}
