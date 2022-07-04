@@ -82,6 +82,11 @@ a {
   color: $link-color;
 }
 
+.page__content a {
+  color: #0070c0; //$link-color;
+  font-weight: bold;
+}
+
 /* Apply focus state */
 
 a:focus {
