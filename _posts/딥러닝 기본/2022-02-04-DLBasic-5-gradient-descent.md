@@ -94,4 +94,4 @@ $$
 
 [🌏 IBM : How does gradient descent work?](https://www.ibm.com/cloud/learn/gradient-descent)
 
-[🎬 YouTube : 경사 하강, 신경 네트워크가 학습하는 방법 | 심층 학습, 2장](https://www.youtube.com/watch?v=IHZwWFHWa-w&t=1s)
+[🎬 YouTube : 경사 하강, 신경 네트워크가 학습하는 방법 / 심층 학습, 2장](https://www.youtube.com/watch?v=IHZwWFHWa-w&t=1s)
