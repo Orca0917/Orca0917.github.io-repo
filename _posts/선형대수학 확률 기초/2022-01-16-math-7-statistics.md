@@ -233,7 +233,7 @@ $$
 쿨백-라이블러 발산의 이산확률변수 수식에서 $\log$ 항이 기댓값에서 $f(x)$ 라고 생각을 하면 기댓값으로 풀어서 쓸 수 있습니다.
 
 $$
-\mathbb{E}_{\mathbf{x} \sim P(\mathbf{x})}\left[ \log \frac{P(\mathbf{x})}{Q(\mathbf{x})}\right] =  -\mathbb{E}_{x\sim Q(x)} \left[\log Q(x)\right] + \mathbb{E}_{x\sim P(x)}[\log P(x)]
+\mathbb{E}_{\mathbf{x} \sim P(\mathbf{x})}\left[ \log \frac{P(\mathbf{x})}{Q(\mathbf{x})}\right] =  -\mathbb{E}_{\mathbf{x}\sim Q(\mathbf{x})} \left[\log Q(\mathbf{x})\right] + \mathbb{E}_{\mathbf{x}\sim P(\mathbf{x})}[\log P(\mathbf{x})]
 $$
 
 쿨백-라이블러 발산은 최종적으로 위와 같이 분해할 수 있는데, 앞의 식을 **크로스 엔트로피**, 뒤의 식을 **엔트로피**라고 부릅니다. 이는 분류 문제에서 정답 레이블을 $P$, 모델 예측을 $Q$ 라고 두면 최대가능도 추정법은 쿨백-라이블러 발산을 최소화하는 것과 같음을 보입니다.
