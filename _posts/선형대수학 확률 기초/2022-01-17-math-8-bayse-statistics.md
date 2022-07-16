@@ -178,7 +178,7 @@ $$
 
 $$
 \begin{aligned}
-\mathbb{P}^{\mathfrak{C}_a}(R=1) &= \sum_{z \in \{0, 1\}}\mathbb{P}^{\mathfrak{C}}(R=1\,\vert\, T=a, Z=z)\;\mathbb{P}^{\mathfrak{C}}(Z=z)\\
+\mathbb{P}^{\mathfrak{T}_a}(R=1) &= \sum_{z \in \{0, 1\}}\mathbb{P}^{\mathfrak{T}}(R=1\,\vert\, T=a, Z=z)\;\mathbb{P}^{\mathfrak{T}}(Z=z)\\
 &= \frac{81}{87} \times \frac{(87 + 270)}{700} + \frac{192}{263} \times \frac{(263+80)}{700} \approx 0.8325
 \end{aligned}
 $$
@@ -186,14 +186,14 @@ $$
 - $R$ : 완치 여부 (1: 완치, 0: 미완치)
 - $Z$ : 신장 결석 크기 (1: 큰 결석, 0: 작은 결석)
 - $T$ : 치료법 (a: 치료법A, b: 치료법B)
-- $\mathbb{P}^{\mathfrak{C}_a}(R=1)$ : 치료법A를 선택하여 완치를 할 확률
+- $\mathbb{P}^{\mathfrak{T}_a}(R=1)$ : 치료법 A를 선택하여 완치를 할 확률
 
 위에서 치료법 A 에 대해 중첩 요인을 제거하고 계산한 결과 모두에게 치료법 A가 효과적일 확률은 78%가 아닌 83%임을 알 수 있습니다. 이번에는 반대로 치료법 B에 대해 중첩 요인을 제거하고 계산해 보겠습니다.
 
 
 $$
 \begin{aligned}
-\mathbb{P}^{\mathfrak{C}_b}(R=1) &= \sum_{z \in \{0, 1\}}\mathbb{P}^{\mathfrak{C}}(R=1\,\vert\, T=b, Z=z)\;\mathbb{P}^{\mathfrak{C}}(Z=z)\\
+\mathbb{P}^{\mathfrak{T}_b}(R=1) &= \sum_{z \in \{0, 1\}}\mathbb{P}^{\mathfrak{T}}(R=1\,\vert\, T=b, Z=z)\;\mathbb{P}^{\mathfrak{T}}(Z=z)\\
 &= \frac{234}{270} \times \frac{(87 + 270)}{700} + \frac{55}{80} \times \frac{(263+80)}{700} \approx 0.7789
 \end{aligned}
 $$
