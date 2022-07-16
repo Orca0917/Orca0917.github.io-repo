@@ -13,7 +13,8 @@ date: 2022-01-20 02:00:00
 last_modified_at: 2022-07-14 00:00:00
 ---
 
-<!-- image to be here (unsplash) -->
+![image](https://user-images.githubusercontent.com/91870042/179350313-7cdcdb3c-61f7-4ad4-bb36-8a1072d35cc4.png){: .align-center width="100%"}
+
 
 통계에 이어서 조건부확률이 정확히 무엇인지 알아보고 조건부확률을 사용하는 베이즈 정리에 대해서 알아봅시다. 기계학습에서 베이즈 정리가 갖는 의미가 무엇이고 어떻게 사용될 수 있는지 코로나 바이러스를 예시로 들어 살펴보겠습니다. 마지막에서는 확률로 내린 결정이 틀린 오류와 유명한 심슨의 역설에 대해서 알아보겠습니다.
 
@@ -206,5 +207,7 @@ $$
 <br>
 
 # References
+
+[🎨 헤더 이미지 소스](https://unsplash.com/photos/lzxJTsmnTlQ)
 
 [📘 위키백과: 심슨의 역설](https://ko.wikipedia.org/wiki/%EC%8B%AC%EC%8A%A8%EC%9D%98_%EC%97%AD%EC%84%A4)
