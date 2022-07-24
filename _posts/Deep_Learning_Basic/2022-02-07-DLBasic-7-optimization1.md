@@ -1,84 +1,115 @@
 ---
-title:  "[Deep Learning Basic] Optimization"
-excerpt: "최적화와 관련된 주요한 용어와 다양한 Gradient Descent기법"
+title:  "Optimization PART 1 : Optimization 기본 용어 정리"
+excerpt: "Generalization, Under fitting, CV, K-Fold, Bias, Variance, Bootstrap(Bagging, Boosting) 용어 정리"
 
 categories:
   - DLBasic
 tags:
-  - [AI, Naver, BoostCamp, Python, Math]
+  - [AI, BoostCamp]
 toc: true
 toc_sticky: true
  
 date: 2022-02-07 08:00:00
-last_modified_at: 2022-02-07 08:00:00
+last_modified_at: 2022-07-25
 ---
-📌 **알립니다!**<br>
-이번에 작성되는 글은 **네이버 부스트캠프 AI Tech**를 수강하며 정리하는 글입니다.<br>
-여기서 존재하는 강의 자료의 출처는 네이버 부스트코스/캠프에게 있습니다.
-{: .notice--info}
 
-# Gradient Descent
+![image](https://user-images.githubusercontent.com/91870042/180658653-9df2033f-5e9e-4178-8283-2ad17f08c4c7.png){: .align-center width="100%"}
 
-손실함수의 1차적인 미분값을 사용하여 국소적인 최솟값을 찾기 위해 반복적으로 최적화 시키는 방법을 말한다. 이번에는 최적화라는 문제에서 중요하게 다뤄지는 개념에 대해서 살펴본다.
+# Introduction
 
-# Generalization
-우리의 목적은 `일반화(Generalization)`성능을 높이는 것이다. 그렇다면 일반화의 성능을 높인다는 것은 무엇을 의미할까?
-
-먼저 데이터는 크게 2종류로 나눌 수 있다. 
-- `학습 데이터(Training Data)`: 신경망 모델을 학습시키기 위한 데이터를 말한다.
-- `테스트 데이터(Test Data)`: 신경망 모델의 성능을 판단하기 위한 데이터를 말한다.
-
-주어진 학습데이터를 사용하여 신경망을 반복적으로 학습하게 되면, 해당 학습 데이터에 대한 에러는 계속 줄어든다. 하지만 그렇다고 학습데이터에 대한 에러(Training Error)가 0에 가까워진다고 해서 좋은 것은 아니다.
-
-![image](https://user-images.githubusercontent.com/91870042/145222399-075013f7-5baa-4fb7-bd3b-33e73faddadd.png){: .align-center width="70%"}
-
-위의 그림을 보게되면, 학습데이터로 학습을 많이 할수록, 테스트 데이터에 대한 오차는 커지는 것을 알 수 있다. 여기서 일반화가 좋다는 것은 테스트데이터와 학습데이터로 나오는 결과의 일관성이 있다는 것이다.
-
-> 일반화의 성능이 높다는 것은 Train Data와 Test Data의 차이가 적어, 모두 일관성 있는 데이터를 출력하는 것을 말한다.
-
-## Overfitting & Underfitting
-학습 데이터에 대해서는 정확하게 맞추지만, 테스트 데이터에 대해서는 잘 동작하지 않는 것을 `overfitting`이라고 한다. 그와 반대로, Neural Network가 너무 간단하거나, 학습을 너무 조금시켜서 잘 동작하지 않는 것을 `underfitting`이라고 한다. 그렇기 때문에 우리는 적절한 Neural Network를 생성하여 과하지 않게 학습시켜야 한다.
-
-![image](https://user-images.githubusercontent.com/91870042/152759600-f9082138-8084-407d-baef-2dbe9d7580aa.png){: .align-center width="70%"}
-
-
-## cross-validation
-학습 데이터만을 이용해서 학습을 시켜 좋은 Nerual Network를 만드는데에는 한계가 있다. 그렇기에 우리는 여러개의 데이터를 사용하는 것과 같은 효과를 줄 수 있는 `cross-validation`기법을 사용해야 한다.
-
-Cross validation은 `k-fold validation`이라고도 하며, 학습데이터를 \\(k\\)개의 묶음으로 나눈다. 이 묶음중에서 번갈아가면서 \\(k-1\\)개의 묶음을 선택하여 Neural Network를 학습시킨다. 남은 1묶음의 학습데이터로 테스트 데이터처럼 평가를 하는 것이다. 이렇게 남은 1묶음의 학습데이터를 `validate data`라고 표현한다.
-
-주의해야할 것은, 반드시 테스트데이터를 사용해서 학습시켜서는 안된다.
-
-![image](https://user-images.githubusercontent.com/91870042/145223764-c6b40538-45b7-45c7-a1fc-4a69f6f3ecab.png){: .align-center width="70%"}
-
-## Bias and Variance
-- `Variance`: 데이터를 넣었을 때, 결과값이 얼마나 일관성있게 나오는지를 의미한다. (탄착군)
-- `Bias`: 데이터의 결과가 평균적으로 정답(True Target)에 접근하고 있는지를 의미한다.
-
-![image](https://user-images.githubusercontent.com/91870042/145223996-04aa2213-3651-43b9-9749-b6c431db646d.png){: .align-center width="70%"}
-
-### Tradeoff
-나의 학습데이터에 Noise가 있다고 가정할 때, 이 Noise가 있는 데이터의 Cost를 최소화시키는 것은 3가지 구성의 합으로 나타낼 수 있다. 아래에서 \\(t\\)는 target data를 의미하고, \\(\hat{f}\\)는 neural network로 추론한 결과를 말한다. \\(f\\)는 실제 데이터의 값이다.
-
-![image](https://user-images.githubusercontent.com/91870042/145224668-d9d69a72-33c6-43d1-b74a-89e61c055334.png){: .align-center width="70%"}
-
-내가 Noise를 최소화 하려고 하는 것은 1가지의 값인데, 이 값은 다시 3가지 (*bias, variance, noise*)로 구성이 되어 있어서 하나가 줄어들어도 나머지가 커질 수 밖에 없는 상황을 말한다.
-
-## Bootstrapping
-`Bootstrapping`은 여러개의 데이터중 임의의 데이터를 추출하여 학습 데이터를 생성하는 것을 말한다. 모든 학습데이터를 이용해서 학습하는 것이 좋을 것 같지만, 좋지 않은 경우가 많다.
-
-1. **Bagging**(Bootstrapping aggregating)  
-추출된 임의의 학습데이터들로 여러개의 Neural Network Model을 생성한다. 이후, 하나의 데이터에 대해서 각각의 Model이 얼마나 일관성있는 출력을 갖는지 비교한다. 이는 `앙상블(Ensenble)`이라고도 말한다.
-
-2. **Boosting**  
-  추출된 임의의 학습데이터들로 Neural Network를 학습시킨다. 나머지 데이터들에 대해서 예측을 하지 못하는 경우, 나머지 데이터에 대해서 잘 학습된 Nerual Network Model을 생성한다.
-
-  예를 들어, 학습데이터가 100개가 있고 해당 데이터에서 예측을 진행하는 모델을 만들었다고 하자. 모델이 80개의 데이터에 대해서는 잘 예측하지만 나머지 20개의 데이터에 대해서는 예측을 잘 하지 못한다고 할 때, 나머지 20개에 대해서만 잘 작동하는 모델을 다시 만드는 것을 말한다.
-
-
-![image](https://user-images.githubusercontent.com/91870042/145226008-fddb29cc-7740-4796-a652-07cb81923691.png){: .align-center width="70%"}
+이번 포스팅 부터 약 3파트에 걸쳐서 생성한 인공지능 모델을 학습하는데 필요한 기본적인 최적화 이론에 대해서 알아보고자 합니다. 특히 가장 첫 파트인 현재 게시글에서는 일반화 성능이 무엇을 의미하는지, 과적합과 K-Fold validation이 무엇인지 등 기본적인 내용에 대해서 다루겠습니다.
 
 <br>
+
+## Generalization
+
+대다수의 인공지능 모델의 학습 목적은 일반화 성능을 올리는 것에 있습니다. 여기서 말하는 일반화 성능은 학습에 사용된 `학습 데이터` 이외에 여러 다른 데이터에 대해서도 동일하거나 유사한 성능을 내는 것을 말합니다. 일반적으로 주어진 학습 데이터에 대해서만 학습을 진행하게 되면, 해당 데이터에 대해서만 잘 예측을 하고 다른 데이터에 대해서는 전혀 엉뚱한 결과를 내는 문제가 발생할 수 있습니다. 이 문제가 과적합 문제이며 바로 아래에서 설명합니다.
+
+인공지능의 모델은 입력으로 들어오는 데이터에 대해서 오차를 줄이를 방향으로 학습을 진행합니다. 다시 말해 학습 횟수가 증가할수록 학습데이터에 대한 오류는 점점 줄어들게 되지만, 너무 학습데이터에만 맞추어져서 다른 데이터셋에 대해서 오류가 증가합니다. 이 모습을 아래와 같이 표현할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180654929-2a02ba3f-7693-4f32-9ced-c272d82c8c5c.png){: .align-center width="70%"}
+
+<br>
+
+## Under & Over fitting
+
+먼저 Under Fitting 은 주어진 학습 데이터 조차도 학습이 제대로 되지 않은 상태를 말합니다. 학습이 덜 된 상태라고 할 수 있으며 비교적 일반화가 되었다고 느낄 수 있지만, 전체적인 정확도가 높지는 않은 양상을 보여줍니다. 반대로 Over Fitting은 학습이 너무 많이 된 상태를 말합니다. 주어진 데이터에 너무 과적합되어 있어서 다른 데이터에 대한 표현이나 예측은 잘 하지 못하는 상황입니다. 한 번 이 2가지 모습을 그림으로 나타내 보겠습니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180655209-79599feb-3a87-41de-b593-5fc4a2de5f0c.png){: .align-center width="90%"}
+
+가장 왼쪽이 Under Fitting 상태입니다. 학습이 제대로 되지 않아서 이미 주어진 데이터 조차도 잘 표현하지 못하고 있습니다. 가장 우측이 Over fitting이 된 상태로 다른 데이터가 새로 들어온다면 제대로 예측하는데 문제가 발생할 수 있습니다. 이 2가지 상태도 아닌 적절한 상태가 중앙의 모습이며 비교적 모든 데이터들을 포괄하는 곡선형의 그래프를 보여줍니다.
+
+<br>
+
+## Cross Validation
+
+대부분의 인공지능 모델을 생성할 때는 데이터셋을 `학습 데이터셋(Train dataset)`과 `테스트 데이터셋(Test dataset)` 2가지로 분류합니다. 그리고 학습데이터로 학습된 모델을 테스트 데이터셋으로 모델의 평가가 이루어지게 됩니다. 먼저 현재 학습이 적절하게 진행되고 있는지 판단하기 위해서 일반적으로 학습 데이터셋을 다시 또 다른 학습 데이터셋과 `검증 데이터셋(Valid dataset)`으로 분리합니다. 지금까지의 설명을 그림으로 표현해보겠습니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180655654-7e2260af-72ba-4109-9b12-a2a45c50d56e.png){: .align-center width="70%"}
+
+학습을 할 때, 검증 데이터셋은 학습에 사용되지 않으며 오로지 현재 모델의 상태를 평가하는데 사용합니다. 하지만, 단순히 이 검증셋 만으로 현재 학습된 모델을 평가하기에는 무리가 있습니다. 만약, 검증셋에 데이터가 우연히 매우 적절하게 분배되어 실제로는 학습이 잘 되지 않았는데 성능이 높다고 평가될 수 있는 경우가 존재할 수 있습니다.
+
+그렇기 때문에 Cross Validation은 처음 주어진 Train Dataset을 여러개로 나눈 후, 검증 데이터로 사용할 데이터셋을 번갈아가면서 사용합니다. 이렇게 하여 나온 결과들의 평균을 통해 모델의 성능을 평가하게 됩니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180655922-948bc0ce-2801-48f6-89e1-fd02de9b11f8.png){: .align-center width="70%"}
+
+
+<br>
+
+## Bias, Variance
+
+Bias는 해석하면 `편향` 으로 한 쪽으로 치우쳐져 있는 것을 말하며, Variance는 `분산`으로 기댓값으로 부터 얼마나 떨어진 곳에 확률변수가 분포하는지를 의미합니다. 사실 이 한 줄이 bias와 variance의 모든 것입니다. 흔히 이 2가지를 설명할 때 과녁판에 비유하곤 합니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180656078-08fc2c34-3038-46dd-8499-37fffb9e7b66.png){: .align-center width="50%"}
+
+위의 사진을 보았을 때, 인공지능의 학습이 Bias가 적게, Variance도 적게 학습하는 것이 가장 최적의 방법일 것이라고 바로 떠올릴 수 있습니다. 하지만 이 2 값 사이에는 Trade-off 가 존재해서 하나가 줄어들면 다른 하나는 증가하는 성질이 있습니다. 어떤 노이즈가 포함된 데이터가 존재한다고 가정합시다. 그리고 이 데이터를 아래와 같이 표현할 것입니다.
+
+$$
+\mathcal{D} = \{ (x_i, t_i)\}^N_{i=1} \quad t = f(x) + \epsilon \quad \epsilon \sim \mathcal{N}(0, \sigma^2)
+$$
+
+위의 식에서 나타난 데이터와 노이즈가 없는 실제 값간의 오차를 줄이기 위한 식은 아래와 같이 나타낼 수 있습니다.
+
+$$
+\begin{aligned}
+\mathbb{E}\left[ (t-\hat{f})^2 \right] &= \mathbb{E}\left[ (t - f + f - \hat{f})^2 \right]\\
+&= \dots\\
+&= \mathbb{E}\left[ (f - \mathbb{E} [\hat{f}]^2)^2 \right] + \mathbb{E} \left[ (\mathbb{E}[\hat{f}] - \hat{f})^2\right] + \mathbb{E} \left[\epsilon \right]\\
+&= \text{bias}^2 + \text{variance} + \text{noise}
+\end{aligned}
+$$
+
+이 식은 다시 말해 오차를 줄이는 식이 bias 항과 variance 항이 더해진 형태로 이루어져있어 하나를 낮추면 다른 하나가 증가할 수 밖에 없음을 보여줍니다.
+
+<br>
+
+## Bootstrapping
+
+Bootstrapping 은 주어진 학습 데이터를 모두 사용하는 것이 아니라 랜덤 샘플링을 통해서 얻은 데이터셋을 가지고 여러 모델을 학습시키거나 여러 평가를 하는 것을 말합니다. 확률적인 해석으로 무작위 표본 추출에 의존하는 어떤 시험이나 예측 표본 추정치들의 정확도를 할당하게 됩니다.
+
+실제로 주어진 학습데이터를 모두 사용한 1개의 모델보다, 랜덤 샘플링을 통해 만든 여러개의 모델들의 앙상블이 더 좋은 결과를 보여주고 있습니다. Boostrapping에 대한 대표적인 예로 Baggin와 Boosting이 있습니다. 바로 아래에서 살펴봅시다!
+
+<br>
+
+## Bagging & Boosting
+
+`Bagging`은 Bootstrapping aggregating으로 학습데이터에서 랜덤 샘플링을 통해 여러개의 데이터셋을 생성하고 이 여러개의 데이터셋으로 다시 여러개의 학습된 모델을 생성하는 것을 말합니다. 각 모델들의 결과를 평균내어 최종결과로 사용되며 이 기법이 `앙상블`기법이라고 표현합니다.
+
+`Boosting`은 어떤 A 모델이 잘 예측하지 못한 데이터들을 잘 맞추는 모델 B를 생성하는 방식으로 학습하는 것을 말합니다. 우리는 특히 예측하지 못한 데이터들을 weak learner 라고 표현하며 이들을 지속적으로 매꾸어나가는 방식으로 진행합니다. 대표적으로 XGBoost, CatBoost 모델이 있습니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180658559-0fdd929d-bb68-483d-a0d8-9c91e34ff82f.png){: .align-center width="70%"}
+
+<br>
+
+# References
+
+[🎨 Cover Image Source : Unsplash](https://unsplash.com/photos/L3d2KZJoiKk)
+
+[🎨 Over Fitting & Under Fitting Image Source](https://www.researchgate.net/figure/llustration-of-the-underfitting-overfitting-issue-on-a-simple-regression-case-Data_fig2_339680577)
+
+[🎨 Bagging & Boosting Image Source](https://seongjuhong.com/2021-01-17pm-ensemble-bagging-and-boosting/)
+
+<!--
 
 # Practical Gradient Descent method
 
@@ -249,3 +280,5 @@ $$ \text{total cost} = \text{loss}(D; W) + \frac{\alpha}{2}\|W\|_2^2 $$
 [📘 신경망에서 과적합을 방지하기 위한 방법](https://velog.io/@yuns_u/%EA%B3%BC%EC%A0%81%ED%95%A9%EC%9D%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%B0%A9%EB%B2%95Regularization-Strategies)
 
 [📘 딥러닝을 위한 경사하강법 비교](https://www.koreascience.or.kr/article/JAKO202013261023095.pdf)
+
+-->
