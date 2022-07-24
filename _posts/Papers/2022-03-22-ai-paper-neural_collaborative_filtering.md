@@ -7,13 +7,11 @@ tags:
   - [AI, Recommender System]
 toc: true
 toc_sticky: true
-use_math: true
 
 date: 2022-03-22 00:00:00
 last_modified_at: 2022-03-22 00:00:00
 
 layout: single
-classes: wide
 ---
 
 # Neural Collaborative Filtering
