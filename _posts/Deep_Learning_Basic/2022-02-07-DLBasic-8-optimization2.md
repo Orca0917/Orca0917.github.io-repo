@@ -25,134 +25,175 @@ Optimizer의 2번째 파트입니다. 만약 첫 번째 Optimizer파트에 대�
 
 이전까지 딥러닝의 모델을 학습시킬 때, 경사하강법을 사용하여 학습시킨다고 했었습니다. 이 때 학습시간을 줄이고 학습효과는 크게 하기 위해 여러가지 학습방법들이 고안되었습니다. 먼저 큰 틀에서 보았을 때 학습방법은 3가지로 분류해볼 수 있습니다.
 
-첫 번째 방법은 SGD(Stochastic Gradient Descent) 입니다. 학습을 하면서 가중치 파라미터를 업데이트 할 때 한 번에 모든 데이터를 사용하는 것이 아니라 랜덤 샘플링을 통해 얻은 하나의 데이터를 사용하여 학습하는 방법입니다. 확률적으로 이렇게 랜덤샘플링을 통해 학습을 진행하면 최적해에 근사할 수 있음이 증명되어 있습니다.
+첫 번째 방법은 `SGD`(Stochastic Gradient Descent) 입니다. 학습을 하면서 가중치 파라미터를 업데이트 할 때 한 번에 모든 데이터를 사용하는 것이 아니라 랜덤 샘플링을 통해 얻은 하나의 데이터를 사용하여 학습하는 방법입니다. 확률적으로 이렇게 랜덤샘플링을 통해 학습을 진행하면 최적해에 근사할 수 있음이 증명되어 있습니다.
 
-두 번째 방법은 Mini-batch Gradient Descent 입니다. 위에서는 하나의 데이터만 사용해서 업데이트 했다면, 이번에는 여러개를 사용하여 학습합니다. 여러 개의 단위를 우리는 `배치`라고 정의하며 배치의 크기에 따라 학습의 성능에도 큰 영향을 주게 됩니다. 
+두 번째 방법은 `Mini-batch` Gradient Descent 입니다. 위에서는 하나의 데이터만 사용해서 업데이트 했다면, 이번에는 여러개를 사용하여 학습합니다. 여러 개의 단위를 우리는 `배치`라고 정의하며 배치의 크기에 따라 학습의 성능에도 큰 영향을 주게 됩니다. 
 
 마지막 방법은 모든 학습데이터를 사용하여 업데이트 하는 방법입니다. 앞서 말한 Mini-batch Gradient Descent에서는 배치의 크기를 결정하는 것이 중요합니다. 
 
 <br>
 
-# References
+## 배치를 설정하는 방법
 
-[🎨 Cover Image Source : Unsplash](https://unsplash.com/photos/L3d2KZJoiKk)
+배치사이즈를 크게 설정하는 것이 좋은지, 적게 설정하는 것이 좋은지 어떤 한 논문에서 발표한 자료가 존재합니다. 논문은 *On large-batch Training for Deep Learning, 2017* 으로 sharp minimizer와 flat minimizer에 대해서 소개합니다. 각각이 무엇인지 다음 그림을 통해서 살펴보겠습니다.
 
-[🎨 Over Fitting & Under Fitting Image Source](https://www.researchgate.net/figure/llustration-of-the-underfitting-overfitting-issue-on-a-simple-regression-case-Data_fig2_339680577)
+![image](https://user-images.githubusercontent.com/91870042/180816625-a8cfbf00-82df-4323-bbf3-f56be982d3c9.png){: .align-center width="70%"}
 
-[🎨 Bagging & Boosting Image Source](https://seongjuhong.com/2021-01-17pm-ensemble-bagging-and-boosting/)
+위의 그림에서 파란색 선이 학습으로 얻어낸 결과, 초록색 선이 실제 정답값을 의미합니다. Flat minimum의 경우 학습으로 얻은 결과와 실제 정답간의 차이가 크지 않습니다. 반면에 Sharp minimum의 경우 학습의 결과와 실제 결과값의 차이가 큰 것을 확인할 수 있습니다. 이것을 보아 우리는 flat minimum에 도달하는 것이 더 좋다는 것을 알 수 있습니다.
 
-<!--
-
-# Practical Gradient Descent method
-
-1. Stochastic Gradient Descent(SGD)  
-    한 번에 랜덤 데이터를 여러개 추출하여 입력값으로 사용하는 방법이며, 이에 대한 출력값을 업데이트 하면서 빠르게 전진한다.
-  
-2. Mini-batch gradient descent  
-    batch-size의 샘플을 이용해서 gradient를 계산해서 업데이트
-
-3. Batch gradient descent  
-    한번에 모든 데이터를 이용해서 gradient의 평균을 이용해서 업데이트
-
-## Batch-size  Matters
-> It has been observed in practice that when using a larger batch there is a degradation in the quality in the quality of the model, as measured by its ability to generalize.
-
-> We ... present numerical evidence that supports the view that large batch methods tend to converge sharp minimizers of the training and testing functions. In contrase, small-batch methods consistently converge to flat minimizers... this is due to the inherent noise in the gradient estimation.  
-> -On large-batch Training for Deep Learning, 2017
-
-위의 말을 정리하면 다음 2가지로 나눌 수 있다.
-- `Batch크기를 크게하는 경우`: Sharp minimizers가 된다.
-- `Batch크기를 작게하는 경우`: Flat minimizers가 된다.
-
-minimizers는 Sharp보다는 Flat한 것이 Generalized가 더 잘되어 있기 때문에 `flat`을 사용하는 것이 좋다. 따라서 Batch크기를 작게하는 것이 테스트 데이터에 대한 결과값에 유사하다.
-
-![image](https://user-images.githubusercontent.com/91870042/145227566-7d826e05-7d59-4c7b-8af9-ebcee2e67d5c.png){: .align-center width="70%"}
-
-위의 그림을 봤을 때, Batch크기를 크게 하여 sharp minimum에 도달하였을 경우에는 테스트 데이터에 대한 결과값과의 차이가 커진다. (y절편의 차이값)
-
-[📝 관련 논문: On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima](https://arxiv.org/abs/1609.04836)
+논문에서는 작은 크기의 배치크기를 사용할 수록 Flat minimum에 도달하기 쉽다고 발표합니다. 하지만 모든 상황에 대해서 이렇다고 단정짓기는 힘들기 때문에 여러 주어진 상황속에서 실험을 통해 가장 높은 효과를 내는 배치사이즈를 설정하는 것이 중요합니다.
 
 <br>
 
-# Gradient Descent Methods
+# Optimizer
+
+옵티마이저는 경사하강법을 통해서 얻어낸 그래디언트를 바탕으로 실제 파라미터를 업데이트 하는 과정을 최적화 시켜줍니다. 적은 시간에 더 효과적인 값의 업데이트를 이루어 내는 것이 중요하기 때문에 여러가지 옵티마이저가 존재합니다. 이번에는 그 중에서도 기본이 되는 것들과 많이 사용되는 옵티마이저에 대해서 소개하겠습니다.
+
+<br>
+
 ## Gradient Descent
 
-$$ W_{t+1} \leftarrow W_t - \eta g_t $$
+먼저 가장 일반적인 경사하강법을 이용한 파라미터의 업데이트 수식을 살펴봅시다. 가중치 행렬을 $\mathbf{W}$ 라고 했을 때, 업데이트 식은 다음과 같습니다.
 
-- \\(W\\) : 가중치 행렬
-- \\(\eta\\) : 학습률
-- \\(g_t\\) : 손실함수를 행렬에 대해서로 편미분한 값
+$$
+\mathbf{W}_{t+1} \leftarrow \mathbf{W}_t - \eta g_t
+$$
 
-계산된 기울기에 대해서 최소값을 찾기 위해서 다가가는 수식이다. 하지만, gradient에 대해 <u>학습률(\\(\eta\\))을 설정하기 어렵다는 단점과 local minimum에 수렴하는 단점</u>이 존재한다.
+- $\mathbf{W}$ : 학습 파라미터
+- $\eta$ : 학습률
+- $g_t$ : 그래디언트 값
 
-## momentum
+![image](https://user-images.githubusercontent.com/91870042/180821355-d98f516e-3d42-4b9d-9708-8dcfad949d68.png){: .align-center width="50%"}
 
-$$ a_{t+1} \leftarrow \beta a_t + g_t $$
+하지만 여기서 학습률인 $\eta$ 는 하이퍼파라미터로 사용자가 직접 설정을 통해 최적의 값으로 만들어줘야 합니다. 다음은 여기에 "관성"의 개념을 추가한 Momentum에 대해서 살펴보겠습니다.
 
-$$ W_{t+1} \leftarrow W_t - \eta a_{t+1}$$
+<br>
 
-- \\(\beta\\) : 가속도의 역학을 하는 hyperparameter.
+## Momentum
 
-`momentum`은 경사하강법을 통해 \\(W\\)가 이동하는 과정에서 일종의 관성을 부여하는 것이다. \\(W\\) 값을 업데이트 할때, 이전의 방향을 반영하여 그 쪽 방향으로 진행한다. 장점으로 `local minimum`을 피하고 `global minimum`의 값에 도달하게 한다.
+Momentum은 이전의 Gradient들의 정보들을 사용해서 관성의 개념을 도입하였습니다. 이것의 장점은 현재 진행방향을 어느정도 유지시켜줄 수 있는데 딥러닝의 Global minimum 값을 찾는데 큰 도움이 됩니다. Local minimum에서 갖혀 빠져나오지 못하는 문제점을 해결해 줄 수 있어서 올바른 최적해를 찾을 수 있게 도와줍니다. Momentum을 사용한 경사하강법 수식은 다음과 같습니다.
 
-쉽게 말해서, momentum을 적용하면, GD로 이동하는 거리보다 더 많이 이동한다.
+$$
+a_{t+1} \leftarrow \beta a_t + g_t\\
 
-## nesterov accelerated gradient
+$$
 
-$$ a_{t+1} \leftarrow \beta a_t + \nabla f(W_t-\eta\beta a_t) $$
+- $a_t$ : timestep $t$ 의 관성 그래디언트 누적 값
+- $\beta$ : 관성의 크기
 
-$$ W_{t+1} \leftarrow W_t-\eta a_{t+1}$$
+![image](https://user-images.githubusercontent.com/91870042/180821629-d8da9cfb-63b9-4578-9bb8-a14548aa83cb.png){: .align-center width="50%"}
 
-NAG는 momentum과 비슷하게, 관성을 부여해서 결과값을 이동한다. momentum과의 차이점은 \\(g_t\\)부분인데, 다음 지점의 기울기를 계산한 것이다. 현재 a라는 정보가 있으면, 그 방향으로 가보고 간곳의 기울기를 계산해서 더하는 방식이다. 
+위의 그림에서 알 수 있듯이 단순한 경사하강법보다는 부드럽게 최적해를 찾아나가는 것을 볼 수 있는데, 바로 관성의 효과를 적용했기 때문입니다. 다음은 위의 식에서 관성을 유지한 채, 다음 업데이트 되어서 이동한 부분의 그래디언트를 계산하고 현재의 업데이트의 계산에 적용시키는 NAG 에 대해서 소개하겠습니다.
 
-![image](https://user-images.githubusercontent.com/91870042/145229445-dea1fa3c-0ca7-4210-824f-43f326c9e8da.png){: .align-center width="70%"}
+<br>
+
+## NAG
+
+NAG (Nesterov Accelerated Gradient)는 현재 그래디언트를 업데이트 할 때, 다음 업데이트 되는 그래디언트의 정보도 포함시키는 것을 말합니다. 수식으로 살펴봅시다.
+
+$$
+a_{t+1} \leftarrow \beta a_t + \nabla \mathcal{L}(\mathbf{W}_t-\eta\beta a_t)\\
+\mathbf{W}_{t+1} \leftarrow \mathbf{W}_t - \eta a_{t+1}
+$$
+
+위의 식에서 나블라 $\nabla \mathcal{L}$ 가 포함된 부분이 바로 다음 지점의 그래디언트를 계산하는 부분입니다. 이렇게 되면 관성방향으로 움직이고 다시 움직인 자리의 그래디언트를 계산하기 때문에 최적의 지점을 더 빠르게 찾아 내려갈 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180823899-1977441b-aa7e-4e9c-802f-d5bfcb3c1f1d.png){: .align-center width="80%"}
+
+<br>
 
 ## Adagrad
-경사하강법에서 데이터의 학습률\\(\eta\\)를 설정하는 것은 중요하다. 학습률을 너무 높거나 낮게하면 학습이 안되기 때문이다. 이런점을 보완해서 만든 것이 `Adagrad(Adaptive Gradient)`이다.
 
-$$ W_{t+1} = W_t - \frac{\eta}{\sqrt{G_t + \epsilon}}g_t $$
+Adagrad는 파라미터를 업데이트 할 때, 모두 동일하게 업데이트 하는 것이 아니라 많이 업데이트된 파라미터는 적게 업데이트하고, 적게 업데이트된 파라미터는 많이 업데이트해서 더 빠르게 최적 지점을 찾아낼 수 있습니다.
 
-- \\(G_t\\) : 지금까지 변화한 값을 제곱해서 모두 더한 값
-- \\(\epsilon\\) : 분모가 0이 되는 것을 방지하는 값. 일반적으로 \\(1e^{-7}\\)로 설정한다
+따라서 현재 파라미터가 지금까지 얼마나 업데이트 되었는지 저장하는 변수하나가 필요하며 수식에서는 이를 $G_t$라고 표현했습니다.
 
-학습률의 조정은 **지금까지 변화한 변수들은 최저치에 근접했을 확률이 높을 것으로 보고 학습률을 적게** 한다. 적게 변화한 변수들은 최저치 값에 도달하기 위해서 많이 이동해야할 확률이 높기 때문에 학습률을 크게 한다. 그러기 위해서는 지금까지의 변화한 수치를 저장하는 값이 필요한데 \\(G_t\\)에 저장되어 있다.
+$$
+\mathbf{W}_{t+1} = \mathbf{W}_t - \frac{\eta}{\sqrt{G_t + \epsilon}}g_t
+$$
 
-위의 식에서 \\(\epsilon\\)는 분모가 0이되는 것을 방지하는 값이다. 때에 따라서는 \\(\epsilon\\)값을 얼만큼 설정하느냐에 따라서 학습의 결과가 크게 변동된다. 하지만 \\(G_t\\)는 시간이 지날수록 그 값은 매우 커지는데, 그렇게 되면 학습률 \\(\epsilon\\)는 0에 가까워져 학습이 안되는 문제가 발생한다.
+- $G_t$ : 지금까지 계산된 그래디언트를 제곱하여 모두 더한 값
+- $g_t$ : 현재 계산된 그래디언트
+- $\epsilon$ : 분모가 0이 되는 것을 방지하기 위한 매우 작은 값
 
-하지만 위에서는 \\(G_t\\) 의 값이 무한대로 커져버리면, 학습이 거의 멈춰진다는 단점이 있다.
+![image](https://user-images.githubusercontent.com/91870042/180913863-6a488511-4f58-4d34-adc6-25206d8b9f01.png){: .align-center width="50%"}
+
+이런 Adagrad에는 큰 단점이 존재합니다. 학습이 진행되면 진행될 수록 $G_t$ 의 값은 커질 수 밖에 없는데, 너무 커지게 되면 학습률에 해당하는 값이 0에 가까워져 더 이상 값의 업데이트가 원활하게 이루어지지 않습니다. 이 문제는 다음 소개할 RMSprop 에서 해결하였습니다.
+
+<br>
+
+## RMSprop
+
+RMSprop은 논문으로 소개된 개념은 아닙니다. 제프리 힌튼의 강의 중에서 소개된 내용으로 지수이동평균(Exponential Moving Average, EMA)의 개념을 사용하였습니다. 지수 이동평균으로 $G_t$ 의 값이 매우 커지는 것을 방지할 수 있었는데, 바로 매번 새로운 그래디언트가 계산되고 더해질 때 1보다 작은 가중치를 설정하여 크기를 줄여나갔습니다.
+
+$$
+\begin{aligned}
+G_t &= \gamma G_{t-1} + (1-\gamma)g_t^2\\
+\mathbf{W}_{t+1} &= \mathbf{W}_t - \frac{\eta}{\sqrt{G_t + \epsilon}}g_t
+\end{aligned}
+$$
+
+- $\gamma$ : 지수이동평균 가중치
+
+<br>
 
 ## Adadelta
 
-$$ G_t = \gamma G_{t-1} + (1-\gamma)g_t^2 $$
+Adadelta는 학습률 파라미터인 $\eta$ 를 직접 설정하지 않아도 알아서 최적의 학습률을 계산하여 업데이트 합니다. 기본적인 틀은 Adagrad, RMSprop과 유사하지만 분자에 해당하는 식이 학습률 $\eta$ 대신 $H_t$ 라는 새로운 변수가 사용됩니다.
 
-$$ W_{t+1} = W_t - \frac{\sqrt{H_{t-1}+\epsilon}}{\sqrt{G_t+\epsilon}}g_t$$
+$$
+\begin{aligned}
+G_t &= \gamma G_{t-1} + (1-\gamma)g_t^2\\
+H_t &= \gamma H_{t-1} + (1-\gamma)(\Delta \mathbf{W}_t)^2\\\\
+\mathbf{W}_{t+1} &= \mathbf{W}_t - \frac{\sqrt{H_{t-1} + \epsilon}}{\sqrt{G_t + \epsilon}}g_t
+\end{aligned}
+$$
 
-$$ H_t = \gamma H_{t-1} + (1-\gamma)(\Delta W_t)^2 $$
+- $G_t$ : 그래디언트 제곱합의 지수이동평균(EMA)
+- $H_t$ : 파라미터의 변화량 제곱합의 지수이동평균(EMA)
 
-`Adadelta`는 `Adagrad`의 문제점을 보완하기 위해서 나왔다. 분모를 구할 때 제곱합을 누적하지 않고 지수평균을 사용한다. 단, 여기서는 \\(\eta\\) 대신, 변화값의 제곱을 가지고 지수평균 값을 사용한다. 이는 학습이 끝나지 않았는데, 학습률이 0에 가까워지는 Adagrad의 문제를 해결한다.
-
-조금 더 풀어쓰면, 연속적으로 가중평균을 취하는 것은 과거의 gradient값을 지수적으로 감소시킬 수 있다. 따라서 Adadelta는 분모가 과도하게 작아지는 것을 방지하기 위해서 시점 \\(t\\) 에서의 기울기 변화를 크게 반영시키고 이전, 과거의 기울기 변화는 적게 반영시킨다.
-
-**Adadelta에는 학습률이 존재하지 않는다.**
-
-## RMSprop
-**RMSprop**역시 Adagrad의 문제점을 해결하며, Adadelta에 대해서 learning rate를 추가한 개념이다.
-
-$$ G_t = \gamma G_{t-1} + (1-\gamma)g_t^2 $$
-
-$$ W_{t+1} = W_t - \frac{\eta}{\sqrt{G_t+\epsilon}}g_t$$
+<br>
 
 ## Adam
 
-$$ m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t $$
+Adam은 RMSprop과 Momentum 기법을 합친 옵티마이저로 파라미터마다 업데이트 되는 양이 다릅니다. Adam에서는 사용되는 하이퍼파라미터가 여러개 등장합니다. 첫번째로 학습률 $\eta$ 와 이동가중평균의 $\beta_1, \beta_2$ 가 있습니다.
 
-$$ v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2 $$
+$$
+\begin{aligned}
+m_t &= \beta_1 m_{t-1} + (1-\beta_1)g_t\\
+v_t &= \beta_2 v_{t-1} + (1-\beta_2)g_t^2\\\\
+\mathbf{W}_{t+1} &= \mathbf{W}_t - \frac{\eta}{\sqrt{v_t + \epsilon}}\frac{\sqrt{1-\beta_2^t}}{1-\beta_1^t}m_t
+\end{aligned}
+$$
 
-$$ W_{t+1} = W_t - \frac{\eta}{\sqrt{v_t + \epsilon}}\frac{\sqrt{1-\beta_2^t}}{1-\beta_1^t}m_t $$
+Adam은 현재 진행방향에 관성을 부여하고, 최근까지의 경로의 변화량에 따라서 업데이트 정도를 조절하는 적응 학습률을 부여합니다. 따라서 Adaptive Moment Estimation 이라고 불리며 줄여서 Adam이 된 것입니다.
 
-Gradient 함수중에서 가장 무난하게 사용이 된다. 앞에서 말한 `Momentum`과 `Adagrad`를 섞은 함수이다.
+여러 신경망에서 잘 작동하기 때문에 가장 흔하게 사용되고 있으며 저자가 추천하는 하이퍼 파라미터 값은 다음과 같습니다.
+
+- $\beta_1$ = 0.9
+- $\beta_2$ = 0.999
+- $\epsilon$ = 1e-8
 
 <br>
+
+지금까지 딥러닝에 사용되는 옵티마이저에 대해서 알아보았습니다. 여러 옵티마이저들이 어떤 것들을 바탕으로 발전되었는지 한 눈에 볼 수 있게 정리한 계보가 있어서 마지막으로 소개하면서 마무리하겠습니다. 아래 그래프는 하용호님의 강의자료 중 일부입니다.
+
+![image](https://user-images.githubusercontent.com/91870042/180918419-046e643e-0746-4930-94c0-5901d25d6141.png){: .align-center width="100%"}
+
+<br>
+
+# References
+
+[🌏 자습해도 모르겠던 딥러닝, 머리속에 인스톨 시켜드립니다.](https://www.slideshare.net/yongho/ss-79607172/)
+
+[🌏 [딥러닝] 옵티마이저(Optimizer)](https://velog.io/@freesky/Optimizer#optimizer-%EC%A2%85%EB%A5%98)
+
+[🌏 딥러닝 튜토리얼 6-1강. SGD, 모멘텀, AdaGrad, Adam](https://koreanfoodie.me/178)
+
+[🎨 Cover Image Source : Unsplash](https://unsplash.com/photos/L3d2KZJoiKk)
+
+
+<!--
 
 # Regularization
 위에서 알아본 `overfitting`이 일어나지 않도록, 적절하게 학습을 하게하는 역할을 한다.
