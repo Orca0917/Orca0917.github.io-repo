@@ -162,7 +162,7 @@ $$
 \begin{aligned}
 m_t &= \beta_1 m_{t-1} + (1-\beta_1)g_t\\
 v_t &= \beta_2 v_{t-1} + (1-\beta_2)g_t^2\\\\
-\mathbf{W}_{t+1} &= \mathbf{W}_t - \frac{\eta}{\sqrt{v_t + \epsilon}}\frac{\sqrt{1-\beta_2^t}}{1-\beta_1^t}m_t
+\mathbf{W}_{t+1} &= \mathbf{W}_t - \frac{\eta}{\sqrt{v_t + \epsilon}}m_t
 \end{aligned}
 $$
 
