@@ -1,5 +1,6 @@
 ---
-title: "[논문 리뷰] NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE"
+title: "[논문 리뷰] Neural Machine Translation - Attention Mechanism"
+excerpt: "Neural machine translation by jointly learning to align and translate"
 
 categories:
   - paper
