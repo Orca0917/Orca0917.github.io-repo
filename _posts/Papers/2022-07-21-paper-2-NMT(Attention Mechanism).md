@@ -13,7 +13,7 @@ use_math: true
 date: 2022-07-21
 last_modified_at: 2022-07-21
 ---
-![image](https://user-images.githubusercontent.com/91870042/180634544-37bc1ba4-d213-4781-8774-b8c857a7b041.png){: .align-center width="60%"}
+![image](https://user-images.githubusercontent.com/91870042/180634544-37bc1ba4-d213-4781-8774-b8c857a7b041.png){: .align-center width="70%"}
 
 현재 자연어 처리(NLP) 분야뿐만 아니라, 다른 분야 추천 시스템과 컴퓨터 비전 분야에서도 Transformer 구조는 정말 많이 사용되고 있습니다. 또한 AI 분야를 조금만 공부하더라도 Transformer라는 단어를 한 번이라도 들어볼 수 있습니다. 이번 논문은 Transformer 구조에 사용되는 Attention 메커니즘 최초로 소개한 논문입니다.
 
