@@ -21,9 +21,9 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "유종문(Ryu Jongmoon)"
 description              : "공부한 것들을 기록하는 개인 블로그 입니다."
-url                      : "https://killerwhale0917.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://Orca0917.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "killerWhale0917/killerWhale0917.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "Orca0917/Orca0917.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "CODE WORK" # overrides the website title displayed in the masthead, use " " for no title
@@ -121,7 +121,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/killerWhale0917"
+      url: "https://github.com/Orca0917"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -137,7 +137,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/killerWhale0917"
+      url: "https://github.com/Orca0917"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
